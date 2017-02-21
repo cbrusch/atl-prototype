@@ -1,0 +1,10 @@
+/* https://hackernoon.com/a-guide-to-cross-browser-testing-installing-all-the-things-6e56c2bd8182#.4i58zyc0x */
+body {
+	overflow-y: scroll;
+	.block-scroll {
+		overflow: hidden;
+		overflow-y: scroll !important;
+		position: fixed;
+		width: 100%;
+	}
+}
