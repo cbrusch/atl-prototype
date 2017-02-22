@@ -109,6 +109,19 @@ body {
 		white-space: pre-line;
 	}
 }
+.epigram__english {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+.t-left {
+	border: 1px solid red;
+	padding-right: 2rem;
+}
+.t-right {
+	border: 1px solid blue;
+}
+
 .epigram--double__active {
 /*	display: flex;
 	align-items: center;
