@@ -400,22 +400,18 @@
 				toggleDoubleView();
 			})
 			$('ul.subnav__options--single li:nth-child(1)').click(function() { // click Single Translation to hide / show English text
-				console.log("I'm clicking the single english text option");
 				toggleTranslationViewSingle();
 				hideOptionalSections();
 			});
 			$('ul.subnav__options--double li:nth-child(1)').click(function() { // click Double Translation to hide / show English text
-				console.log("I'm clicking the double english text option");
 				toggleTranslationViewDouble();
 				hideOptionalSections();
 			});
 			$('ul.subnav__options--single li:nth-child(2)').click(function() { // click Single Original to hide / show Latin or German text
-				console.log("I'm clicking the single latin text option");
 				toggleOriginalViewSingle();
 				hideOptionalSections();
 			});
 			$('ul.subnav__options--double li:nth-child(2)').click(function() { // click Double Original to hide / show Latin or German text
-				console.log("I'm clicking the double latin text option");
 				toggleOriginalViewDouble();
 				hideOptionalSections();
 			});
@@ -443,7 +439,6 @@
 				$('.subnav__views--single').toggleClass('is-active'); // highlight single view as default view
 				$('ul.subnav__options--single li:nth-child(1)').toggleClass('is-active'); // highlight english translation as default text
 				$('.section > .section--double').toggleClass('is-disabled'); // hide second div of each text section. It should only show in double view
-				// $('.subnav__option--double').toggleClass('hidden'); // this is a repeat from line 189
 				openEmblemNav(); // toggle opening subnav and revealing views
 				hideOptionalSections(); // hide text for optional languages
 			}
@@ -463,13 +458,14 @@
 					$('.subnav__views--double').removeClass('is-active'); // remove highlight from double view button in subnav
 					$('.subnav__options--double').addClass('is-disabled'); // hide text menu options for Double View
 					$('.subnav__options--double').children().addClass('is-disabled'); // hide all text menu options for double view
-					$('.section--double').addClass('is-disabled'); // hide second div of each section that should only show in double view
-					// ??? DOES THIS SCRIPT BELOW EVEN DO ANYTHING ???
+					$('.double').addClass('is-disabled'); // hide second div of each section that should only show in double view
+					// QUESTION: DOES THIS SCRIPT BELOW EVEN DO ANYTHING???
 					// $('.section').removeClass('section-d');
-					//IS THE SCRIPT BELOW A BETTER OPTION THAN THE INLINE CSS BELOW THAT???
-					// $('.motto').removeClass('motto--double__active');
+					// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
 					$('.section').css({'flex-grow': '', 'flex-shrink': '', 'flex-basis': ''});
 					$('.motto, .epigram, .discourse').css({'align-items': 'center'});
+					// QUESTION: IS THE SCRIPT BELOW A BETTER OPTION THAN THE INLINE CSS ABOVE???
+					// $('.motto').removeClass('motto--double__active');
 				}
 			}
 			function toggleDoubleView() {
@@ -484,20 +480,13 @@
 					$('.subnav__options--double').children().removeClass('is-disabled'); // show all text menu options for double view
 					// NOTE: THE SCRIPT BELOW NEEDS TO HIGHLIGHT WHATEVER THE LAST SELECTED DOUBLE VIEW TEXT OPTION WAS, NOT THE DEFAULT
 					$('ul.subnav__options--double li:nth-child(2)').addClass('is-active'); // highlight original latin/german as default text
+					$('.double').removeClass('is-disabled'); // show second div of each text section
+					// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
 					$('.section').css({'flex-grow': '1', 'flex-shrink': '1', 'flex-basis': '100%'});
 					$('.motto, .epigram, .discourse').css({'align-items': 'baseline'});
-					// $('.section--double').removeClass('is-disabled'); // show second section div of each text area
 					hideOptionalSections();
-					// $('section--double').parent().removeClass('is-disabled'); // reveal double section for each text area
-					//auto select two nav views
-					// $('ul.dbl li:nth-child(2)').addClass('is-active'); // highlight original language selection in double view menu
-					// $('div.motto div:nth-child(2)').removeClass('is-disabled');
-
-
-					// $('.section').addClass('section-d'); //???
-					// $('div.motto, div.epigram, div.discourse div:nth-child(2)').addClass('motto--double__active');//???
-					// $('.motto').addClass('motto--double__active');
-					// $('.epigram').addClass('epigram--double__active');
+					// QUESTION: DOES THIS SCRIPT BELOW EVEN DO ANYTHING???
+					// $('.section').addClass('section-d');
 				}
 			}
 			/* Text Sections */
@@ -507,8 +496,7 @@
 				}
 				else {
 					$('ul.subnav__options--single li:nth-child(1)').toggleClass('is-active');
-					$('ul.subnav__options--single li:nth-child(1)').siblings().removeClass('is-active');
-					// hideOptionalSections();	
+					$('ul.subnav__options--single li:nth-child(1)').siblings().removeClass('is-active');	
 				}
 			}
 			function toggleTranslationViewDouble() { // highlight Double english translation selection in subnav menu
@@ -517,8 +505,7 @@
 				}
 				else {
 					$('ul.subnav__options--double li:nth-child(1)').toggleClass('is-active');
-					$('ul.subnav__options--double li:nth-child(1)').siblings().removeClass('is-active');
-					// hideOptionalSections();	
+					$('ul.subnav__options--double li:nth-child(1)').siblings().removeClass('is-active');	
 				}
 			}
 			function toggleOriginalViewSingle() { // highlight Single original latin selection in subnav menu
@@ -528,7 +515,6 @@
 				else {
 					$('ul.subnav__options--single li:nth-child(2)').toggleClass('is-active');
 					$('ul.subnav__options--single li:nth-child(2)').siblings().removeClass('is-active');
-					// hideOptionalSections();
 				}
 			}
 			function toggleOriginalViewDouble() { // highlight Double original latin selection in subnav menu
@@ -538,7 +524,6 @@
 				else {
 					$('ul.subnav__options--double li:nth-child(2)').toggleClass('is-active');
 					$('ul.subnav__options--double li:nth-child(2)').siblings().removeClass('is-active');
-					// hideOptionalSections();
 				}
 			}
 			function toggleTranscriptionViewSingle() { // highlight Single transcription selection in subnav menu
@@ -547,8 +532,7 @@
 				}
 				else {
 					$('ul.subnav__options--single li:nth-child(3)').toggleClass('is-active');
-					$('ul.subnav__options--single li:nth-child(3)').siblings().removeClass('is-active');
-					// hideOptionalSections();	
+					$('ul.subnav__options--single li:nth-child(3)').siblings().removeClass('is-active');	
 				}
 			}
 			function toggleTranscriptionViewDouble() { // highlight Double transcription selection in subnav menu
@@ -557,8 +541,7 @@
 				}
 				else {
 					$('ul.subnav__options--double li:nth-child(3)').toggleClass('is-active');
-					$('ul.subnav__options--double li:nth-child(3)').siblings().removeClass('is-active');
-					// hideOptionalSections();	
+					$('ul.subnav__options--double li:nth-child(3)').siblings().removeClass('is-active');	
 				}
 			}
 			function toggleFacsimileViewSingle() { // highlight Single facsimile selection in subnav menu
@@ -567,8 +550,7 @@
 				}
 				else {
 					$('ul.subnav__options--single li:nth-child(4)').toggleClass('is-active');
-					$('ul.subnav__options--single li:nth-child(4)').siblings().removeClass('is-active');
-					// hideOptionalSections();	
+					$('ul.subnav__options--single li:nth-child(4)').siblings().removeClass('is-active');	
 				}
 			}
 			function toggleFacsimileViewDouble() { // highlight Double facsimile selection in subnav menu
@@ -577,12 +559,11 @@
 				}
 				else {
 					$('ul.subnav__options--double li:nth-child(4)').toggleClass('is-active');
-					$('ul.subnav__options--double li:nth-child(4)').siblings().removeClass('is-active');
-					// hideOptionalSections();	
+					$('ul.subnav__options--double li:nth-child(4)').siblings().removeClass('is-active');	
 				}
 			}
 
-			function hideOptionalSections() {
+			function hideOptionalSections() { // show requested text, hide text that is not currently being used 
 				console.log("I'm in the optional sections function");
 				// Translation Single
 				if( $('ul.subnav__options--single li:nth-child(1)').hasClass('is-active') ) {
@@ -604,7 +585,7 @@
 					$('.single .discourse__latin').siblings().addClass('is-disabled');
 				}
 				// Transcription Single
-				else if( $('ul.subnav__options--single li:nth-child(4)').hasClass('is-active') ) {
+				else if( $('ul.subnav__options--single li:nth-child(3)').hasClass('is-active') ) {
 					$('.single .motto__transcription').removeClass('is-disabled');
 					$('.single .motto__transcription').siblings().addClass('is-disabled');
 					$('.single .epigram__transcription').removeClass('is-disabled');
@@ -613,7 +594,7 @@
 					$('.single .discourse__transcription').siblings().addClass('is-disabled');				
 				}
 				// Facsimile Single
-				else if( $('ul.subnav__options--single li:nth-child(3)').hasClass('is-active') ) {
+				else if( $('ul.subnav__options--single li:nth-child(4)').hasClass('is-active') ) {
 					$('.single .motto__facsimile').removeClass('is-disabled');
 					$('.single .motto__facsimile').siblings().addClass('is-disabled');
 					$('.single .epigram__facsimile').removeClass('is-disabled');
@@ -660,7 +641,7 @@
 					$('.double .discourse__facsimile').siblings().addClass('is-disabled');
 				}
 				else {
-					console.log("I don't know what these sections are even doing");
+					console.log("I don't know what these sections are doing");
 				}
 			}
 		});
