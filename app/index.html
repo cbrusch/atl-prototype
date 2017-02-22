@@ -440,7 +440,8 @@
 				$('.subnav__views--single, .subnav__views--double').toggleClass('is-disabled'); // hide subnav views
 				$('div.subnav ul:nth-child(2)').toggleClass('is-disabled'); // hide navigation options for double view
 				$('.subnav__views--single').toggleClass('is-active'); // highlight single view as default view
-				$('ul.subnav__options--single li:nth-child(1)').toggleClass('is-active'); // highlight english translation as default text
+				$('ul.subnav__options--single li:nth-child(1)').toggleClass('is-active'); // highlight english translation as default single text
+				$('ul.subnav__options--double li:nth-child(2)').addClass('is-active'); // highlight original latin/german as default double text
 				$('.section > .section--double').toggleClass('is-disabled'); // hide second div of each text section. It should only show in double view
 				openEmblemNav(); // toggle opening subnav and revealing views
 				hideOptionalSections(); // hide text for optional languages
@@ -481,8 +482,6 @@
 					$('.subnav__views--single').removeClass('is-active'); // remove highlight from single view button in subnav
 					$('.subnav__options--double').removeClass('is-disabled'); // show text menu options for Double View
 					$('.subnav__options--double').children().removeClass('is-disabled'); // show all text menu options for double view
-					// NOTE: THE SCRIPT BELOW NEEDS TO HIGHLIGHT WHATEVER THE LAST SELECTED DOUBLE VIEW TEXT OPTION WAS, NOT THE DEFAULT
-					$('ul.subnav__options--double li:nth-child(2)').addClass('is-active'); // highlight original latin/german as default text
 					$('.double').removeClass('is-disabled'); // show second div of each text section
 					// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
 					$('.section').css({'flex-grow': '1', 'flex-shrink': '1', 'flex-basis': '100%'});
