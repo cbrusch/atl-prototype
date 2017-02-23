@@ -67,6 +67,7 @@ body {
 	justify-content: center;
 	min-height: 34rem;
 	position: relative;
+	z-index: 4;
 	.image__picture {
 /*		position: absolute; - breaks in safari*/ 
 		img {
@@ -91,6 +92,7 @@ body {
 .music {
 	min-height: 25rem;
 	max-height: 25rem;
+	z-index: 4;
 }
 
 .epigram {
@@ -158,6 +160,16 @@ body {
 		text-align: left;
 		text-indent: 0;
 	}
+}
+.divider {
+	display: flex;
+	background-color: $light-gray;
+	margin-left: 49.8%;
+	width: .5rem;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	z-index: 3;
 }
 /*.text-double {
 	h1 {

@@ -14,45 +14,40 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="wrapper-emblem">
 <!-- NAVIGATION -->
-			<div class="wrapper-topnav">
-				<div class="topnav row">
-					<p>Alchemy in Code: Atalanta Fugiens</p>
-				</div>
-				<!-- BOOTSTRAP NAV -->
-				<!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
-					<div class="wrapper-subnav">
-						<div class="topnav subnav row">
-							<div class="subnav__options">
-								<ul class="subnav__options__option subnav__options--single">
-									<li class="subnav__options__option"><a href="#">Translation</a></li>
-									<li class="subnav__options__option"><a href="#">Original</a></li>
-									<li class="subnav__options__option"><a href="#">Transcription</a></li>
-									<li class="subnav__options__option"><a href="#">Facsimile</a></li>
-								</ul>
-								<ul class="subnav__options__option subnav__options--double">
-									<li class="subnav__options__option subnav__option--double"><a href="#">Translation</a></li>
-									<li class="subnav__options__option subnav__option--double"><a href="#">Original</a></li>
-									<li class="subnav__options__option subnav__option--double"><a href="#">Transcription</a></li>
-									<li class="subnav__options__option subnav__option--double"><a href="#">Facsimile</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="topnav subnav__views row">
-							<ul>
-								<li class="subnav__views--single"><a href="#">Single View</a></li>
-								<li class="subnav__views__btn"><span><a href="#"><p>+</p></a></span></li>
-								<li class="subnav__views--double"><a href="#">Double View</a></li>
-							</ul>
-						</div>
+		<div class="wrapper-topnav">
+			<div class="topnav row"><p>Alchemy in Code: Atalanta Fugiens</p></div>
+			<!-- BOOTSTRAP NAV -->
+			<!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
+			<!-- </nav> -->
+		</div>
+		<div class="wrapper-emblem">
+			<div class="wrapper-subnav">
+				<div class="topnav subnav row">
+					<div class="subnav__options">
+						<ul class="subnav__options__option subnav__options--single">
+							<li class="subnav__options__option"><a href="#">Translation</a></li>
+							<li class="subnav__options__option"><a href="#">Original</a></li>
+							<li class="subnav__options__option"><a href="#">Transcription</a></li>
+							<li class="subnav__options__option"><a href="#">Facsimile</a></li>
+						</ul>
+						<ul class="subnav__options__option subnav__options--double">
+							<li class="subnav__options__option subnav__option--double"><a href="#">Translation</a></li>
+							<li class="subnav__options__option subnav__option--double"><a href="#">Original</a></li>
+							<li class="subnav__options__option subnav__option--double"><a href="#">Transcription</a></li>
+							<li class="subnav__options__option subnav__option--double"><a href="#">Facsimile</a></li>
+						</ul>
 					</div>
-				<!-- </nav> -->
+				</div>
+				<div class="topnav subnav__views row">
+					<ul>
+						<li class="subnav__views--single"><a href="#">Single View</a></li>
+						<li class="subnav__views__btn"><span><a href="#"><p>+</p></a></span></li>
+						<li class="subnav__views--double"><a href="#">Double View</a></li>
+					</ul>
+				</div>
 			</div>
-<!-- 			<div class="sidenav row">
-				
-			</div>
--->
+		<div class="divider"></div>
 <!-- MOTTO -->
 			<div class="motto wrapper-section row">
 				<!-- Single Motto Section-->
@@ -548,6 +543,7 @@
 				$('ul.subnav__options--single li:nth-child(1)').toggleClass('is-active'); // highlight english translation as default single text
 				$('ul.subnav__options--double li:nth-child(2)').toggleClass('is-active'); // highlight original latin/german as default double text
 				$('.double').toggleClass('is-disabled'); // hide second div of each text section. It should only show in double view
+				$('.divider').addClass('is-disabled'); // hide vertical line that divides text sections
 				openEmblemNav(); // open subnav and reveal text options menu
 				hideOptionalSections(); // hide text for optional languages
 			}
@@ -575,6 +571,7 @@
 					$('.motto, .epigram, .discourse').css({'align-items': 'center'});
 					// QUESTION: IS THE SCRIPT BELOW A BETTER OPTION THAN THE INLINE CSS ABOVE???
 					// $('.motto').removeClass('motto--double__active');
+					$('.divider').addClass('is-disabled'); // hide vertical line that divides text sections
 				}
 			}
 			function toggleDoubleView() {
@@ -594,6 +591,7 @@
 					hideOptionalSections();
 					// QUESTION: DOES THIS SCRIPT BELOW EVEN DO ANYTHING???
 					// $('.section').addClass('section-d');
+					$('.divider').removeClass('is-disabled'); // show vertical line that divides text sections
 				}
 			}
 			/* Text Sections */
