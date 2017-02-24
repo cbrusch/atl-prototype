@@ -14,14 +14,54 @@
 </head>
 <body>
 	<div class="container-fluid">
-<!-- NAVIGATION -->
+<!-- GLOBAL NAVIGATION -->
 		<div class="wrapper-topnav">
 			<div class="topnav row"><p>Alchemy in Code: Atalanta Fugiens</p></div>
 			<!-- BOOTSTRAP NAV -->
 			<!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
 			<!-- </nav> -->
 		</div>
+<!-- EMBLEM -->		
 		<div class="wrapper-emblem">
+		<div class="wrapper-vertical-divider">
+			<div class="vertical-divider"></div>
+		</div>
+		<div class="wrapper-pdf">
+			<div class="pdf__background">
+				<div class="pdf__image">
+					<div></div>
+				</div>
+				<div class="topnav pdf__controls">
+					<div class="pdf__controls__options">
+						<ul>
+							<li><a href="#">Page 1</a></li>
+							<li><a href="#">Page 2</a></li>
+							<li><a href="#">Page 3</a></li>
+							<li><a href="#">Page 4</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- I NEED TWO PDF SECTIONS -->
+<!-- 		<div class="wrapper-pdf double">
+			<div class="pdf__background">
+				<div class="pdf__image">
+					<div></div>
+				</div>
+				<div class="topnav pdf__controls">
+					<div class="pdf__controls__options">
+						<ul>
+							<li><a href="#">Page 1</a></li>
+							<li><a href="#">Page 2</a></li>
+							<li><a href="#">Page 3</a></li>
+							<li><a href="#">Page 4</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div> -->
+<!-- EMBLEM NAV -->
 			<div class="wrapper-subnav">
 				<div class="topnav subnav row">
 					<div class="subnav__options">
@@ -47,9 +87,6 @@
 					</ul>
 				</div>
 			</div>
-		<div class="wrapper-vertical-divider">
-			<div class="vertical-divider"></div>
-		</div>
 <!-- MOTTO -->
 			<div class="motto wrapper-section row">
 				<!-- Single Motto Section-->
@@ -545,7 +582,8 @@
 				$('ul.subnav__options--single li:nth-child(1)').toggleClass('is-active'); // highlight english translation as default single text
 				$('ul.subnav__options--double li:nth-child(2)').toggleClass('is-active'); // highlight original latin/german as default double text
 				$('.double').toggleClass('is-disabled'); // hide second div of each text section. It should only show in double view
-				$('.wrapper-vertical-divider').addClass('is-disabled'); // hide vertical line that divides text sections
+				$('.wrapper-vertical-divider').toggleClass('is-disabled'); // hide vertical line that divides text sections
+				$('.wrapper-pdf').toggleClass('is-disabled'); // hide dark background for pdf viewer
 				openEmblemNav(); // open subnav and reveal text options menu
 				hideOptionalSections(); // hide text for optional languages
 			}
@@ -574,6 +612,7 @@
 					// QUESTION: IS THE SCRIPT BELOW A BETTER OPTION THAN THE INLINE CSS ABOVE???
 					// $('.motto').removeClass('motto--double__active');
 					$('.wrapper-vertical-divider').addClass('is-disabled'); // hide vertical line that divides text sections
+					$('.wrapper-pdf').removeClass('pdf--half'); // make the pdf viewer take up the full window
 				}
 			}
 			function toggleDoubleView() {
@@ -594,6 +633,8 @@
 					// QUESTION: DOES THIS SCRIPT BELOW EVEN DO ANYTHING???
 					// $('.section').addClass('section-d');
 					$('.wrapper-vertical-divider').removeClass('is-disabled'); // show vertical line that divides text sections
+					$('.wrapper-pdf').addClass('pdf--half'); // make the pdf viewer take up half of the window
+
 				}
 			}
 			/* Text Sections */
@@ -657,7 +698,7 @@
 				}
 				else {
 					$('ul.subnav__options--single li:nth-child(4)').toggleClass('is-active');
-					$('ul.subnav__options--single li:nth-child(4)').siblings().removeClass('is-active');	
+					$('ul.subnav__options--single li:nth-child(4)').siblings().removeClass('is-active');
 				}
 			}
 			function toggleFacsimileViewDouble() { // highlight Double facsimile selection in subnav menu
@@ -666,7 +707,15 @@
 				}
 				else {
 					$('ul.subnav__options--double li:nth-child(4)').toggleClass('is-active');
-					$('ul.subnav__options--double li:nth-child(4)').siblings().removeClass('is-active');	
+					$('ul.subnav__options--double li:nth-child(4)').siblings().removeClass('is-active');
+					$('.wrapper-pdf').removeClass('is-disabled'); // show dark background for pdf viewer
+					if( $('.subnav__views--double').hasClass('is-active') ) {
+						$('.wrapper-pdf').addClass('pdf--double');	
+					}
+					else {
+
+					}
+
 				}
 			}
 
@@ -680,6 +729,7 @@
 					$('.single .epigram__english').siblings().addClass('is-disabled');
 					$('.single .discourse__english').removeClass('is-disabled');
 					$('.single .discourse__english').siblings().addClass('is-disabled');
+					$('.wrapper-pdf').addClass('is-disabled');
 				}
 				// Original Single
 				else if( $('ul.subnav__options--single li:nth-child(2)').hasClass('is-active') ) {
@@ -690,6 +740,7 @@
 					$('.single .epigram__latin').siblings().addClass('is-disabled');
 					$('.single .discourse__latin').removeClass('is-disabled');
 					$('.single .discourse__latin').siblings().addClass('is-disabled');
+					$('.wrapper-pdf').addClass('is-disabled');
 				}
 				// Transcription Single
 				else if( $('ul.subnav__options--single li:nth-child(3)').hasClass('is-active') ) {
@@ -698,7 +749,8 @@
 					$('.single .epigram__transcription').removeClass('is-disabled');
 					$('.single .epigram__transcription').siblings().addClass('is-disabled');	
 					$('.single .discourse__transcription').removeClass('is-disabled');
-					$('.single .discourse__transcription').siblings().addClass('is-disabled');				
+					$('.single .discourse__transcription').siblings().addClass('is-disabled');
+					$('.wrapper-pdf').addClass('is-disabled');				
 				}
 				// Facsimile Single
 				else if( $('ul.subnav__options--single li:nth-child(4)').hasClass('is-active') ) {
@@ -708,6 +760,8 @@
 					$('.single .epigram__facsimile').siblings().addClass('is-disabled');
 					$('.single .discourse__facsimile').removeClass('is-disabled');
 					$('.single .discourse__facsimile').siblings().addClass('is-disabled');
+					$('.wrapper-pdf').removeClass('is-disabled');	
+					$('.wrapper-pdf').addClass('pdf--single');	
 				}
 				// Translation Double
 				if( $('ul.subnav__options--double li:nth-child(1)').hasClass('is-active') ) {
@@ -750,6 +804,9 @@
 				else {
 					console.log("I don't know what these sections are doing");
 				}
+			}
+			function fakeFacsimile() {
+
 			}
 		});
 	</script>

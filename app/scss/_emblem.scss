@@ -67,7 +67,7 @@ body {
 	justify-content: center;
 	min-height: 34rem;
 	position: relative;
-	z-index: 4;
+	z-index: 3;
 	.image__picture {
 /*		position: absolute; - breaks in safari*/ 
 		img {
@@ -92,7 +92,7 @@ body {
 .music {
 	min-height: 25rem;
 	max-height: 25rem;
-	z-index: 4;
+	z-index: 3;
 }
 
 .epigram {
@@ -168,12 +168,86 @@ body {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 3;
+	z-index: 2;
 }
 .vertical-divider {
 	background-color: $light-gray;
 	height: 100vh;
 	width: .5rem;
+}
+.wrapper-pdf {
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 4;
+}
+.pdf__background {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: $gray;
+	height: 100vh;
+	width: 100%;
+	z-index: 8;
+}
+.pdf__image {
+	display: flex;
+	justify-content: center;
+	padding-top: 8rem;
+	padding-bottom: 2rem;
+	div {
+		background-image: url("../img/6a.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 50%;
+		height: 73vh;
+	}
+}
+.pdf--half {
+	.pdf__background {
+		width: 50%;
+	}
+	.pdf__image div {
+		width: 100%;
+	}
+	.pdf__controls__options {
+		width: 85%;
+	}
+}
+.pdf__controls {
+	background-color: $gray;
+	height: 4rem;
+}
+.pdf__controls__options {
+	width: 40%;
+	ul {
+		display: flex;
+		justify-content: space-around;
+		li {
+			background-color: $dusty-pink;
+			cursor: pointer;
+			padding: 1rem 3rem;
+			a {
+				color: $black;
+			}
+		}
+		li:hover {
+			background-color: blue;
+			a {
+				color: $white;
+			}
+		}
+	}
+}
+.pdf--single {
+	justify-content: flex-start;
+}
+.pdf--double {
+	justify-content: flex-end;
 }
 /*.text-double {
 	h1 {

@@ -47,6 +47,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* NEUTRAL */
+/* COOL */
+/* WARM */
 .container-fluid {
   margin: 0;
   padding: 0; }
@@ -54,6 +57,9 @@ table {
 .row {
   /*	border: 1px solid red !important;*/ }
 
+/* NEUTRAL */
+/* COOL */
+/* WARM */
 .btn {
   background-color: #989DAC;
   border-radius: .25rem;
@@ -86,6 +92,9 @@ table {
 		align-self: center;
 	}
 }*/
+/* NEUTRAL */
+/* COOL */
+/* WARM */
 .wrapper-topnav {
   /*	position: fixed;*/ }
 
@@ -115,6 +124,9 @@ table {
 /* large  -  desktop */
 /* extra-large */
 /* xxl */
+/* NEUTRAL */
+/* COOL */
+/* WARM */
 .wrapper-subnav {
   display: flex;
   flex-direction: column;
@@ -326,6 +338,9 @@ table {
 }*/
 /* extra-large */
 /* xxl */
+/* NEUTRAL */
+/* COOL */
+/* WARM */
 body {
   font-family: 'Futura', Helvetica, sans-serif;
   font-size: 16px; }
@@ -389,7 +404,7 @@ body {
   justify-content: center;
   min-height: 34rem;
   position: relative;
-  z-index: 4; }
+  z-index: 3; }
   .image .image__picture {
     /*		position: absolute; - breaks in safari*/ }
     .image .image__picture img {
@@ -409,7 +424,7 @@ body {
 .music {
   min-height: 25rem;
   max-height: 25rem;
-  z-index: 4; }
+  z-index: 3; }
 
 .epigram {
   display: flex;
@@ -481,12 +496,78 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 3; }
+  z-index: 2; }
 
 .vertical-divider {
   background-color: #eee;
   height: 100vh;
   width: .5rem; }
+
+.wrapper-pdf {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4; }
+
+.pdf__background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #282828;
+  height: 100vh;
+  width: 100%;
+  z-index: 8; }
+
+.pdf__image {
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+  padding-bottom: 2rem; }
+  .pdf__image div {
+    background-image: url("../img/6a.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50%;
+    height: 73vh; }
+
+.pdf--half .pdf__background {
+  width: 50%; }
+
+.pdf--half .pdf__image div {
+  width: 100%; }
+
+.pdf--half .pdf__controls__options {
+  width: 85%; }
+
+.pdf__controls {
+  background-color: #282828;
+  height: 4rem; }
+
+.pdf__controls__options {
+  width: 40%; }
+  .pdf__controls__options ul {
+    display: flex;
+    justify-content: space-around; }
+    .pdf__controls__options ul li {
+      background-color: #C9A2A2;
+      cursor: pointer;
+      padding: 1rem 3rem; }
+      .pdf__controls__options ul li a {
+        color: #222; }
+    .pdf__controls__options ul li:hover {
+      background-color: blue; }
+      .pdf__controls__options ul li:hover a {
+        color: #fff; }
+
+.pdf--single {
+  justify-content: flex-start; }
+
+.pdf--double {
+  justify-content: flex-end; }
 
 /*.text-double {
 	h1 {
