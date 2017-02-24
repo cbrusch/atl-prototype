@@ -503,72 +503,6 @@ body {
   height: 100vh;
   width: .5rem; }
 
-.wrapper-pdf {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 4; }
-
-.pdf__background {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #282828;
-  height: 100vh;
-  width: 100%;
-  z-index: 8; }
-
-.pdf__image {
-  display: flex;
-  justify-content: center;
-  padding-top: 8rem;
-  padding-bottom: 2rem; }
-  .pdf__image div {
-    background-image: url("../img/6a.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 50%;
-    height: 73vh; }
-
-.pdf--half .pdf__background {
-  width: 50%; }
-
-.pdf--half .pdf__image div {
-  width: 100%; }
-
-.pdf--half .pdf__controls__options {
-  width: 85%; }
-
-.pdf__controls {
-  background-color: #282828;
-  height: 4rem; }
-
-.pdf__controls__options {
-  width: 40%; }
-  .pdf__controls__options ul {
-    display: flex;
-    justify-content: space-around; }
-    .pdf__controls__options ul li {
-      background-color: #C9A2A2;
-      cursor: pointer;
-      padding: 1rem 3rem; }
-      .pdf__controls__options ul li a {
-        color: #222; }
-    .pdf__controls__options ul li:hover {
-      background-color: blue; }
-      .pdf__controls__options ul li:hover a {
-        color: #fff; }
-
-.pdf--single {
-  justify-content: flex-start; }
-
-.pdf--double {
-  justify-content: flex-end; }
-
 /*.text-double {
 	h1 {
 	
@@ -691,6 +625,74 @@ body {
       left: 65%; } }
 
 /* xxl */
+/* NEUTRAL */
+/* COOL */
+/* WARM */
+.wrapper-pdf {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4; }
+
+.pdf__background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #282828;
+  height: 100vh;
+  width: 100%;
+  z-index: 8; }
+
+.pdf__image {
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+  padding-bottom: 2rem; }
+  .pdf__image div {
+    background-image: url("../img/6a.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50%;
+    height: 73vh; }
+
+.pdf--half .pdf__background {
+  width: 50%; }
+
+.pdf--half .pdf__image div {
+  width: 100%; }
+
+.pdf--half .pdf__controls__options {
+  width: 85%; }
+
+.pdf__controls {
+  background-color: #282828;
+  height: 4rem; }
+
+.pdf__controls__options {
+  width: 40%; }
+  .pdf__controls__options ul {
+    display: flex;
+    justify-content: space-around; }
+    .pdf__controls__options ul li {
+      background-color: #fff;
+      color: #222;
+      cursor: pointer;
+      padding: 1rem 3rem; }
+      .pdf__controls__options ul li a {
+        color: #222; }
+    .pdf__controls__options ul li:hover {
+      background-color: #C9A2A2; }
+
+.pdf--single {
+  justify-content: flex-start; }
+
+.pdf--double {
+  justify-content: flex-end; }
+
 /*@import 'emblem-double';*/
 /*@import 'subnav-double';*/
 /* https://www.abeautifulsite.net/a-clean-fade-in-effect-for-webpages */

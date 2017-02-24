@@ -532,15 +532,17 @@
 			onLoad(); // display emblem menu and is-active options on page load
 
 /* EVENTS */
+			//emblem top navigation
 			$('.subnav__views__btn').click(function() { // click the X button to hide / show emblem views menu
 				openEmblemNav();
 			});
 			$('.subnav__views--single').click(function() { // click Single View to hide / show single text
 				toggleSingleView();
-			})
+			});
 			$('.subnav__views--double').click(function() { // click Double View to hide / show side-by-side text
 				toggleDoubleView();
-			})
+			});
+			// emblem language menu
 			$('ul.subnav__options--single li:nth-child(1)').click(function() { // click Single Translation to hide / show English text
 				toggleTranslationViewSingle();
 				hideOptionalSections();
@@ -572,6 +574,27 @@
 			$('ul.subnav__options--double li:nth-child(4)').click(function() { // click Double Facsimile to hide / show PDF pages
 				toggleFacsimileViewDouble();
 				hideOptionalSections();
+			});
+			// pdf page menu
+			$('div.pdf__controls__options li:nth-child(1)').click(function() { // pdf page 1: replace image, highlight menu selection
+				$('div.pdf__controls__options li:nth-child(1)').addClass('is-active');
+				$('div.pdf__controls__options li:nth-child(1)').siblings().removeClass('is-active');
+				$('.pdf__image > div').css({'background-image': 'url(../img/6a.jpg)'});
+			});
+			$('div.pdf__controls__options li:nth-child(2)').click(function() { // pdf page 2: replace image, highlight menu selection
+				$('div.pdf__controls__options li:nth-child(2)').addClass('is-active');
+				$('div.pdf__controls__options li:nth-child(2)').siblings().removeClass('is-active');
+				$('.pdf__image > div').css({'background-image': 'url(../img/6b.jpg)'});
+			});
+			$('div.pdf__controls__options li:nth-child(3)').click(function() { // pdf page 3: replace image, highlight menu selection
+				$('div.pdf__controls__options li:nth-child(3)').addClass('is-active');
+				$('div.pdf__controls__options li:nth-child(3)').siblings().removeClass('is-active');
+				$('.pdf__image > div').css({'background-image': 'url(../img/6c.jpg)'});
+			});
+			$('div.pdf__controls__options li:nth-child(4)').click(function() { // pdf page 4: replace image, highlight menu selection
+				$('div.pdf__controls__options li:nth-child(4)').addClass('is-active');
+				$('div.pdf__controls__options li:nth-child(4)').siblings().removeClass('is-active');
+				$('.pdf__image > div').css({'background-image': 'url(../img/6d.jpg)'});
 			});
 
 /* FUNCTIONS */
@@ -761,7 +784,8 @@
 					$('.single .discourse__facsimile').removeClass('is-disabled');
 					$('.single .discourse__facsimile').siblings().addClass('is-disabled');
 					$('.wrapper-pdf').removeClass('is-disabled');	
-					$('.wrapper-pdf').addClass('pdf--single');	
+					$('.wrapper-pdf').addClass('pdf--single');
+					$('div.pdf__controls__options li:nth-child(1)').addClass('is-active');
 				}
 				// Translation Double
 				if( $('ul.subnav__options--double li:nth-child(1)').hasClass('is-active') ) {
