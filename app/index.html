@@ -91,12 +91,12 @@
 <div class="wrapper-subnav2">
 	<div class="topnav subnav2 row">
 		<ul class="subnav2__options">
+			<li class="subnav2__options--single"><a href="#">See Double View</a></li>
+			<li class="subnav2__options--double"><a href="#">See Single View</a></li>
 			<li class="subnav2__options--single"><a href="#">English</a></li>
 			<li class="subnav2__options--single"><a href="#">Latin</a></li>
 			<li class="subnav2__options--single"><a href="#">Transcription</a></li>
 			<li class="subnav2__options--single"><a href="#">Facsimile</a></li>
-			<li class="subnav2__options--single"><a href="#">See Double View</a></li>
-			<li class="subnav2__options--double"><a href="#">See Single View</a></li>
 			<li class="subnav2__options--double"><a href="#">English</a></li>
 			<li class="subnav2__options--double"><a href="#">Latin</a></li>
 			<li class="subnav2__options--double"><a href="#">Transcription</a></li>
@@ -574,12 +574,12 @@
 			/* emblem nav */
 			var singleNav = '.subnav2__options--single';
 			var doubleNav = '.subnav2__options--double';
-			var seeSingleViewBtn = 'ul.subnav2__options li:nth-child(6)';
-			var seeDoubleViewBtn = 'ul.subnav2__options li:nth-child(5)';
-			var englishSingleView = 'ul.subnav2__options li:nth-child(1)';
-			var latinSingleView = 'ul.subnav2__options li:nth-child(2)';
-			var transcriptionSingleView = 'ul.subnav2__options li:nth-child(3)';
-			var facsimileSingleView = 'ul.subnav2__options li:nth-child(4)';
+			var seeSingleViewBtn = 'ul.subnav2__options li:nth-child(2)';
+			var seeDoubleViewBtn = 'ul.subnav2__options li:nth-child(1)';
+			var englishSingleView = 'ul.subnav2__options li:nth-child(3)';
+			var latinSingleView = 'ul.subnav2__options li:nth-child(4)';
+			var transcriptionSingleView = 'ul.subnav2__options li:nth-child(5)';
+			var facsimileSingleView = 'ul.subnav2__options li:nth-child(6)';
 			var englishDoubleView = 'ul.subnav2__options li:nth-child(7)';
 			var latinDoubleView = 'ul.subnav2__options li:nth-child(8)';
 			var transcriptionDoubleView = 'ul.subnav2__options li:nth-child(9)';
@@ -866,16 +866,16 @@
 					$('.wrapper-pdf').removeClass('is-disabled');	
 					$('.wrapper-pdf').addClass('pdf--single');
 					$('div.pdf__controls__options li:nth-child(1)').addClass('is-active');
-					if( $(seeDoubleViewBtn).hasClass('is-active') ) {
-						$('.wrapper-sidenav').addClass('is-disabled');
-					}
-					else if( $(facsimileSingleView).hasClass('is-active') && $(facsimileDoubleView).hasClass('is-active') ) {
-						console.log("hey");
-						$('.wrapper-sidenav').addClass('is-disabled');
-					}
-					else {
-						$('.wrapper-sidenav').removeClass('is-disabled');
-					}
+					// if( $(seeDoubleViewBtn).hasClass('is-active') ) {
+					// 	$('.wrapper-sidenav').addClass('is-disabled');
+					// }
+					// else if( $(facsimileSingleView).hasClass('is-active') && $(facsimileDoubleView).hasClass('is-active') ) {
+					// 	console.log("hey");
+					// 	$('.wrapper-sidenav').addClass('is-disabled');
+					// }
+					// else {
+					// 	$('.wrapper-sidenav').removeClass('is-disabled');
+					// }
 				}
 				// English Double
 				if( $(englishDoubleView).hasClass('is-active') ) {

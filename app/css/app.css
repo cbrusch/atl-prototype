@@ -156,29 +156,29 @@ table {
     .subnav2__options li:hover a {
       color: #222; }
 
-.subnav2__options li:nth-child(5) {
+.subnav2__options li:nth-child(1) {
   background-color: #C9A2A2;
   border: 0.25rem solid #BD205D;
   order: 3;
   font-size: 1.25rem; }
 
-.subnav2__options li:nth-child(1) {
-  order: 1; }
-
 .subnav2__options li:nth-child(2) {
-  order: 2; }
-
-.subnav2__options li:nth-child(3) {
-  order: 4; }
-
-.subnav2__options li:nth-child(4) {
-  order: 5; }
-
-.subnav2__options li:nth-child(6) {
   background-color: #C9A2A2;
   border: 0.25rem solid #BD205D;
   order: 6;
   font-size: 1rem; }
+
+.subnav2__options li:nth-child(3) {
+  order: 1; }
+
+.subnav2__options li:nth-child(4) {
+  order: 2; }
+
+.subnav2__options li:nth-child(5) {
+  order: 4; }
+
+.subnav2__options li:nth-child(6) {
+  order: 5; }
 
 .subnav2__options li:nth-child(7) {
   order: 7; }
@@ -361,123 +361,6 @@ body {
 	
 	}
 }*/
-/***     Breakpoints     ***/
-/* extra small */
-/* small  -  mobile */
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .section {
-    margin: .5rem 0; }
-  .motto {
-    min-height: 5rem; }
-    .motto h1 {
-      font-size: 1.5rem;
-      line-height: 1.625rem; }
-  .image {
-    display: flex;
-    justify-content: space-between;
-    min-height: 24rem; }
-    .image .image__picture {
-      position: relative; }
-      .image .image__picture img {
-        width: 18rem;
-        height: 18rem; }
-    .image .image__facets {
-      display: none;
-      /*			position: relative;
-			left: 0;
-			z-index: 0;*/ }
-  .epigram p {
-    margin: 0 1rem;
-    font-size: .875rem;
-    line-height: 1.75rem; }
-  .discourse {
-    padding-bottom: 4rem; }
-    .discourse .text {
-      margin: 0 1.5rem;
-      padding: 3rem 0; }
-    .discourse p {
-      font-size: .875rem;
-      line-height: 1.325rem;
-      margin-bottom: 1rem;
-      text-indent: 0; } }
-
-/* medium  -  tablet */
-@media screen and (min-width: 768px) and (max-width: 999px) {
-  .motto {
-    min-height: 12rem; }
-    .motto h1 {
-      font-size: 2rem; }
-  .image {
-    display: flex;
-    justify-content: space-around; }
-    .image .image__picture {
-      position: relative; }
-    .image .image__facets {
-      position: relative;
-      left: 0;
-      z-index: 0; }
-  .discourse .text {
-    padding-left: 8rem;
-    padding-right: 8rem; } }
-
-/* medium-large */
-@media screen and (min-width: 1000px) and (max-width: 1199px) {
-  .motto {
-    min-height: 12rem; }
-    .motto h1 {
-      font-size: 2rem; }
-  .image {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 4rem;
-    padding-right: 4rem; }
-    .image .image__picture {
-      position: relative; }
-    .image .image__facets {
-      position: relative;
-      left: 0;
-      z-index: 0; }
-  .discourse .text {
-    padding-left: 14rem;
-    padding-right: 14rem; } }
-
-/* large  -  laptop */
-@media screen and (min-width: 1200px) and (max-width: 1499px) {
-  .motto {
-    min-height: 12rem; }
-    .motto h1 {
-      font-size: 2rem; }
-  .image {
-    display: flex;
-    justify-content: space-around;
-    padding-left: 4rem;
-    padding-right: 4rem; }
-    .image .image__picture {
-      position: relative; }
-    .image .image__facets {
-      position: relative;
-      left: 0;
-      z-index: 0; }
-  /*	.discourse .text {
-		padding-left: 10rem;
-		padding-right: 10rem;
-	}*/ }
-
-/* large  -  desktop */
-/*@media screen and (min-width: 1500px) and (max-width: 1999px) {
-
-}*/
-/* extra-large */
-@media screen and (min-width: 2000px) and (max-width: 2800px) {
-  .image {
-    min-height: 40rem; }
-    .image .image__picture img {
-      width: 37rem;
-      height: 37rem; }
-    .image .image__facets {
-      left: 65%; } }
-
-/* xxl */
 /* NEUTRAL */
 /* COOL */
 /* WARM */
@@ -591,6 +474,131 @@ body {
   .sidenav .sidenav__language li {
     padding-bottom: 1rem !important; }
 
+/* NEUTRAL */
+/* COOL */
+/* WARM */
+/***     Breakpoints     ***/
+/* extra small */
+/* small  -  mobile */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .section {
+    margin: .5rem 0; }
+  .motto {
+    min-height: 5rem; }
+    .motto h1 {
+      font-size: 1.5rem;
+      line-height: 1.625rem; }
+  .image {
+    display: flex;
+    justify-content: space-between;
+    min-height: 24rem; }
+    .image .image__picture {
+      position: relative; }
+      .image .image__picture img {
+        width: 18rem;
+        height: 18rem; }
+    .image .image__facets {
+      display: none;
+      /*			position: relative;
+			left: 0;
+			z-index: 0;*/ }
+  .epigram p {
+    margin: 0 1rem;
+    font-size: .875rem;
+    line-height: 1.75rem; }
+  .discourse {
+    padding-bottom: 4rem; }
+    .discourse .text {
+      margin: 0 1.5rem;
+      padding: 3rem 0; }
+    .discourse p {
+      font-size: .875rem;
+      line-height: 1.325rem;
+      margin-bottom: 1rem;
+      text-indent: 0; }
+  .wrapper-sidenav {
+    display: none; } }
+
+/* medium  -  tablet */
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .motto {
+    min-height: 12rem; }
+    .motto h1 {
+      font-size: 2rem; }
+  .image {
+    display: flex;
+    justify-content: space-around; }
+    .image .image__picture {
+      position: relative; }
+    .image .image__facets {
+      position: relative;
+      left: 0;
+      z-index: 0; }
+  .discourse .text {
+    padding-left: 8rem;
+    padding-right: 8rem; } }
+
+/* medium-large */
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  .motto {
+    min-height: 12rem; }
+    .motto h1 {
+      font-size: 2rem; }
+  .image {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4rem;
+    padding-right: 4rem; }
+    .image .image__picture {
+      position: relative; }
+    .image .image__facets {
+      position: relative;
+      left: 0;
+      z-index: 0; }
+  .discourse .text {
+    padding-left: 14rem;
+    padding-right: 14rem; } }
+
+/* large  -  laptop */
+@media screen and (min-width: 1200px) and (max-width: 1499px) {
+  .motto {
+    min-height: 12rem; }
+    .motto h1 {
+      font-size: 2rem; }
+  .image {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 4rem;
+    padding-right: 4rem; }
+    .image .image__picture {
+      position: relative; }
+    .image .image__facets {
+      position: relative;
+      left: 0;
+      z-index: 0; }
+  .subnav2 {
+    font-size: .825rem; }
+  .subnav2__options li:nth-child(6) {
+    font-size: .825rem; }
+  .pdf__controls__options {
+    width: 100%;
+    font-size: .825rem; } }
+
+/* large  -  desktop */
+/*@media screen and (min-width: 1500px) and (max-width: 1999px) {
+
+}*/
+/* extra-large */
+@media screen and (min-width: 2000px) and (max-width: 2800px) {
+  .image {
+    min-height: 40rem; }
+    .image .image__picture img {
+      width: 37rem;
+      height: 37rem; }
+    .image .image__facets {
+      left: 65%; } }
+
+/* xxl */
 /*@import 'emblem-double';*/
 /*@import 'subnav-double';*/
 /* https://www.abeautifulsite.net/a-clean-fade-in-effect-for-webpages */

@@ -32,29 +32,29 @@ height: 3rem;
 			}
 		}
 }
-.subnav2__options li:nth-child(5) {
+.subnav2__options li:nth-child(1) {
 	background-color: $dusty-pink;
 	border: .25rem solid $dark-pink;
 	order: 3;
 	font-size: 1.25rem;
 }
-.subnav2__options li:nth-child(1) {
-	order: 1;
-}
 .subnav2__options li:nth-child(2) {
-	order: 2;
-}
-.subnav2__options li:nth-child(3) {
-	order: 4;
-}
-.subnav2__options li:nth-child(4) {
-	order: 5;
-}
-.subnav2__options li:nth-child(6) {
 	background-color: $dusty-pink;
 	border: .25rem solid $dark-pink;
 	order: 6;
 	font-size: 1rem;
+}
+.subnav2__options li:nth-child(3) {
+	order: 1;
+}
+.subnav2__options li:nth-child(4) {
+	order: 2;
+}
+.subnav2__options li:nth-child(5) {
+	order: 4;
+}
+.subnav2__options li:nth-child(6) {
+	order: 5;
 }
 .subnav2__options li:nth-child(7) {
 	order: 7;
