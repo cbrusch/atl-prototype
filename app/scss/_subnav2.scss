@@ -1,0 +1,90 @@
+.wrapper-subnav2 {
+	position: relative;
+	top: -.125rem;
+	z-index: 10;
+}
+.subnav2 {
+	height: 3rem;
+	min-width: 100%;
+	position: absolute;
+}
+.subnav2__options {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+width: 100%;
+height: 3rem;
+		li {
+			background-color: $black;
+			cursor: pointer;
+			flex: 1 1 100%;
+			padding: 1rem 2rem;
+			text-align: center;
+			a {
+				color: $white;
+			}
+		}
+		li:hover {
+			background-color: $dusty-pink;
+			a {
+				color: $black;
+			}
+		}
+}
+.subnav2__options li:nth-child(5) {
+	background-color: $dusty-pink;
+	border: .25rem solid $dark-pink;
+	order: 3;
+	font-size: 1.25rem;
+}
+.subnav2__options li:nth-child(1) {
+	order: 1;
+}
+.subnav2__options li:nth-child(2) {
+	order: 2;
+}
+.subnav2__options li:nth-child(3) {
+	order: 4;
+}
+.subnav2__options li:nth-child(4) {
+	order: 5;
+}
+.subnav2__options li:nth-child(6) {
+	background-color: $dusty-pink;
+	border: .25rem solid $dark-pink;
+	order: 6;
+	font-size: 1rem;
+}
+.subnav2__options li:nth-child(7) {
+	order: 7;
+}
+.subnav2__options li:nth-child(8) {
+	order: 8;
+}
+.subnav2__options li:nth-child(9) {
+	order: 9;
+}
+.subnav2__options li:nth-child(10) {
+	order: 10;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

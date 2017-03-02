@@ -62,18 +62,18 @@
 			</div>
 		</div> -->
 <!-- EMBLEM NAV -->
-			<div class="wrapper-subnav">
+<!-- 			<div class="wrapper-subnav">
 				<div class="topnav subnav row">
 					<div class="subnav__options">
 						<ul class="subnav__options__option subnav__options--single">
-							<li class="subnav__options__option"><a href="#">Translation</a></li>
-							<li class="subnav__options__option"><a href="#">Original</a></li>
+							<li class="subnav__options__option"><a href="#">English</a></li>
+							<li class="subnav__options__option"><a href="#">Latin</a></li>
 							<li class="subnav__options__option"><a href="#">Transcription</a></li>
 							<li class="subnav__options__option"><a href="#">Facsimile</a></li>
 						</ul>
 						<ul class="subnav__options__option subnav__options--double">
-							<li class="subnav__options__option subnav__option--double"><a href="#">Translation</a></li>
-							<li class="subnav__options__option subnav__option--double"><a href="#">Original</a></li>
+							<li class="subnav__options__option subnav__option--double"><a href="#">English</a></li>
+							<li class="subnav__options__option subnav__option--double"><a href="#">Latin</a></li>
 							<li class="subnav__options__option subnav__option--double"><a href="#">Transcription</a></li>
 							<li class="subnav__options__option subnav__option--double"><a href="#">Facsimile</a></li>
 						</ul>
@@ -86,26 +86,38 @@
 						<li class="subnav__views--double"><a href="#">Double View</a></li>
 					</ul>
 				</div>
-			</div>
+			</div> -->
+<!-- EMBLEM NAV V2 -->
+<div class="wrapper-subnav2">
+	<div class="topnav subnav2 row">
+		<ul class="subnav2__options">
+			<li class="subnav2__options--single"><a href="#">English</a></li>
+			<li class="subnav2__options--single"><a href="#">Latin</a></li>
+			<li class="subnav2__options--single"><a href="#">Transcription</a></li>
+			<li class="subnav2__options--single"><a href="#">Facsimile</a></li>
+			<li class="subnav2__options--single"><a href="#">See Double View</a></li>
+			<li class="subnav2__options--double"><a href="#">See Single View</a></li>
+			<li class="subnav2__options--double"><a href="#">English</a></li>
+			<li class="subnav2__options--double"><a href="#">Latin</a></li>
+			<li class="subnav2__options--double"><a href="#">Transcription</a></li>
+			<li class="subnav2__options--double"><a href="#">Facsimile</a></li>
+		</ul>
+	</div>
+</div>
 <!-- SIDENAV -->
 			<div class="wrapper-sidenav">
 				<div class="sidenav">
 					<ul class="sidenav__navigation">
-						<li><a href="#">&#10094;</a></li>
-						<li><a href="#">Emblem 6</a></li>
-						<li><a href="#">&#10095;</a></li>
+						<a href="#"><li>&#10094;</li></a>
+						<a href="#"><li>Emblem 6</li></a>
+						<a href="#"><li>&#10095;</li></a>
 					</ul>
 					<ul class="sidenav__options">
-						<li><a href="#motto">Motto</a></li>
-						<li><a href="#image">Image</a></li>
-						<li><a href="#music">Music</a></li>
-						<li><a href="#epigram">Epigram</a></li>
-						<li><a href="#discourse">Discourse</a></li>
-					</ul>
-					<ul class="sidenav__language">
-<!-- 						<li><a href="#">English</a></li> -->
-						<li><a href="#">Latin</a></li>
-						<li><a href="#">German</a></li>
+						<a href="#motto"><li>Motto</li></a>
+						<a href="#image"><li>Image</li></a>
+						<a href="#music"><li>Music</li></a>
+						<a href="#epigram"><li>Epigram</li></a>
+						<a href="#discourse"><li>Discourse</li></a>
 					</ul>
 				</div>
 			</div>
@@ -174,7 +186,9 @@
 <a name="music"></a>
 			<div class="music wrapper-section row">
 				<div class="section">
+					<div class="test">
 					<p>Music will go here</p>
+					</div>
 				</div>
 			</div>
 <!-- EPIGRAM -->
@@ -555,54 +569,104 @@
 <!-- JS -->
 	<script>
 		$(function () {
+
+/* VARIABLES */
+			/* emblem nav */
+			var singleNav = '.subnav2__options--single';
+			var doubleNav = '.subnav2__options--double';
+			var seeSingleViewBtn = 'ul.subnav2__options li:nth-child(6)';
+			var seeDoubleViewBtn = 'ul.subnav2__options li:nth-child(5)';
+			var englishSingleView = 'ul.subnav2__options li:nth-child(1)';
+			var latinSingleView = 'ul.subnav2__options li:nth-child(2)';
+			var transcriptionSingleView = 'ul.subnav2__options li:nth-child(3)';
+			var facsimileSingleView = 'ul.subnav2__options li:nth-child(4)';
+			var englishDoubleView = 'ul.subnav2__options li:nth-child(7)';
+			var latinDoubleView = 'ul.subnav2__options li:nth-child(8)';
+			var transcriptionDoubleView = 'ul.subnav2__options li:nth-child(9)';
+			var facsimileDoubleView = 'ul.subnav2__options li:nth-child(10)';
+			/* emblem side nav */
+			var mottoSideNav = 'ul.sidenav__options > a li:nth-child(1)';
+			var imageSideNav = 'ul.sidenav__options > a li:nth-child(2)';
+			var musicSideNav = 'ul.sidenav__options > a li:nth-child(3)';
+			var epigramSideNav = 'ul.sidenav__options > a li:nth-child(4)';
+			var discourseSideNav = 'ul.sidenav__options > a li:nth-child(5)';
+
+
 /* INITIALIZE */
 			onLoad(); // display emblem menu and is-active options on page load
 
 /* EVENTS */
-			//emblem top navigation
-			$('.subnav__views__btn').click(function() { // click the X button to hide / show emblem views menu
-				openEmblemNav();
+			/* scroll position */
+			$(window).scroll(function() { // fix/unfix header after/before 3rem scroll position
+				updateScrollPosition();
 			});
-			$('.subnav__views--single').click(function() { // click Single View to hide / show single text
+			/* emblem single or double views */
+			$(seeSingleViewBtn).click(function() { // click to show single view and hide double view
 				toggleSingleView();
 			});
-			$('.subnav__views--double').click(function() { // click Double View to hide / show side-by-side text
+			$(seeDoubleViewBtn).click(function() { // click to show double view
 				toggleDoubleView();
 			});
-			// emblem language menu
-			$('ul.subnav__options--single li:nth-child(1)').click(function() { // click Single Translation to hide / show English text
-				toggleTranslationViewSingle();
+			/* emblem language menu */
+			$(englishSingleView).click(function() { // click Single Translation to hide / show English text
+				toggleEnglishViewSingle();
 				hideOptionalSections();
 			});
-			$('ul.subnav__options--single li:nth-child(2)').click(function() { // click Single Original to hide / show Latin or German text
-				toggleOriginalViewSingle();
+			$(latinSingleView).click(function() { // click Single Original to hide / show Latin or German text
+				toggleLatinViewSingle();
 				hideOptionalSections();
 			});
-			$('ul.subnav__options--single li:nth-child(3)').click(function() { // click Single Transcription to hide / show English Transcription text
+			$(transcriptionSingleView).click(function() { // click Single Transcription to hide / show English Transcription text
 				toggleTranscriptionViewSingle();
 				hideOptionalSections();
 			});
-			$('ul.subnav__options--single li:nth-child(4)').click(function() { // click Single Facsimile to hide / show PDF pages
+			$(facsimileSingleView).click(function() { // click Single Facsimile to hide / show PDF pages
 				toggleFacsimileViewSingle();
 				hideOptionalSections();
 			});
-			$('ul.subnav__options--double li:nth-child(1)').click(function() { // click Double Translation to hide / show English text
-				toggleTranslationViewDouble();
+			$(englishDoubleView).click(function() { // click Double Translation to hide / show English text
+				toggleEnglishViewDouble();
 				hideOptionalSections();
 			});
-			$('ul.subnav__options--double li:nth-child(2)').click(function() { // click Double Original to hide / show Latin or German text
-				toggleOriginalViewDouble();
+			$(latinDoubleView).click(function() { // click Double Original to hide / show Latin or German text
+				toggleLatinViewDouble();
 				hideOptionalSections();
 			});
-			$('ul.subnav__options--double li:nth-child(3)').click(function() { // click Double Transcription to hide / show English Transcription text
+			$(transcriptionDoubleView).click(function() { // click Double Transcription to hide / show English Transcription text
 				toggleTranscriptionViewDouble();
 				hideOptionalSections();
 			});
-			$('ul.subnav__options--double li:nth-child(4)').click(function() { // click Double Facsimile to hide / show PDF pages
+			$(facsimileDoubleView).click(function() { // click Double Facsimile to hide / show PDF pages
 				toggleFacsimileViewDouble();
 				hideOptionalSections();
 			});
-			// pdf page menu
+			/* emblem side menu */
+			$(mottoSideNav).click(function() { // click to move to Motto section
+				$(this).parent().addClass('is-active');
+				$(this).parent().siblings().removeClass('is-active');
+				moveToSection();
+			})
+			$(imageSideNav).click(function() { // click to move to Image section
+				$(this).parent().addClass('is-active');
+				$(this).parent().siblings().removeClass('is-active');
+				moveToSection();
+			})
+			$(musicSideNav).click(function() { // click to move to Music section
+				$(this).parent().addClass('is-active');
+				$(this).parent().siblings().removeClass('is-active');
+				moveToSection();
+			})
+			$(epigramSideNav).click(function() { // click to move to Epigram section
+				$(this).parent().addClass('is-active');
+				$(this).parent().siblings().removeClass('is-active');
+				moveToSection();
+			})
+			$(discourseSideNav).click(function() { // click to move to Discourse section
+				$(this).parent().addClass('is-active');
+				$(this).parent().siblings().removeClass('is-active');
+				moveToSection();
+			})
+			/* pdf page menu */
 			$('div.pdf__controls__options li:nth-child(1)').click(function() { // pdf page 1: replace image, highlight menu selection
 				$('div.pdf__controls__options li:nth-child(1)').addClass('is-active');
 				$('div.pdf__controls__options li:nth-child(1)').siblings().removeClass('is-active');
@@ -626,140 +690,126 @@
 
 /* FUNCTIONS */
 			function onLoad() {
-				$('.subnav__views--single, .subnav__views--double').toggleClass('is-disabled'); // hide subnav views because openEmblemNav() will reveal them
-				$('div.subnav ul:nth-child(2)').toggleClass('is-disabled'); // hide navigation options for double view
-				$('.subnav__views--single').toggleClass('is-active'); // highlight single view as default view
-				$('ul.subnav__options--single li:nth-child(1)').toggleClass('is-active'); // highlight english translation as default single text
-				$('ul.subnav__options--double li:nth-child(2)').toggleClass('is-active'); // highlight original latin/german as default double text
+				$(doubleNav).toggleClass('is-disabled'); // hide double navigation
+				$(seeDoubleViewBtn).toggleClass('is-active'); // make "see Double View" button active
+				$(englishSingleView).toggleClass('is-active'); // highlight english translation as default single text
+				$(latinDoubleView).toggleClass('is-active'); // highlight original latin/german as default double text
+				$('ul.sidenav__options a:nth-child(1)').toggleClass('is-active'); // highlight motto in sidenav menu
 				$('.double').toggleClass('is-disabled'); // hide second div of each text section. It should only show in double view
 				$('.wrapper-vertical-divider').toggleClass('is-disabled'); // hide vertical line that divides text sections
 				$('.wrapper-pdf').toggleClass('is-disabled'); // hide dark background for pdf viewer
-				openEmblemNav(); // open subnav and reveal text options menu
 				hideOptionalSections(); // hide text for optional languages
 			}
 			/* Navigation Menus */
-			function openEmblemNav() { 
-				$('.wrapper-subnav').toggleClass('wrapper-subnav--open'); // animate to hide/reveal emblem's subnav
-				$('.subnav__views--single, .subnav__views--double').toggleClass('is-disabled'); // animate to hide/reveal emblem's subnav views
-				// $('.subnav__views').toggleClass('wrapper-subnav--open');
-				// $('.subnav__views--single, .subnav__views--double').toggleClass('hidden');
-			}
 			function toggleSingleView() {
-				if( $('.subnav__views--single').hasClass('is-active') ) { 
-
-				}
-				else {
-					$('.subnav__views--single').addClass('is-active'); // highlight single view button in subnav
-					$('.subnav__views--double').removeClass('is-active'); // remove highlight from double view button in subnav
-					$('.subnav__options--double').addClass('is-disabled'); // hide text menu options for Double View
-					$('.subnav__options--double').children().addClass('is-disabled'); // hide all text menu options for double view
-					$('.double').addClass('is-disabled'); // hide second div of each section that should only show in double view
-					// QUESTION: DOES THIS SCRIPT BELOW EVEN DO ANYTHING???
-					// $('.section').removeClass('section-d');
-					// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
-					$('.section').css({'flex-grow': '', 'flex-shrink': '', 'flex-basis': ''});
-					$('.motto, .epigram, .discourse').css({'align-items': 'center'});
-					// QUESTION: IS THE SCRIPT BELOW A BETTER OPTION THAN THE INLINE CSS ABOVE???
-					// $('.motto').removeClass('motto--double__active');
-					$('.wrapper-vertical-divider').addClass('is-disabled'); // hide vertical line that divides text sections
-					$('.wrapper-pdf').removeClass('pdf--half'); // make the pdf viewer take up the full window
-				}
+				$(seeDoubleViewBtn).removeClass('is-disabled'); // show "see double view" button
+				$(doubleNav).addClass('is-disabled'); // hide double view navigation
+				$(seeDoubleViewBtn).addClass('is-active'); // make "see double view" button active
+				$(seeSingleViewBtn).removeClass('is-active'); // make "see single view" button inactive
+				$('.double').addClass('is-disabled'); // hide second div of each section that should only show in double view
+				// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
+				$('.section').css({'flex-grow': '', 'flex-shrink': '', 'flex-basis': ''});
+				$('.motto, .epigram, .discourse').css({'align-items': 'center'});
+				$('.wrapper-vertical-divider').addClass('is-disabled'); // hide vertical line that divides text sections
+				$('.wrapper-pdf').removeClass('pdf--half'); // make the pdf viewer take up the full window
+				$('.wrapper-sidenav').removeClass('is-disabled'); // bring sidenav back onscreen
+				hideOptionalSections(); // hide text for optional languages
 			}
 			function toggleDoubleView() {
-				if( $('.subnav__views--double').hasClass('is-active') ) {
-
-				}
-				else {
-					console.log("I clicked on the double view button");
-					$('.subnav__views--double').addClass('is-active'); // highlight double view button in subnav
-					$('.subnav__views--single').removeClass('is-active'); // remove highlight from single view button in subnav
-					$('.subnav__options--double').removeClass('is-disabled'); // show text menu options for Double View
-					$('.subnav__options--double').children().removeClass('is-disabled'); // show all text menu options for double view
-					$('.double').removeClass('is-disabled'); // show second div of each text section
-					// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
-					$('.section').css({'flex-grow': '1', 'flex-shrink': '1', 'flex-basis': '100%'});
-					$('.motto, .epigram, .discourse').css({'align-items': 'baseline'});
-					hideOptionalSections();
-					// QUESTION: DOES THIS SCRIPT BELOW EVEN DO ANYTHING???
-					// $('.section').addClass('section-d');
-					$('.wrapper-vertical-divider').removeClass('is-disabled'); // show vertical line that divides text sections
-					$('.wrapper-pdf').addClass('pdf--half'); // make the pdf viewer take up half of the window
-
-				}
+				$(seeDoubleViewBtn).removeClass('is-active'); // make "see double view" button inactive
+				$(seeDoubleViewBtn).addClass('is-disabled'); // hide "see double view" button
+				$(doubleNav).removeClass('is-disabled'); // show double view navigation and "see single view" button
+				$(seeSingleViewBtn).addClass('is-active'); // make "see single view" button active
+				$('.double').removeClass('is-disabled'); // show second div of each text section
+				// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
+				$('.section').css({'flex-grow': '1', 'flex-shrink': '1', 'flex-basis': '100%'});
+				$('.motto, .epigram, .discourse').css({'align-items': 'baseline'});
+				$('.wrapper-vertical-divider').removeClass('is-disabled'); // show vertical line that divides text sections
+				$('.wrapper-pdf').addClass('pdf--half'); // make the pdf viewer take up half of the window
+				$('.wrapper-sidenav').addClass('is-disabled'); // move sidenav offscreen
+				hideOptionalSections(); // hide text for optional languages
 			}
 			/* Text Sections */
-			function toggleTranslationViewSingle() { // highlight Single english translation selection in subnav menu
-				if( $('ul.subnav__options--single li:nth-child(1)').hasClass('is-active') ) {
+			function toggleEnglishViewSingle() { // highlight Single english translation selection in subnav menu
+				if( $(englishSingleView).hasClass('is-active') ) {
 
 				}
 				else {
-					$('ul.subnav__options--single li:nth-child(1)').toggleClass('is-active');
-					$('ul.subnav__options--single li:nth-child(1)').siblings().removeClass('is-active');	
+					$(singleNav).removeClass('is-active');
+					$(englishSingleView).toggleClass('is-active');
+					$(seeDoubleViewBtn).addClass('is-active');	
 				}
 			}
-			function toggleTranslationViewDouble() { // highlight Double english translation selection in subnav menu
-				if( $('ul.subnav__options--double li:nth-child(1)').hasClass('is-active') ) {
+			function toggleEnglishViewDouble() { // highlight Double english translation selection in subnav menu
+				if( $(englishDoubleView).hasClass('is-active') ) {
 
 				}
 				else {
-					$('ul.subnav__options--double li:nth-child(1)').toggleClass('is-active');
-					$('ul.subnav__options--double li:nth-child(1)').siblings().removeClass('is-active');	
+					$(doubleNav).removeClass('is-active');
+					$(englishDoubleView).toggleClass('is-active');
+					$(seeSingleViewBtn).addClass('is-active');	
 				}
 			}
-			function toggleOriginalViewSingle() { // highlight Single original latin selection in subnav menu
-				if( $('ul.subnav__options--single li:nth-child(2)').hasClass('is-active') ) {
+			function toggleLatinViewSingle() { // highlight Single original latin selection in subnav menu
+				if( $(latinSingleView).hasClass('is-active') ) {
 
 				}
 				else {
-					$('ul.subnav__options--single li:nth-child(2)').toggleClass('is-active');
-					$('ul.subnav__options--single li:nth-child(2)').siblings().removeClass('is-active');
+					$(singleNav).removeClass('is-active');
+					$(latinSingleView).toggleClass('is-active');
+					$(seeDoubleViewBtn).addClass('is-active');
 				}
 			}
-			function toggleOriginalViewDouble() { // highlight Double original latin selection in subnav menu
-				if( $('ul.subnav__options--double li:nth-child(2)').hasClass('is-active') ) {
+			function toggleLatinViewDouble() { // highlight Double original latin selection in subnav menu
+				if( $(latinDoubleView).hasClass('is-active') ) {
 
 				}
 				else {
-					$('ul.subnav__options--double li:nth-child(2)').toggleClass('is-active');
-					$('ul.subnav__options--double li:nth-child(2)').siblings().removeClass('is-active');
+					$(doubleNav).removeClass('is-active');
+					$(latinDoubleView).toggleClass('is-active');
+					$(seeSingleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleTranscriptionViewSingle() { // highlight Single transcription selection in subnav menu
-				if( $('ul.subnav__options--single li:nth-child(3)').hasClass('is-active') ) {
+				if( $(transcriptionSingleView).hasClass('is-active') ) {
 
 				}
 				else {
-					$('ul.subnav__options--single li:nth-child(3)').toggleClass('is-active');
-					$('ul.subnav__options--single li:nth-child(3)').siblings().removeClass('is-active');	
+					$(singleNav).removeClass('is-active')
+					$(transcriptionSingleView).toggleClass('is-active');
+					$(seeDoubleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleTranscriptionViewDouble() { // highlight Double transcription selection in subnav menu
-				if( $('ul.subnav__options--double li:nth-child(3)').hasClass('is-active') ) {
+				if( $(transcriptionDoubleView).hasClass('is-active') ) {
 
 				}
 				else {
-					$('ul.subnav__options--double li:nth-child(3)').toggleClass('is-active');
-					$('ul.subnav__options--double li:nth-child(3)').siblings().removeClass('is-active');	
+					$(doubleNav).removeClass('is-active');
+					$(transcriptionDoubleView).toggleClass('is-active');
+					$(seeSingleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleFacsimileViewSingle() { // highlight Single facsimile selection in subnav menu
-				if( $('ul.subnav__options--single li:nth-child(4)').hasClass('is-active') ) {
+				if( $(facsimileSingleView).hasClass('is-active') ) {
 
 				}
 				else {
-					$('ul.subnav__options--single li:nth-child(4)').toggleClass('is-active');
-					$('ul.subnav__options--single li:nth-child(4)').siblings().removeClass('is-active');
+					$(singleNav).removeClass('is-active')
+					$(facsimileSingleView).toggleClass('is-active');
+					$(seeDoubleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleFacsimileViewDouble() { // highlight Double facsimile selection in subnav menu
-				if( $('ul.subnav__options--double li:nth-child(4)').hasClass('is-active') ) {
+				if( $(facsimileDoubleView).hasClass('is-active') ) {
 
 				}
 				else {
-					$('ul.subnav__options--double li:nth-child(4)').toggleClass('is-active');
-					$('ul.subnav__options--double li:nth-child(4)').siblings().removeClass('is-active');
+					$(doubleNav).removeClass('is-active');
+					$(facsimileDoubleView).toggleClass('is-active');
+					$(seeSingleViewBtn).addClass('is-active');
 					$('.wrapper-pdf').removeClass('is-disabled'); // show dark background for pdf viewer
-					if( $('.subnav__views--double').hasClass('is-active') ) {
+					if( $(seeSingleViewBtn).hasClass('is-active') ) {
 						$('.wrapper-pdf').addClass('pdf--double');	
 					}
 					else {
@@ -771,8 +821,8 @@
 
 			function hideOptionalSections() { // show requested text, hide text that is not currently being used 
 				console.log("I'm in the optional sections function");
-				// Translation Single
-				if( $('ul.subnav__options--single li:nth-child(1)').hasClass('is-active') ) {
+				// English Single
+				if( $(englishSingleView).hasClass('is-active') ) {
 					$('.single .motto__english').removeClass('is-disabled');
 					$('.single .motto__english').siblings().addClass('is-disabled');
 					$('.single .epigram__english').removeClass('is-disabled');
@@ -780,9 +830,10 @@
 					$('.single .discourse__english').removeClass('is-disabled');
 					$('.single .discourse__english').siblings().addClass('is-disabled');
 					$('.wrapper-pdf').addClass('is-disabled');
+					$('.wrapper-sidenav').removeClass('is-disabled');
 				}
-				// Original Single
-				else if( $('ul.subnav__options--single li:nth-child(2)').hasClass('is-active') ) {
+				// Latin Single
+				else if( $(latinSingleView).hasClass('is-active') ) {
 					// NEED TO ADD AN IF STATMENT CHECKING WHETHER GERMAN OR LATIN IS SELECTED FOR MOTTO AND EPIGRAM
 					$('.single .motto__latin').removeClass('is-disabled');
 					$('.single .motto__latin').siblings().addClass('is-disabled');
@@ -791,19 +842,21 @@
 					$('.single .discourse__latin').removeClass('is-disabled');
 					$('.single .discourse__latin').siblings().addClass('is-disabled');
 					$('.wrapper-pdf').addClass('is-disabled');
+					$('.wrapper-sidenav').removeClass('is-disabled');
 				}
 				// Transcription Single
-				else if( $('ul.subnav__options--single li:nth-child(3)').hasClass('is-active') ) {
+				else if( $(transcriptionSingleView).hasClass('is-active') ) {
 					$('.single .motto__transcription').removeClass('is-disabled');
 					$('.single .motto__transcription').siblings().addClass('is-disabled');
 					$('.single .epigram__transcription').removeClass('is-disabled');
 					$('.single .epigram__transcription').siblings().addClass('is-disabled');	
 					$('.single .discourse__transcription').removeClass('is-disabled');
 					$('.single .discourse__transcription').siblings().addClass('is-disabled');
-					$('.wrapper-pdf').addClass('is-disabled');				
+					$('.wrapper-pdf').addClass('is-disabled');
+					$('.wrapper-sidenav').removeClass('is-disabled');				
 				}
 				// Facsimile Single
-				else if( $('ul.subnav__options--single li:nth-child(4)').hasClass('is-active') ) {
+				else if( $(facsimileSingleView).hasClass('is-active') ) {
 					$('.single .motto__facsimile').removeClass('is-disabled');
 					$('.single .motto__facsimile').siblings().addClass('is-disabled');
 					$('.single .epigram__facsimile').removeClass('is-disabled');
@@ -813,18 +866,29 @@
 					$('.wrapper-pdf').removeClass('is-disabled');	
 					$('.wrapper-pdf').addClass('pdf--single');
 					$('div.pdf__controls__options li:nth-child(1)').addClass('is-active');
+					if( $(seeDoubleViewBtn).hasClass('is-active') ) {
+						$('.wrapper-sidenav').addClass('is-disabled');
+					}
+					else if( $(facsimileSingleView).hasClass('is-active') && $(facsimileDoubleView).hasClass('is-active') ) {
+						console.log("hey");
+						$('.wrapper-sidenav').addClass('is-disabled');
+					}
+					else {
+						$('.wrapper-sidenav').removeClass('is-disabled');
+					}
 				}
-				// Translation Double
-				if( $('ul.subnav__options--double li:nth-child(1)').hasClass('is-active') ) {
+				// English Double
+				if( $(englishDoubleView).hasClass('is-active') ) {
 					$('.double .motto__english').removeClass('is-disabled');
 					$('.double .motto__english').siblings().addClass('is-disabled');
 					$('.double .epigram__english').removeClass('is-disabled');
 					$('.double .epigram__english').siblings().addClass('is-disabled');
 					$('.double .discourse__english').removeClass('is-disabled');
 					$('.double .discourse__english').siblings().addClass('is-disabled');
+					$('.wrapper-sidenav').removeClass('is-disabled');
 				}
-				// Original Double
-				else if( $('ul.subnav__options--double li:nth-child(2)').hasClass('is-active') ) {
+				// Latin Double
+				else if( $(latinDoubleView).hasClass('is-active') ) {
 					console.log("show double text original only")
 					// NEED TO ADD AN IF STATMENT CHECKING WHETHER GERMAN OR LATIN IS SELECTED FOR MOTTO AND EPIGRAM
 					$('.double .motto__latin').removeClass('is-disabled');
@@ -835,29 +899,66 @@
 					$('.double .discourse__latin').siblings().addClass('is-disabled');
 				}
 				// Transcription Double
-				else if( $('ul.subnav__options--double li:nth-child(3)').hasClass('is-active') ) {
+				else if( $(transcriptionDoubleView).hasClass('is-active') ) {
 					$('.double .motto__transcription').removeClass('is-disabled');
 					$('.double .motto__transcription').siblings().addClass('is-disabled');
 					$('.double .epigram__transcription').removeClass('is-disabled');
 					$('.double .epigram__transcription').siblings().addClass('is-disabled');	
 					$('.double .discourse__transcription').removeClass('is-disabled');
-					$('.double .discourse__transcription').siblings().addClass('is-disabled');				
+					$('.double .discourse__transcription').siblings().addClass('is-disabled');
+					$('.wrapper-sidenav').removeClass('is-disabled');				
 				}
 				// Facsimile Double
-				else if( $('ul.subnav__options--double li:nth-child(4)').hasClass('is-active') ) {
+				else if( $(facsimileDoubleView).hasClass('is-active') ) {
 					$('.double .motto__facsimile').removeClass('is-disabled');
 					$('.double .motto__facsimile').siblings().addClass('is-disabled');
 					$('.double .epigram__facsimile').removeClass('is-disabled');
 					$('.double .epigram__facsimile').siblings().addClass('is-disabled');
 					$('.double .discourse__facsimile').removeClass('is-disabled');
 					$('.double .discourse__facsimile').siblings().addClass('is-disabled');
+					if( $(seeSingleViewBtn).hasClass('is-active') ) {
+						$('.wrapper-subnav2').removeClass('is-disabled');
+					}
 				}
 				else {
 					console.log("I don't know what these sections are doing");
 				}
 			}
-			function fakeFacsimile() {
 
+			function moveToSection() {
+				if( $('ul.sidenav__options li:nth-child(1)').hasClass('is-active') ) {
+					$('ul.sidenav__options li:nth-child(1)').siblings().removeClass('is-active');
+				}
+				else if( $('ul.sidenav__options li:nth-child(2)').hasClass('is-active') ) {
+					$('ul.sidenav__options li:nth-child(2)').siblings().removeClass('is-active');
+				}
+				else if( $('ul.sidenav__options li:nth-child(3)').hasClass('is-active') ) {
+					$('ul.sidenav__options li:nth-child(3)').siblings().removeClass('is-active');
+				}
+				else if( $('ul.sidenav__options li:nth-child(4)').hasClass('is-active') ) {
+					$('ul.sidenav__options li:nth-child(4)').siblings().removeClass('is-active');
+				}
+				else if( $('ul.sidenav__options li:nth-child(5)').hasClass('is-active') ) {
+					$('ul.sidenav__options li:nth-child(5)').siblings().removeClass('is-active');
+				}
+				else {
+					console.log("moveToSection() is not working propertly");
+				}
+			}
+
+			function updateScrollPosition() {
+				if($(window).scrollTop() >= 48) { // once you scroll past the top navbar or 3rem, fix the subnav to top of screen
+					$('.subnav2').css('top', '.325rem');
+					$('.subnav2').css('position', 'fixed');
+					$('.wrapper-sidenav').css('top', '7px');
+					$('.wrapper-sidenav').css('position', 'fixed');
+				}
+				else { // once the top navbar comes back into view, move subnav relative to top navbar
+					$('.subnav2').css('top', ''); 
+					$('.subnav2').css('position', '');
+					$('.wrapper-sidenav').css('top', '');
+					$('.wrapper-sidenav').css('position', '');
+				}
 			}
 		});
 	</script>

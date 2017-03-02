@@ -3,9 +3,9 @@
 	margin-top: 3rem;
 	margin-left: .5rem;
 	padding: 0 0 1rem 0;
-	position: fixed;
+	position: absolute;
 	width: 9rem;
-	height: 13.5rem;
+	height: 11rem;
 	z-index: 20;
 }
 .sidenav {
@@ -17,27 +17,31 @@
 		flex-direction: row;
 		justify-content: space-between;
 		text-align: center;
-			width: 9rem;
-		li {
-/*			border: 1px solid red;*/
-			color: white;
-			cursor: pointer;
-			font-size: .825rem;
-			padding: .5rem .625rem;
-			a {
+		width: 9rem;
+		a {
+			li {
 				color: $white;
+				cursor: pointer;
+				font-size: .825rem;
+				padding: .5rem .625rem;
 			}
 		}
-		li:hover {
+		a:hover {
 			background-color: $dusty-pink;
-			a {
+			li {
 				color: $black;
 			}
 		}
 	}
 	.sidenav__navigation {
 		background-color: $dusty-pink;
-		padding-top: .325rem;
+		li:hover {
+			background-color: $dark-pink;
+/*			padding-top: .325rem;*/
+			a {
+				color: $white;
+			}
+		}
 		a {
 			color: $black;
 		}
