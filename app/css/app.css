@@ -126,71 +126,72 @@ table {
 /* extra-large */
 /* xxl */
 /*@import 'subnav';*/
-.wrapper-subnav2 {
+/*@import 'subnav2';*/
+.wrapper-subnav3 {
   position: relative;
   top: -.125rem;
+  left: 0;
   z-index: 10; }
 
-.subnav2 {
+.subnav3 {
   height: 3rem;
-  min-width: 100%;
-  position: absolute; }
+  position: absolute;
+  left: 0;
+  right: 0; }
 
-.subnav2__options {
+.subnav3__options {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   height: 3rem; }
-  .subnav2__options li {
+  .subnav3__options li {
     background-color: #222;
     cursor: pointer;
+    display: flex;
     flex: 1 1 100%;
-    padding: 1rem 2rem;
-    text-align: center; }
-    .subnav2__options li a {
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem; }
+    .subnav3__options li a {
       color: #fff; }
-  .subnav2__options li:hover {
+  .subnav3__options li:hover {
     background-color: #C9A2A2; }
-    .subnav2__options li:hover a {
+    .subnav3__options li:hover a {
       color: #222; }
 
-.subnav2__options li:nth-child(1) {
-  background-color: #C9A2A2;
-  border: 0.25rem solid #BD205D;
-  order: 3;
-  font-size: 1.25rem; }
-
-.subnav2__options li:nth-child(2) {
-  background-color: #C9A2A2;
-  border: 0.25rem solid #BD205D;
-  order: 6;
-  font-size: 1rem; }
-
-.subnav2__options li:nth-child(3) {
-  order: 1; }
-
-.subnav2__options li:nth-child(4) {
-  order: 2; }
-
-.subnav2__options li:nth-child(5) {
+.subnav3__options li:nth-child(1) {
+  height: 4rem;
   order: 4; }
 
-.subnav2__options li:nth-child(6) {
+.subnav3__options li:nth-child(2) {
+  order: 1; }
+
+.subnav3__options li:nth-child(3) {
+  order: 2; }
+
+.subnav3__options li:nth-child(4) {
+  order: 3; }
+
+.subnav3__options li:nth-child(5) {
+  height: 4rem;
   order: 5; }
 
-.subnav2__options li:nth-child(7) {
+.subnav3__options li:nth-child(6) {
+  order: 6; }
+
+.subnav3__options li:nth-child(7) {
   order: 7; }
 
-.subnav2__options li:nth-child(8) {
+.subnav3__options li:nth-child(8) {
   order: 8; }
 
-.subnav2__options li:nth-child(9) {
-  order: 9; }
-
-.subnav2__options li:nth-child(10) {
-  order: 10; }
+.is-inactive {
+  background-color: #eee !important;
+  pointer-events: none !important; }
+  .is-inactive a {
+    color: #222 !important; }
 
 /* NEUTRAL */
 /* COOL */

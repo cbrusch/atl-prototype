@@ -88,7 +88,7 @@
 				</div>
 			</div> -->
 <!-- EMBLEM NAV V2 -->
-<div class="wrapper-subnav2">
+<!-- <div class="wrapper-subnav2">
 	<div class="topnav subnav2 row">
 		<ul class="subnav2__options">
 			<li class="subnav2__options--single"><a href="#">See Double View</a></li>
@@ -101,6 +101,21 @@
 			<li class="subnav2__options--double"><a href="#">Latin</a></li>
 			<li class="subnav2__options--double"><a href="#">Transcription</a></li>
 			<li class="subnav2__options--double"><a href="#">Facsimile</a></li>
+		</ul>
+	</div>
+</div> -->
+<!-- EMBLEM NAV V3 -->
+<div class="wrapper-subnav3">
+	<div class="subnav3 row">
+		<ul class="subnav3__options">
+			<li class="subnav3__options--single"><a href="#">Single View</a></li>
+			<li class="subnav3__options--single"><a href="#">Original</a></li>
+			<li class="subnav3__options--single"><a href="#">Translation</a></li>
+			<li class="subnav3__options--single"><a href="#">Facsimile</a></li>
+			<li class="subnav3__options--double"><a href="#">Double View</a></li>
+			<li class="subnav3__options--double"><a href="#">Original</a></li>
+			<li class="subnav3__options--double"><a href="#">Translation</a></li>
+			<li class="subnav3__options--double"><a href="#">Facsimile</a></li>
 		</ul>
 	</div>
 </div>
@@ -572,18 +587,16 @@
 
 /* VARIABLES */
 			/* emblem nav */
-			var singleNav = '.subnav2__options--single';
-			var doubleNav = '.subnav2__options--double';
-			var seeSingleViewBtn = 'ul.subnav2__options li:nth-child(2)';
-			var seeDoubleViewBtn = 'ul.subnav2__options li:nth-child(1)';
-			var englishSingleView = 'ul.subnav2__options li:nth-child(3)';
-			var latinSingleView = 'ul.subnav2__options li:nth-child(4)';
-			var transcriptionSingleView = 'ul.subnav2__options li:nth-child(5)';
-			var facsimileSingleView = 'ul.subnav2__options li:nth-child(6)';
-			var englishDoubleView = 'ul.subnav2__options li:nth-child(7)';
-			var latinDoubleView = 'ul.subnav2__options li:nth-child(8)';
-			var transcriptionDoubleView = 'ul.subnav2__options li:nth-child(9)';
-			var facsimileDoubleView = 'ul.subnav2__options li:nth-child(10)';
+			var singleNav = '.subnav3__options--single';
+			var doubleNav = '.subnav3__options--double';
+			var singleViewBtn = 'ul.subnav3__options li:nth-child(1)';
+			var doubleViewBtn = 'ul.subnav3__options li:nth-child(5)';
+			var latinSingleView = 'ul.subnav3__options li:nth-child(2)';
+			var englishSingleView = 'ul.subnav3__options li:nth-child(3)';
+			var facsimileSingleView = 'ul.subnav3__options li:nth-child(4)';
+			var latinDoubleView = 'ul.subnav3__options li:nth-child(6)';
+			var englishDoubleView = 'ul.subnav3__options li:nth-child(7)';
+			var facsimileDoubleView = 'ul.subnav3__options li:nth-child(8)';
 			/* emblem side nav */
 			var mottoSideNav = 'ul.sidenav__options > a li:nth-child(1)';
 			var imageSideNav = 'ul.sidenav__options > a li:nth-child(2)';
@@ -601,10 +614,10 @@
 				updateScrollPosition();
 			});
 			/* emblem single or double views */
-			$(seeSingleViewBtn).click(function() { // click to show single view and hide double view
+			$(singleViewBtn).click(function() { // click to show single view and hide double view
 				toggleSingleView();
 			});
-			$(seeDoubleViewBtn).click(function() { // click to show double view
+			$(doubleViewBtn).click(function() { // click to show double view
 				toggleDoubleView();
 			});
 			/* emblem language menu */
@@ -616,10 +629,10 @@
 				toggleLatinViewSingle();
 				hideOptionalSections();
 			});
-			$(transcriptionSingleView).click(function() { // click Single Transcription to hide / show English Transcription text
-				toggleTranscriptionViewSingle();
-				hideOptionalSections();
-			});
+			// $(transcriptionSingleView).click(function() { // click Single Transcription to hide / show English Transcription text
+			// 	toggleTranscriptionViewSingle();
+			// 	hideOptionalSections();
+			// });
 			$(facsimileSingleView).click(function() { // click Single Facsimile to hide / show PDF pages
 				toggleFacsimileViewSingle();
 				hideOptionalSections();
@@ -632,10 +645,10 @@
 				toggleLatinViewDouble();
 				hideOptionalSections();
 			});
-			$(transcriptionDoubleView).click(function() { // click Double Transcription to hide / show English Transcription text
-				toggleTranscriptionViewDouble();
-				hideOptionalSections();
-			});
+			// $(transcriptionDoubleView).click(function() { // click Double Transcription to hide / show English Transcription text
+			// 	toggleTranscriptionViewDouble();
+			// 	hideOptionalSections();
+			// });
 			$(facsimileDoubleView).click(function() { // click Double Facsimile to hide / show PDF pages
 				toggleFacsimileViewDouble();
 				hideOptionalSections();
@@ -690,10 +703,11 @@
 
 /* FUNCTIONS */
 			function onLoad() {
-				$(doubleNav).toggleClass('is-disabled'); // hide double navigation
-				$(seeDoubleViewBtn).toggleClass('is-active'); // make "see Double View" button active
+				$(singleViewBtn).toggleClass('is-active'); // make "Single View" button active
 				$(englishSingleView).toggleClass('is-active'); // highlight english translation as default single text
-				$(latinDoubleView).toggleClass('is-active'); // highlight original latin/german as default double text
+				$(doubleNav).toggleClass('is-inactive'); // make double nav options inactive
+				$(doubleViewBtn).toggleClass('is-inactive') // remove inactive class from Double View button, because it is always clickable
+				// $(latinDoubleView).toggleClass('is-active'); // highlight original latin/german as default double text
 				$('ul.sidenav__options a:nth-child(1)').toggleClass('is-active'); // highlight motto in sidenav menu
 				$('.double').toggleClass('is-disabled'); // hide second div of each text section. It should only show in double view
 				$('.wrapper-vertical-divider').toggleClass('is-disabled'); // hide vertical line that divides text sections
@@ -702,10 +716,11 @@
 			}
 			/* Navigation Menus */
 			function toggleSingleView() {
-				$(seeDoubleViewBtn).removeClass('is-disabled'); // show "see double view" button
-				$(doubleNav).addClass('is-disabled'); // hide double view navigation
-				$(seeDoubleViewBtn).addClass('is-active'); // make "see double view" button active
-				$(seeSingleViewBtn).removeClass('is-active'); // make "see single view" button inactive
+				$(singleViewBtn).addClass('is-active'); // make "single view" button active
+				$(doubleViewBtn).removeClass('is-active'); // make "double view" button inactive
+				$(doubleNav).removeClass('is-active'); //
+				$(doubleNav).addClass('is-inactive'); //
+				$(doubleViewBtn).removeClass('is-inactive'); //
 				$('.double').addClass('is-disabled'); // hide second div of each section that should only show in double view
 				// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
 				$('.section').css({'flex-grow': '', 'flex-shrink': '', 'flex-basis': ''});
@@ -716,10 +731,10 @@
 				hideOptionalSections(); // hide text for optional languages
 			}
 			function toggleDoubleView() {
-				$(seeDoubleViewBtn).removeClass('is-active'); // make "see double view" button inactive
-				$(seeDoubleViewBtn).addClass('is-disabled'); // hide "see double view" button
-				$(doubleNav).removeClass('is-disabled'); // show double view navigation and "see single view" button
-				$(seeSingleViewBtn).addClass('is-active'); // make "see single view" button active
+				$(singleViewBtn).removeClass('is-active'); // make "single view" button inactive
+				$(doubleViewBtn).addClass('is-active'); // make "double view" button active
+				$(doubleNav).removeClass('is-inactive'); //
+				$(latinDoubleView).addClass('is-active'); // 
 				$('.double').removeClass('is-disabled'); // show second div of each text section
 				// NOTE: I tried adding the CSS below as a class instead of injecting inline, but it doesn't work
 				$('.section').css({'flex-grow': '1', 'flex-shrink': '1', 'flex-basis': '100%'});
@@ -734,10 +749,14 @@
 				if( $(englishSingleView).hasClass('is-active') ) {
 
 				}
+				else if( $(doubleViewBtn).hasClass('is-active') ) {
+					$(singleNav).removeClass('is-active');
+					$(englishSingleView).toggleClass('is-active');
+				}
 				else {
 					$(singleNav).removeClass('is-active');
 					$(englishSingleView).toggleClass('is-active');
-					$(seeDoubleViewBtn).addClass('is-active');	
+					$(singleViewBtn).addClass('is-active');	
 				}
 			}
 			function toggleEnglishViewDouble() { // highlight Double english translation selection in subnav menu
@@ -747,17 +766,21 @@
 				else {
 					$(doubleNav).removeClass('is-active');
 					$(englishDoubleView).toggleClass('is-active');
-					$(seeSingleViewBtn).addClass('is-active');	
+					$(doubleViewBtn).addClass('is-active');	
 				}
 			}
 			function toggleLatinViewSingle() { // highlight Single original latin selection in subnav menu
 				if( $(latinSingleView).hasClass('is-active') ) {
 
 				}
+				else if( $(doubleViewBtn).hasClass('is-active') ) {
+					$(singleNav).removeClass('is-active');
+					$(latinSingleView).toggleClass('is-active');
+				}
 				else {
 					$(singleNav).removeClass('is-active');
 					$(latinSingleView).toggleClass('is-active');
-					$(seeDoubleViewBtn).addClass('is-active');
+					$(singleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleLatinViewDouble() { // highlight Double original latin selection in subnav menu
@@ -767,17 +790,21 @@
 				else {
 					$(doubleNav).removeClass('is-active');
 					$(latinDoubleView).toggleClass('is-active');
-					$(seeSingleViewBtn).addClass('is-active');
+					$(doubleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleTranscriptionViewSingle() { // highlight Single transcription selection in subnav menu
 				if( $(transcriptionSingleView).hasClass('is-active') ) {
 
 				}
+				else if( $(doubleViewBtn).hasClass('is-active') ) {
+					$(singleNav).removeClass('is-active')
+					$(transcriptionSingleView).toggleClass('is-active');
+				}
 				else {
 					$(singleNav).removeClass('is-active')
 					$(transcriptionSingleView).toggleClass('is-active');
-					$(seeDoubleViewBtn).addClass('is-active');
+					$(singleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleTranscriptionViewDouble() { // highlight Double transcription selection in subnav menu
@@ -787,17 +814,21 @@
 				else {
 					$(doubleNav).removeClass('is-active');
 					$(transcriptionDoubleView).toggleClass('is-active');
-					$(seeSingleViewBtn).addClass('is-active');
+					$(doubleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleFacsimileViewSingle() { // highlight Single facsimile selection in subnav menu
 				if( $(facsimileSingleView).hasClass('is-active') ) {
 
 				}
-				else {
-					$(singleNav).removeClass('is-active')
+				else if( $(doubleViewBtn).hasClass('is-active') ) {
+					$(singleNav).removeClass('is-active');
 					$(facsimileSingleView).toggleClass('is-active');
-					$(seeDoubleViewBtn).addClass('is-active');
+				}
+				else {
+					$(singleNav).removeClass('is-active');
+					$(facsimileSingleView).toggleClass('is-active');
+					$(singleViewBtn).addClass('is-active');
 				}
 			}
 			function toggleFacsimileViewDouble() { // highlight Double facsimile selection in subnav menu
@@ -807,9 +838,9 @@
 				else {
 					$(doubleNav).removeClass('is-active');
 					$(facsimileDoubleView).toggleClass('is-active');
-					$(seeSingleViewBtn).addClass('is-active');
+					$(doubleViewBtn).addClass('is-active');
 					$('.wrapper-pdf').removeClass('is-disabled'); // show dark background for pdf viewer
-					if( $(seeSingleViewBtn).hasClass('is-active') ) {
+					if( $(doubleViewBtn).hasClass('is-active') ) {
 						$('.wrapper-pdf').addClass('pdf--double');	
 					}
 					else {
@@ -845,16 +876,16 @@
 					$('.wrapper-sidenav').removeClass('is-disabled');
 				}
 				// Transcription Single
-				else if( $(transcriptionSingleView).hasClass('is-active') ) {
-					$('.single .motto__transcription').removeClass('is-disabled');
-					$('.single .motto__transcription').siblings().addClass('is-disabled');
-					$('.single .epigram__transcription').removeClass('is-disabled');
-					$('.single .epigram__transcription').siblings().addClass('is-disabled');	
-					$('.single .discourse__transcription').removeClass('is-disabled');
-					$('.single .discourse__transcription').siblings().addClass('is-disabled');
-					$('.wrapper-pdf').addClass('is-disabled');
-					$('.wrapper-sidenav').removeClass('is-disabled');				
-				}
+				// else if( $(transcriptionSingleView).hasClass('is-active') ) {
+				// 	$('.single .motto__transcription').removeClass('is-disabled');
+				// 	$('.single .motto__transcription').siblings().addClass('is-disabled');
+				// 	$('.single .epigram__transcription').removeClass('is-disabled');
+				// 	$('.single .epigram__transcription').siblings().addClass('is-disabled');	
+				// 	$('.single .discourse__transcription').removeClass('is-disabled');
+				// 	$('.single .discourse__transcription').siblings().addClass('is-disabled');
+				// 	$('.wrapper-pdf').addClass('is-disabled');
+				// 	$('.wrapper-sidenav').removeClass('is-disabled');				
+				// }
 				// Facsimile Single
 				else if( $(facsimileSingleView).hasClass('is-active') ) {
 					$('.single .motto__facsimile').removeClass('is-disabled');
@@ -876,6 +907,9 @@
 					// else {
 					// 	$('.wrapper-sidenav').removeClass('is-disabled');
 					// }
+				}
+				else {
+					console.log("I don't know what these sections are doing");
 				}
 				// English Double
 				if( $(englishDoubleView).hasClass('is-active') ) {
@@ -899,15 +933,15 @@
 					$('.double .discourse__latin').siblings().addClass('is-disabled');
 				}
 				// Transcription Double
-				else if( $(transcriptionDoubleView).hasClass('is-active') ) {
-					$('.double .motto__transcription').removeClass('is-disabled');
-					$('.double .motto__transcription').siblings().addClass('is-disabled');
-					$('.double .epigram__transcription').removeClass('is-disabled');
-					$('.double .epigram__transcription').siblings().addClass('is-disabled');	
-					$('.double .discourse__transcription').removeClass('is-disabled');
-					$('.double .discourse__transcription').siblings().addClass('is-disabled');
-					$('.wrapper-sidenav').removeClass('is-disabled');				
-				}
+				// else if( $(transcriptionDoubleView).hasClass('is-active') ) {
+				// 	$('.double .motto__transcription').removeClass('is-disabled');
+				// 	$('.double .motto__transcription').siblings().addClass('is-disabled');
+				// 	$('.double .epigram__transcription').removeClass('is-disabled');
+				// 	$('.double .epigram__transcription').siblings().addClass('is-disabled');	
+				// 	$('.double .discourse__transcription').removeClass('is-disabled');
+				// 	$('.double .discourse__transcription').siblings().addClass('is-disabled');
+				// 	$('.wrapper-sidenav').removeClass('is-disabled');				
+				// }
 				// Facsimile Double
 				else if( $(facsimileDoubleView).hasClass('is-active') ) {
 					$('.double .motto__facsimile').removeClass('is-disabled');
@@ -917,11 +951,8 @@
 					$('.double .discourse__facsimile').removeClass('is-disabled');
 					$('.double .discourse__facsimile').siblings().addClass('is-disabled');
 					if( $(seeSingleViewBtn).hasClass('is-active') ) {
-						$('.wrapper-subnav2').removeClass('is-disabled');
+						$('.wrapper-subnav3').removeClass('is-disabled');
 					}
-				}
-				else {
-					console.log("I don't know what these sections are doing");
 				}
 			}
 
@@ -948,14 +979,14 @@
 
 			function updateScrollPosition() {
 				if($(window).scrollTop() >= 48) { // once you scroll past the top navbar or 3rem, fix the subnav to top of screen
-					$('.subnav2').css('top', '.325rem');
-					$('.subnav2').css('position', 'fixed');
+					$('.subnav3').css('top', '.325rem');
+					$('.subnav3').css('position', 'fixed');
 					$('.wrapper-sidenav').css('top', '7px');
 					$('.wrapper-sidenav').css('position', 'fixed');
 				}
 				else { // once the top navbar comes back into view, move subnav relative to top navbar
-					$('.subnav2').css('top', ''); 
-					$('.subnav2').css('position', '');
+					$('.subnav3').css('top', ''); 
+					$('.subnav3').css('position', '');
 					$('.wrapper-sidenav').css('top', '');
 					$('.wrapper-sidenav').css('position', '');
 				}
