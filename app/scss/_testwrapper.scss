@@ -1,0 +1,22 @@
+@import 'colors';
+
+.test-wrapper {
+/*	border: 1px solid red;*/
+	display: flex;
+	margin-top: 5.5rem;
+	width: 100%;
+}
+.emblem-halves__left {
+/*	border: 1px solid green;*/
+	width: 100%;
+}
+.emblem-halves__right {
+/*	border: 1px solid blue;*/
+	width: 100%;
+}
+.emblem-halves--order__left {
+	order: 1;
+}
+.emblem-halves--order__right {
+	order: 2;
+}
