@@ -4,19 +4,9 @@ body {
 	font-family: 'Futura', Helvetica, sans-serif;
 	font-size: 16px;
 }
-.is-active {
-	background-color: $dusty-pink !important;
-	color: $black !important;
-	a {
-		color: $black !important;
-	}
-}
-.is-disabled {
-	display: none !important;
-}
-
 .wrapper-emblem {
 	background-color: $light-gray;
+/*	min-height: 80rem;*/
 	padding: 0 0 .125rem 0;
 }
 .wrapper-section {
@@ -34,38 +24,23 @@ body {
 		font-size: 2.5rem;
 	}
 }
-.section--single {
-	
-}
-.section--double {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0;	
-}
 .motto {
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 	justify-content: center;
-	min-height: 17rem;  /* this prevents the page from shifting vertically when selecting language options in the subnav */
-	max-height: 30rem;  /* this prevents the page from shifting vertically when selecting language options in the subnav */
-	text-align: center;
+	min-height: 10rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */
+	max-height: 20rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */	
+	padding: 5rem 0 0 0;
 	h1 {
 		font-size: 2rem;
 	}
 }
-.motto .section {
-	padding: 0 5rem;
-}
-/*.motto--double__active h1{
-	font-size: 1.75rem;
-}*/
 .image {
 	display: flex;
 	justify-content: center;
 	min-height: 34rem;
-	position: relative; /* needed for the z-index to apply */
-	z-index: 3;
+/*	position: relative;  needed for the z-index to apply and hide the vertical divider in this section 
+	z-index: 3;*/
 	.image__picture {
 /*		position: absolute; - breaks in safari*/ 
 		img {
@@ -86,21 +61,18 @@ body {
 		max-width: 22rem;
 	}
 }
-
 .music {
 	background-color: $white;
 	display: flex;
 	justify-content: center;
-	position: relative; /* needed for the z-index to apply */
+/*	position: relative;   needed for the z-index to apply and hide the vertical divider in this section */
 	min-height: 25rem;
-	z-index: 3;
+/*	z-index: 3;*/
 
 }
-
-
 .epigram {
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 	justify-content: center;
 	min-height: 6rem;
 	max-height: 30rem;  /* this prevents the page from shifting vertically when selecting language options in the subnav */
@@ -114,24 +86,18 @@ body {
 		white-space: pre-line;
 	}
 }
-.epigram--double__active {
-/*	display: flex;
-	align-items: center;
-	justify-content: center;*/
-}
-
 .discourse {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
+	align-items: baseline;
+	justify-content: center;
+/*	justify-content: space-between;*/
 	min-height: 30rem;
 	max-height: 5000rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */
 	padding-bottom: 6rem;
 	.text {
 		flex-direction: column;
 		margin: 5rem 0;
-		padding: 0 5rem;
 		text-align: left;
 	}
 	p {
@@ -144,26 +110,24 @@ body {
 		max-width: 40rem;
 	}
 }
-.wrapper-transcription {
+/*.wrapper-transcription {
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
-}
-.transcription__numbers {
-/*	border: 1px solid red;*/
+}*/
+/*.transcription__numbers {
 	color: $dark-gray;
 	font-size: 1.125rem;
 	text-align: right;
 	min-width: 3rem;
-}
-.transcription__lines {
-/*	border: 1px solid red;*/
+}*/
+/*.transcription__lines {
 	padding-left: 1rem;
 	p {
 		text-align: left;
 		text-indent: 0;
 	}
-}
+}*/
 .wrapper-vertical-divider {
 	display: flex;
 	justify-content: center;
@@ -178,14 +142,43 @@ body {
 	height: 100vh;
 	width: .5rem;
 }
-/*.text-double {
-	h1 {
-	
+
+
+
+/***     Breakpoints     ***/
+
+/* large  -  laptop */
+@media screen and (min-width: 1200px) and (max-width: 1499px) {
+	.motto {
+		h1 {
+			max-width: 36rem;
+		}
 	}
-}*/
+	.epigram {
+		padding: 4rem 3rem;
+		p {
+			max-width: 35rem;
+		}
+	}
+	.discourse p {
+		max-width: 30rem;
+	}
+}
 
-
-
+/* medium-large */
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+	.motto {
+		h1 {
+			max-width: 35rem;
+		}
+	}
+	.epigram p {
+		max-width: 26rem;
+	}
+	.discourse p {
+		max-width: 26rem;
+	}
+}
 
 
 
