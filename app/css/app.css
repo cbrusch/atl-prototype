@@ -116,13 +116,29 @@ table {
   -ms-flex-pack: center;
   justify-content: center;
   height: 3.125rem;
+  line-height: 2rem;
   margin: 0;
   position: relative;
   z-index: 10; }
-
-.topnav p {
-  color: #fff;
-  font-size: 1.5rem; }
+  .topnav ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 1rem;
+    width: 100%; }
+    .topnav ul li {
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center; }
+      .topnav ul li a img {
+        margin-top: 5px;
+        width: 45px; }
 
 /*** Breakpoints ***/
 /* small  -  mobile */
@@ -147,8 +163,17 @@ table {
 
 .subnav5 {
   background-color: #fff;
-  width: 100%;
-  height: 6rem; }
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 5rem;
+  width: 100%; }
   .subnav5 ul {
     /*		border: 2px solid red;*/
     display: -webkit-flex;
