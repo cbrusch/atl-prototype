@@ -3,6 +3,9 @@
 body {
 	font-family: 'Futura', Helvetica, sans-serif;
 	font-size: 16px;
+	p {
+		font-family: Garamond, serif;
+	}
 }
 .wrapper-emblem {
 	background-color: $light-gray;
@@ -66,7 +69,7 @@ body {
 	display: flex;
 	justify-content: center;
 /*	position: relative;   needed for the z-index to apply and hide the vertical divider in this section */
-	min-height: 25rem;
+	min-height: 40rem;
 /*	z-index: 3;*/
 
 }
@@ -147,7 +150,7 @@ body {
 
 /***     Breakpoints     ***/
 
-/* large  -  laptop */
+/* large  -  desktop */
 @media screen and (min-width: 1200px) and (max-width: 1499px) {
 	.motto {
 		h1 {
@@ -165,7 +168,7 @@ body {
 	}
 }
 
-/* medium-large */
+/* medium-large - laptop */
 @media screen and (min-width: 1000px) and (max-width: 1199px) {
 	.motto {
 		h1 {
@@ -179,6 +182,52 @@ body {
 		max-width: 26rem;
 	}
 }
+
+/* medium - small laptop */
+@media screen and (min-width: 900px) and (max-width: 999px) {
+	.epigram p {
+		max-width: 25rem;
+	}
+	.discourse p {
+		max-width: 22rem;
+	}
+}
+
+/* medium - tablet */
+@media screen and (min-width: 768px) and (max-width: 899px) {
+	.motto h1 {
+		font-size: 1.625rem;
+		line-height: 2.125rem;
+	}
+	.epigram p {
+		font-size: 1rem;
+		font-weight: lighter;
+		line-height: 1.625rem;
+		max-width: 21rem;
+	}
+	.discourse p {
+		font-size: 1rem;
+		max-width: 18rem;
+	}
+/*	.discourse.single p {  this needs to be wider in single view, but not when double view is active 
+		border: 1px solid red;
+		max-width: 30rem;
+	}*/
+}
+
+/* small  -  mobile */
+@media screen and (min-width: 320px) and (max-width: 767px) { /* mobile phones are too small for a side by side view */
+	.subnav5 li:nth-child(1) {
+		display: none !important;
+	}
+	.subnav5 li:nth-child(n+5) {
+		display: none !important;
+	}
+	.discourse p {
+		max-width: 30rem;
+	}
+}
+
 
 
 
