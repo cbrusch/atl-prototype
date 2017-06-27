@@ -7,10 +7,20 @@ body {
 		font-family: Garamond, serif;
 	}
 }
+.container-fluid { /* all of this is to support the toc menu transition*/
+	background-color: $blue;
+	min-height: 100vh;
+	min-width: 100%;
+	position: relative;
+	top: 0;
+	bottom: 100%;
+	left: 0;
+	z-index: 1;
+}
 .wrapper-emblem {
 	background-color: $light-gray;
-/*	min-height: 80rem;*/
 	padding: 0 0 .125rem 0;
+
 }
 .wrapper-section {
 	background-color: $white;

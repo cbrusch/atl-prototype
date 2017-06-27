@@ -1,0 +1,86 @@
+body {
+	overflow-x: hidden;
+}
+.toc {
+	background-color: $black;
+	height: 100%;
+	width: 100%;
+	list-style: none;
+	overflow: auto;
+	overflow-y: scroll;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	li {
+		border-top: 1px solid $black;
+		border-bottom: 1px solid $white;
+		width: 200px;
+		a {
+			background: $black;
+			color: $white;
+			display: block;
+			font-size: 1.5rem;
+			padding: 1em;
+			text-decoration: none;
+			transition: color 0.2s, background 0.5s;
+		}
+		a:hover {
+			color: $blue;
+		}
+	}
+}
+.toc-trigger {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+label[for="toc-trigger"] {
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='5' fill='#fff'/><rect y='24' width='30' height='5' fill='#fff'/><rect y='12' width='30' height='5' fill='#fff'/></svg>");
+	background-size: contain;
+	cursor: pointer;
+	fill: $white;
+	height: 30px;
+	width: 30px;
+	position: fixed;
+	top: 1rem;
+	left: 1rem;
+	z-index: 2;
+}
+.toc-trigger:checked + label {
+	left: 215px;
+}
+.toc-trigger:checked ~ .container-fluid {
+	left: 200px;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+.nav-trigger + label, .container-fluid {
+	transition: left 0.2s;
+}
+.splash {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 88vh;
+	h1 {
+		font-size: 10rem;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

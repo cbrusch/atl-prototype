@@ -11,8 +11,8 @@
 6 silly lifecycle prototype@1.0.0~pregulp: no script for pregulp, continuing
 7 info lifecycle prototype@1.0.0~gulp: prototype@1.0.0
 8 verbose lifecycle prototype@1.0.0~gulp: unsafe-perm in lifecycle true
-9 verbose lifecycle prototype@1.0.0~gulp: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/crystalbrusch/Documents/atalanta/prototype/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-10 verbose lifecycle prototype@1.0.0~gulp: CWD: /Users/crystalbrusch/Documents/atalanta/prototype
+9 verbose lifecycle prototype@1.0.0~gulp: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/crystalbrusch/Documents/atalanta/atl-prototype/node_modules/.bin:/Users/crystalbrusch/.gem/ruby/2.3.1/bin:/Users/crystalbrusch/.rubies/ruby-2.3.1/lib/ruby/gems/2.3.0/bin:/Users/crystalbrusch/.rubies/ruby-2.3.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle prototype@1.0.0~gulp: CWD: /Users/crystalbrusch/Documents/atalanta/atl-prototype
 11 silly lifecycle prototype@1.0.0~gulp: Args: [ '-c', 'gulp "watch"' ]
 12 silly lifecycle prototype@1.0.0~gulp: Returned: code: 1  signal: null
 13 info lifecycle prototype@1.0.0~gulp: Failed to exec gulp script
@@ -27,7 +27,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:877:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid prototype@1.0.0
-16 verbose cwd /Users/crystalbrusch/Documents/atalanta/prototype/app
+16 verbose cwd /Users/crystalbrusch/Documents/atalanta/atl-prototype/app
 17 error Darwin 15.6.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "gulp" "watch"
 19 error node v6.9.1
