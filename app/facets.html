@@ -5,7 +5,16 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>Alchemy in Code</title>
 	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="node_modules/bootstrap-grid-only/bootstrap.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.css" />
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+	<script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.js'></script>
+	<script src="node_modules/gridstack.js-master/dist/gridstack.js"></script>
+	<script src="node_modules/gridstack.js-master/dist/gridstack.jQueryUI.js"></script>
+
 </head>
 <body>
 <!-- TABLE OF CONTENTS -->
@@ -30,15 +39,159 @@
 				</ul>
 			</div>
 		</div>
-<!-- COVER PAGE -->
+<!-- FACETS PAGE -->
 		<div class="facets-wrapper splash">
 			<h1>Faceted Search</h1>
 		</div>
+		<!-- <div class="row">
+			<div class="faceted-search">
+				<div class="sidebar col-lg-3">
+					<div id="all-emblems" class="facet-category row">
+						<div class="facet-category-heading facet-category-heading-active">
+							<p>All Emblems</p>
+						</div>
+						<div class="facet-category-buttons">
+						</div>
+					</div>
+					<div id="actions" class="facet-category row">
+						<div class="facet-category-heading">
+							<p>Actions</p>
+						</div>
+						<div class="facet-category-buttons">
+						</div>
+					</div>
+					<div id="animals" class="facet-category row">
+						<div class="facet-category-heading facet-category-heading-active">
+							<p>Animals</p>
+						</div>
+						<div class="facet-category-buttons">
+							<a class="btn facet-category-buttons__active" href="#"><p>All Animals (50)</p></a>
+							<a class="btn" href="#"><p>Boar (1)</p></a>
+							<a class="btn" href="#"><p>Cat (1)</p></a>
+							<a class="btn" href="#"><p>Crow (1)</p></a>
+							<a class="btn" href="#"><p>Dog (3)</p></a>
+							<a class="btn" href="#"><p>Dragon (3)</p></a>
+							<a class="btn" href="#"><p>Eagle (3)</p></a>
+							<a class="btn" href="#"><p>Fish (1)</p></a>
+							<a class="btn" href="#"><p>Goat (1)</p></a>
+							<a class="btn" href="#"><p>Lion (2)</p></a>
+							<a class="btn" href="#"><p>Ox Hide (1)</p></a>
+							<a class="btn" href="#"><p>Rooster (1)</p></a>
+							<a class="btn" href="#"><p>Salamander (1)</p></a>
+							<a class="btn" href="#"><p>Toad (1)</p></a>
+							<a class="btn" href="#"><p>Vulture (1)</p></a>
+							<a class="btn" href="#"><p>Wolf (3)</p></a>
+						</div>
+					</div>
+					<div id="objects" class="facet-category row">
+						<div class="facet-category-heading">
+							<p>Objects</p>
+						</div>
+						<div class="facet-category-buttons">
+						</div>
+					</div>
+					<div id="people" class="facet-category row">
+						<div class="facet-category-heading">
+							<p>People</p>
+						</div>
+						<div class="facet-category-buttons">
+						</div>
+					</div>
+					<div id="places" class="facet-category row">
+						<div class="facet-category-heading">
+							<p>Places</p>
+						</div>
+						<div class="facet-category-buttons">
+						</div>
+					</div>
+				</div>
+				<div class="grid-area col-lg-9">
+					<div class="grid-header">
+						<h1>All Emblems</h1>
+					</div>
+					<div class="grid-stack"></div>
+				</div>
+			</div> -->
 	</div> <!-- END OF CONTAINER -->
 <!-- JS -->
 	<script>
 		$(function () {
+			// /* SHOWING / HIDING CATEGORIES ON CLICK */
+			// $('.facet-category-heading-active').click(function() {
+			// 	console.log("I clicked");
+			// 	$(this).toggleClass('btn-selected');
+			// 	// $(this).siblings('.facet-category-buttons').toggle();
+			// 	$(this).siblings('.facet-category-buttons').toggleClass('facet-show');
+			// });
 
+			// /* DRAG & DROP GRID */
+			// //var width = 10, //number of columns. default is 12
+			// var rectWidth = 1,
+			// 	rectHeight = 3,
+			// 	row1 = 0,
+			// 	row2 = rectHeight;
+			// 	row3 = rectHeight*2;
+			// 	row4 = rectHeight*3;
+			// var options = {
+			// 	cellHeight: 50,
+			// 	verticalMargin: 5,
+			// 	width: 10
+			// };
+			// $('.grid-stack').gridstack(options);
+			
+
+			// new function () {
+			// 	// $('.grid-stack').data('gridstack').grid.setWidth(5);
+			// 	this.serializedData = [
+			// 		{x: 0, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 1, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 2, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 3, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 4, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 5, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 6, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 7, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 8, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 9, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 10, y: row1, width: rectWidth, height: rectHeight},
+			// 		{x: 0, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 1, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 2, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 3, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 4, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 5, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 6, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 7, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 8, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 9, y: row2, width: rectWidth, height: rectHeight},
+			// 		{x: 10, y: row2, width: rectWidth, height: rectHeight}
+
+			// 	];
+
+			// 	this.grid = $('.grid-stack').data('gridstack');
+
+			// 	// this.loadGrid = function () {
+			// 	// 	this.grid.removeAll();
+			// 	// 	var items = GridStackUI.Utils.sort(this.serializedData);
+			// 	// 	_.each(items, function (node) {
+			// 	// 		this.gridd.addWidget($('<div><div class='grid-stack-item-content' /><div/>'),
+			// 	// 			node.x, node.y, node.width, node.height);
+			// 	// 	}, this);
+			// 	// 	return false;
+			// 	// }.bind(this);
+
+			// 	this.loadGrid = function () {
+   //                  this.grid.removeAll();
+   //                  var items = GridStackUI.Utils.sort(this.serializedData);
+   //                  _.each(items, function (node) {
+   //                      this.grid.addWidget($('<div><div class="grid-stack-item-content" /><div/>'),
+   //                          node.x, node.y, node.width, node.height);
+   //                  }, this);
+   //                  return false;
+   //              }.bind(this);
+
+			// 	this.loadGrid();
+			// };
 		});
 	</script>
 </body>

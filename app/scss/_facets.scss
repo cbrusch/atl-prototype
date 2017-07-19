@@ -1,0 +1,177 @@
+html, a {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #000;
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+ }
+ body {
+ 	margin: 0;
+ 	padding: 0;
+ }
+ h1 {
+ 	font-size: 2.5rem;
+ 	margin-bottom: 0;
+ }
+.container-fluid {
+	margin: 0;
+	padding: 0;
+}
+.btn {
+	background-color: #008E8F;
+	border-radius: 25px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	margin-bottom: .5rem;
+	width: 6.5rem;
+	height: 2rem;
+}
+.btn p {
+	display: flex;
+	align-self: center;
+	font-size: .75rem;
+}
+
+.topnav {
+	background-color: black;
+	height: 3rem;
+}
+.topnav p {
+	color: #fff;
+	text-align: center;
+}
+.faceted-search {
+	height: 25rem;
+}
+/*** FACETS ***/
+.sidebar {
+	background-color: #c7c6c4;
+	height: 100vh;
+	padding-top: .25rem;
+}
+.facet-category-heading {
+	background-color: #008E8F;
+	display: flex;
+	justify-content: flex-start;
+	height: 4rem;
+	width: 100%;
+	margin-bottom: .25rem;
+	padding-left: 1rem;
+}
+.facet-category-heading-active:hover {
+	background-color: #17C37B;
+}
+.facet-category-heading p {
+	align-self: center;
+	color: #fff;
+	font-size: 1rem;
+
+}
+.facet-category-buttons {
+	display: none;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 0 1rem;
+	width: 100%;
+}
+.facet-show {
+	display: flex;
+}
+.facet-category-buttons__active {
+	background-color: #17C37B;
+}
+.active {
+	padding: 1rem;
+}
+.btn-selected {
+	background-color: #17C37B;
+}
+.btn:hover {
+	background-color: #17C37B;
+}
+.btn:first-child {
+	flex-basis: 100%;
+}
+/*.btn:nth-child(0n) {
+	flex-basis: 100%;
+}*/
+
+/*** EMBLEM GRID ***/
+.grid-area {
+	background-color: #17C37B;
+	height: 100vh;
+}
+.grid-header {	
+	display: flex;
+	justify-content: center;
+}
+.grid-header h1 {
+	align-self: center;
+	color: #fff;
+}
+.grid-stack {
+	background: blue;
+}
+.grid-stack-item-content {
+	background-color: #17C37B;
+	color: pink;
+	margin: 10px 0 !important;
+	text-align: center;
+}
+
+
+
+
+
+/*				---MEDIA QUERIES---				*/
+
+/* xxxl */
+@media screen and (min-width: 2000px) and (max-width: 2800px) {
+
+}
+
+/* xxl */
+@media screen and (min-width: 1700px) and (max-width: 1999px) {
+
+}
+
+/* extra-large */
+@media screen and (min-width: 1500px) and (max-width: 1699px) {
+
+}
+
+/* large */
+/*@media screen and (min-width: 1200px) and (max-width: 1499px) {
+	
+}*/
+
+/* medium-large  -  desktop */
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+
+}
+
+/* medium */
+@media screen and (min-width: 768px) and (max-width: 999px) {
+
+}
+
+/* small  -  mobile */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+}
+
+/* extra small */
+@media screen and (max-width: 319px) {
+	
+}
