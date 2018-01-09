@@ -9,7 +9,6 @@ body {
 }
 .wrapper-emblem {
 	background-color: $light-gray;
-/*	min-height: 80rem;*/
 	padding: 0 0 .125rem 0;
 }
 .wrapper-section {
@@ -68,8 +67,8 @@ body {
 	background-color: $white;
 	display: flex;
 	justify-content: center;
-/*	position: relative;   needed for the z-index to apply and hide the vertical divider in this section */
 	min-height: 40rem;
+/*	position: relative;   needed for the z-index to apply and hide the vertical divider in this section */
 /*	z-index: 3;*/
 
 }
