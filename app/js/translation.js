@@ -1,19 +1,19 @@
 $(document).ready(function() {
-	console.log("I loaded the translation js file");
+	console.log("the translation.js file loaded");
 	var i = 1;
 	var j = 0;
-	var englishEmblemsArray = [];
-	var url = "partials/emblems-html/emblem04-Facsimile.html #motto-e";
-	console.log(url);
-	$('._motto--english').load(url);
-	while (i < 50+1) {
-		if (i < 10){
-			englishEmblemsArray.push("partials/emblems-html/emblem0" + i++ + "-Facsimile.html #motto-e");
+	var englishEmblemArray = [];
+	var englishEmblemURL
+	var emblemDataNum = $('.wrapper-emblem').data("id"); // get a numerical ID for the current emblem page
+	while (i < 50+1) { // make an array of urls to each english emblem proof page
+		if (i < 10){ // add a leading zero to the emblem number in the url if the emblem is less than 10
+			englishEmblemArray.push("partials/emblems-html/emblem0" + i++ + "-Facsimile.html #motto-e");
 		}
 		else {
-			englishEmblemsArray.push("partials/emblems-html/emblem" + i++ + "-Facsimile.html #motto-e");
+			englishEmblemArray.push("partials/emblems-html/emblem" + i++ + "-Facsimile.html #motto-e");
 		}
-		
 	}
-	console.log(englishEmblemsArray[10]);
+	englishEmblemURL = englishEmblemArray[emblemDataNum]; // associate the URL with the corresponding emblem data ID
+	$('._motto--english').load(englishEmblemURL); // load the emblem text from the corresponding URL
+	console.log(englishEmblemArray[emblemDataNum]);
 })
