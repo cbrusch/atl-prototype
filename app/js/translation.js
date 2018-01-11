@@ -1,15 +1,16 @@
 $(document).ready(function() {
 	console.log("the translation.js file loaded");
 	var i = 1;
-	var j = 0;
 	var mottoDivEnglish = "._motto--english";
 	var epigramDivEnglish = "._epigram--english";
 	var discourseDivEnglish = "._discourse--english";
+	var mottoDivLatin = "._motto--latin";
+	var epigramDivLatin = "._epigram--latin";
+	var discourseDivLatin = "._discourse--latin";
+	var mottoDivGerman = "._motto--german";
+	var epigramDivGerman = "._epigram--german";
 	var englishEmblemArray = [];
 	var englishEmblemURL
-	var testObject = {
-
-	}
 	var emblemDataNum = $('.wrapper-emblem').data("id"); // get the data ID for the current emblem page
 
 /**** I THINK THIS ONLY NEEDS TO OCCUR ONCE, NOT EVERY TIME THE PAGE LOADS ****/
