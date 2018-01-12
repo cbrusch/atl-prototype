@@ -19,12 +19,13 @@
 	$(document).ready(function(){
 		var dataDiv = $('.wrapper-emblem');
 		var dataNum = dataDiv.attr("data-id");
-		var currentEmblem = $('.wrapper-emblem').data('id') + 1;
-		var prevEmblem = currentEmblem - 1;
-		var nextEmblem = currentEmblem + 1;
-		console.log(dataNum);
-		console.log($('.wrapper-emblem').data('id'));
-		$('#sidenav__prev').attr("href", "../pages/emblem" + prevEmblem + ".html");
-		$('#sidenav__next').attr("href", "../pages/emblem" + nextEmblem + ".html");
+		var currentEmblemNum = $('.wrapper-emblem').data('id') + 1;
+		var prevEmblemNum = currentEmblemNum - 1;
+		var nextEmblemNum = currentEmblemNum + 1;
+		
+
+		$('#sidenav__prev').attr("href", "../pages/emblem" + prevEmblemNum + ".html");
+		$('#sidenav__next').attr("href", "../pages/emblem" + nextEmblemNum + ".html");
+		$('#sidenav__titles').text("Emblem " + currentEmblemNum);
 	})
 </script>

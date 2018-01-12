@@ -67,6 +67,12 @@ $(document).ready(function() {
 		$(epigramDivEnglish).load(englishEmblemURL["epigram"]); // load the epigram text from the corresponding file
 		$(discourseDivEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the corresponding file
 		$(sideNavDiv).load(sideNav); // load the side nav partial
+		// updateEmblemNum();
+
+	}
+
+	function updateEmblemNum(){
+		$('#sidenav__titles').innerHTML.replace("Emblem 6", "Emblem ");
 	}
 
 })
