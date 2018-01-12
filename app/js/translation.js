@@ -12,34 +12,61 @@ $(document).ready(function() {
 	var englishEmblemArray = [];
 	var englishEmblemURL
 	var emblemDataNum = $('.wrapper-emblem').data("id"); // get the data ID for the current emblem page
+	var sideNavDiv = "._sidenav";
+	var sideNav = "../partials/_sidenav.html";
 
-/**** I THINK THIS ONLY NEEDS TO OCCUR ONCE, NOT EVERY TIME THE PAGE LOADS ****/
-	for (i = 1; i < 51; i++) { // make an array of emblem html files with values of urls + IDs to the content sections
-		if (i < 10) { // add a leading zero to the emblem number in the url if the emblem is less than 10
-			englishEmblemArray.push({
-				motto: "partials/emblems-html/emblem0" + i + "-Facsimile.html #mottoPartial--e",
-				epigram: "partials/emblems-html/emblem0" + i + "-Facsimile.html #epigramPartial--e",
-				discourse: "partials/emblems-html/emblem0" + i + "-Facsimile.html #discoursePartial--e"
-			});	
-		}
-		else {
-			englishEmblemArray.push({
-				motto: "partials/emblems-html/emblem" + i + "-Facsimile.html #mottoPartial--e",
-				epigram: "partials/emblems-html/emblem" + i + "-Facsimile.html #epigramPartial--e",
-				discourse: "partials/emblems-html/emblem" + i + "-Facsimile.html #discoursePartial--e"
-			});	
-		}
-	}
-	englishEmblemURL = englishEmblemArray[emblemDataNum]; // associate the URL with the corresponding emblem data ID
-	$(mottoDivEnglish).load(englishEmblemURL["motto"]); // load the motto text from the corresponding file
-	$(epigramDivEnglish).load(englishEmblemURL["epigram"]); // load the epigram text from the corresponding file
-	$(discourseDivEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the corresponding file
+	var dataDiv = ".wrapper-emblem";
+	var dataNum = 0;
+	var dataID = $(dataDiv).attr("data-id", dataNum);
+	console.log(dataID);
+	dataNum = 3;
+	console.log(dataID);
+
+
+	generateJSON();
+
+
+
+
+
 
 
 // update url with window.location.href???
 
 
-console.log(englishEmblemURL["motto"]);
 
+	function generateJSON(){
+	/**** I THINK THIS ONLY NEEDS TO OCCUR ONCE, NOT EVERY TIME THE PAGE LOADS ****/
+		for (i = 1; i < 51; i++) { // make an array of emblem html files with values of urls + IDs to the content sections
+			if (i < 10) { // add a leading zero to the emblem number in the url if the emblem is less than 10
+				englishEmblemArray.push({
+					motto: "../../partials/emblems-html/emblem0" + i + "-Facsimile.html #mottoPartial--e",
+					epigram: "../partials/emblems-html/emblem0" + i + "-Facsimile.html #epigramPartial--e",
+					discourse: "../partials/emblems-html/emblem0" + i + "-Facsimile.html #discoursePartial--e"
+				});	
+			}
+			else {
+				englishEmblemArray.push({
+					motto: "../partials/emblems-html/emblem" + i + "-Facsimile.html #mottoPartial--e",
+					epigram: "../partials/emblems-html/emblem" + i + "-Facsimile.html #epigramPartial--e",
+					discourse: "../partials/emblems-html/emblem" + i + "-Facsimile.html #discoursePartial--e"
+				});	
+			}
+		}
+		identifyEmblem();
+	}
+
+	function identifyEmblem(){
+		englishEmblemURL = englishEmblemArray[emblemDataNum]; // associate the URL with the corresponding emblem data ID
+
+		loadPartials();
+	}
+
+	function loadPartials(){
+		$(mottoDivEnglish).load(englishEmblemURL["motto"]); // load the motto text from the corresponding file
+		$(epigramDivEnglish).load(englishEmblemURL["epigram"]); // load the epigram text from the corresponding file
+		$(discourseDivEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the corresponding file
+		$(sideNavDiv).load(sideNav); // load the side nav partial
+	}
 
 })

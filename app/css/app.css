@@ -912,5 +912,91 @@ body {
   .discourse p {
     max-width: 30rem; } }
 
+/* NEUTRAL */
+/* COOL */
+/* WARM */
+/* NEUTRAL */
+/* COOL */
+/* WARM */
+.wrapper-sidenav {
+  background-color: #222;
+  margin-top: 3rem;
+  margin-left: .5rem;
+  padding: 0 0 1rem 0;
+  position: fixed;
+  width: 9rem;
+  height: 13.5rem;
+  z-index: 20; }
+
+.sidenav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.sidenav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: center;
+  width: 9rem; }
+
+.sidenav ul li {
+  /*			border: 1px solid red;*/
+  color: white;
+  cursor: pointer;
+  font-size: .825rem;
+  padding: .5rem .625rem; }
+
+.sidenav ul li a {
+  color: #fff; }
+
+.sidenav ul li:hover {
+  background-color: #C9A2A2; }
+
+.sidenav ul li:hover a {
+  color: #222; }
+
+.sidenav .sidenav__navigation {
+  background-color: #C9A2A2;
+  padding-top: .325rem; }
+
+.sidenav .sidenav__navigation a {
+  color: #222; }
+
+.sidenav .sidenav__options {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 9rem; }
+
+.sidenav .sidenav__language li {
+  padding-bottom: 1rem !important; }
+
 a {
   text-decoration: none !important; }
