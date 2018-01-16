@@ -17,15 +17,13 @@
 
 <script>
 	$(document).ready(function(){
-		var dataDiv = $('.wrapper-emblem');
-		var dataNum = dataDiv.attr("data-id");
 		var currentEmblemNum = $('.wrapper-emblem').data('id') + 1;
 		var prevEmblemNum = currentEmblemNum - 1;
 		var nextEmblemNum = currentEmblemNum + 1;
 		
 
-		$('#sidenav__prev').attr("href", "../pages/emblem" + prevEmblemNum + ".html");
-		$('#sidenav__next').attr("href", "../pages/emblem" + nextEmblemNum + ".html");
-		$('#sidenav__titles').text("Emblem " + currentEmblemNum);
+		$('#sidenav__prev').attr("href", "../pages/emblem" + prevEmblemNum + ".html"); // update the previous button to link to the previous emblem
+		$('#sidenav__next').attr("href", "../pages/emblem" + nextEmblemNum + ".html"); // update the next button to link to the next emblem
+		$('#sidenav__titles').text("Emblem " + currentEmblemNum); // update the emblem title to reflect the current emblem number
 	})
 </script>
