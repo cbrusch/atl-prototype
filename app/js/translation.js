@@ -13,14 +13,18 @@ $(document).ready(function() {
 	var englishEmblemURL
 	var emblemDataNum = $('.wrapper-emblem').data("id"); // get the data ID for the current emblem page
 	var sideNavDiv = "._sidenav";
-	var sideNav = "../partials/_sidenav.html";
+	var sideNavPartial = "../partials/_sidenav.html";
+	var imageDiv = "._image";
+	var imagePartial = "../partials/_image.html";
+	var imageContent = "._image-url";
+	var imageAlt = "._image-alt-text";
 
-	var dataDiv = ".wrapper-emblem";
-	var dataNum = 0;
-	var dataID = $(dataDiv).attr("data-id", dataNum);
-	console.log(dataID);
-	dataNum = 3;
-	console.log(dataID);
+	// var dataDiv = ".wrapper-emblem";
+	// var dataNum = 0;
+	// var dataID = $(dataDiv).attr("data-id", dataNum);
+	// console.log(dataID);
+	// dataNum = 3;
+	// console.log(dataID);
 
 
 	generateJSON();
@@ -66,7 +70,8 @@ $(document).ready(function() {
 		$(mottoDivEnglish).load(englishEmblemURL["motto"]); // load the motto text from the corresponding file
 		$(epigramDivEnglish).load(englishEmblemURL["epigram"]); // load the epigram text from the corresponding file
 		$(discourseDivEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the corresponding file
-		$(sideNavDiv).load(sideNav); // load the side nav partial
+		$(sideNavDiv).load(sideNavPartial); // load the side nav partial
+		$(imageDiv).load(imagePartial); // load the emblem image partial
 		// updateEmblemNum();
 
 	}

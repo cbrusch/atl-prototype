@@ -1,0 +1,24 @@
+<div class="image wrapper-section section single">
+	<div class="image__picture"><img src="" alt="Illustration" /></div>
+</div>
+
+<script>
+	var emblemDataNum = $('.wrapper-emblem').data("id"); // get the data ID for the current emblem page
+	var urlJSON = '../data/emblem-images.json';
+	var imageJSON
+	var imageURL
+	var imageBlock = "._image img";
+	var imageSrc 
+
+
+	$.getJSON(urlJSON, function( json ) {
+		imageJSON = json[emblemDataNum];
+		console.log(imageJSON);
+		$(imageBlock).attr("src", imageJSON["github-raw-url"]);
+		$(imageBlock).attr("alt", imageJSON["alt-text"]);
+	});
+
+	// console.log(imageJSON);
+	// imageURL = imageJSON[emblemDataNum];
+	// console.log(imageURL);
+</script>

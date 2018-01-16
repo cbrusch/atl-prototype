@@ -15,15 +15,20 @@
 	</div>
 </div>
 
-<script>
+<script>//http://jennamolby.com/how-to-display-dynamic-content-on-a-page-using-url-parameters/
 	$(document).ready(function(){
+		var mottoSideNav = 'ul.sidenav__options > a li:nth-child(1)';
+		var imageSideNav = 'ul.sidenav__options > a li:nth-child(2)';
+		var musicSideNav = 'ul.sidenav__options > a li:nth-child(3)';
+		var epigramSideNav = 'ul.sidenav__options > a li:nth-child(4)';
+		var discourseSideNav = 'ul.sidenav__options > a li:nth-child(5)';
 		var dataID = $('.wrapper-emblem').data('id');
 		var currentEmblemNum = dataID + 1;
 		var prevEmblemNum = currentEmblemNum - 1;
 		var nextEmblemNum = currentEmblemNum + 1;
-		var prevBtn = $('#sidenav__prev');
-		var nextBtn = $('#sidenav__next');
-		var emblemNumTextArea = $('#sidenav__titles');
+		var prevBtn = '#sidenav__prev';
+		var nextBtn = '#sidenav__next';
+		var emblemNumTextArea = '#sidenav__titles';
 		
 		if (dataID === 0) {
 			$(prevBtn).addClass('is-hidden'); // do not display previous button on first emblem
