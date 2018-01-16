@@ -2,7 +2,7 @@
 	<div class="sidenav">
 		<ul class="sidenav__navigation">
 			<li><a id="sidenav__prev" href="#">&#10094;</a></li>
-			<li id="sidenav__titles">Emblem 6</li>
+			<li id="sidenav__titles">Emblem TEST</li>
 			<li><a id="sidenav__next" href="#">&#10095;</a></li>
 		</ul>
 		<ul class="sidenav__options">
@@ -17,13 +17,32 @@
 
 <script>
 	$(document).ready(function(){
-		var currentEmblemNum = $('.wrapper-emblem').data('id') + 1;
+		var dataID = $('.wrapper-emblem').data('id');
+		var currentEmblemNum = dataID + 1;
 		var prevEmblemNum = currentEmblemNum - 1;
 		var nextEmblemNum = currentEmblemNum + 1;
+		var prevBtn = $('#sidenav__prev');
+		var nextBtn = $('#sidenav__next');
+		var emblemNumTextArea = $('#sidenav__titles');
 		
-
-		$('#sidenav__prev').attr("href", "../pages/emblem" + prevEmblemNum + ".html"); // update the previous button to link to the previous emblem
-		$('#sidenav__next').attr("href", "../pages/emblem" + nextEmblemNum + ".html"); // update the next button to link to the next emblem
-		$('#sidenav__titles').text("Emblem " + currentEmblemNum); // update the emblem title to reflect the current emblem number
+		if (dataID === 0) {
+			$(prevBtn).addClass('is-hidden'); // do not display previous button on first emblem
+			$(nextBtn).removeClass('is-hidden'); // display next button
+			$(nextBtn).attr("href", "../pages/emblem" + nextEmblemNum + ".html"); // update the next button to link to the next emblem
+			$(emblemNumTextArea).text("Emblem " + currentEmblemNum); // update the emblem title to reflect the current emblem number
+		}
+		else if (dataID === 4) { 
+			$(nextBtn).addClass('is-hidden'); // do not display next button on last emblem
+			$(prevBtn).removeClass('is-hidden'); // display previous button
+			$(prevBtn).attr("href", "../pages/emblem" + prevEmblemNum + ".html"); // update the previous button to link to the previous emblem
+			$(emblemNumTextArea).text("Emblem " + currentEmblemNum); // update the emblem title to reflect the current emblem number
+		}
+		else {
+			$(prevBtn).removeClass('is-hidden'); // display previous button
+			$(nextBtn).removeClass('is-hidden'); // display next button
+			$(prevBtn).attr("href", "../pages/emblem" + prevEmblemNum + ".html"); // update the previous button to link to the previous emblem
+			$(nextBtn).attr("href", "../pages/emblem" + nextEmblemNum + ".html"); // update the next button to link to the next emblem
+			$(emblemNumTextArea).text("Emblem " + currentEmblemNum); // update the emblem title to reflect the current emblem number
+		}
 	})
 </script>
