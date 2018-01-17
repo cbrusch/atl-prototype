@@ -1,5 +1,9 @@
 @import 'colors';
 
+.css-test {
+	border: 2px solid green !important;
+}
+
 body {
 	background-color: pink;
 	font-family: 'Futura', Helvetica, sans-serif;
@@ -11,6 +15,36 @@ body {
 .wrapper-emblem {
 	background-color: $light-gray;
 	padding: 50px 0 .125rem 0;
+}
+.emblem-wrapper {
+/*	background-color: blue;*/
+	display: flex;
+	justify-content: center;
+	padding-top: 8rem;
+}
+.emblem__full {
+	width: 100%;
+}
+.emblem__left {
+	display: inline-block;
+	vertical-align: top; /* pfft text */
+	width: 49%;
+	height: 20rem;
+
+}
+.emblem__right {
+	display: inline-block;
+	vertical-align: top; /* pfft text */
+	width: 49%;
+	height: 20rem;
+}
+.emblem {
+	display: inline-block;
+	width: 100%;
+	vertical-align: top; /* pfft text */
+}
+.half {
+	display: flex;
 }
 .wrapper-section {
 	background-color: $white;
@@ -27,16 +61,21 @@ body {
 		font-size: 2.5rem;
 	}
 }
-.motto {
-	display: flex;
-	align-items: baseline;
-	justify-content: center;
-	min-height: 10rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */
-	max-height: 20rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */	
-	padding: 5rem 0 0 0;
-	h1 {
-		font-size: 2rem;
-	}
+.facsimile-wrapper {
+/*	background-color: hsla(19, 62%, 54%, .7);*/
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: top; /* pfft text */
+}
+.emblem__left .facsimile-wrapper {
+	left: 0;
+}
+.facsimile {
+	background-color: hsla(19, 62%, 54%, .7);
+	height: 100vh;
+	position: fixed;
 }
 .image {
 	display: flex;
@@ -73,12 +112,25 @@ body {
 /*	z-index: 3;*/
 
 }
+.motto {
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	min-height: 10rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */
+	max-height: 20rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */	
+	width: 100%;
+	padding: 5rem 0 0 0;
+	h1 {
+		font-size: 2rem;
+	}
+}
 .epigram {
 	display: flex;
 	align-items: baseline;
 	justify-content: center;
 	min-height: 6rem;
 	max-height: 30rem;  /* this prevents the page from shifting vertically when selecting language options in the subnav */
+	width: 100%;
 	padding: 4rem 0;
 	text-align: center;
 	p {
@@ -97,6 +149,7 @@ body {
 /*	justify-content: space-between;*/
 	min-height: 30rem;
 	max-height: 5000rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */
+	width: 100%;
 	padding-bottom: 6rem;
 	.text {
 		flex-direction: column;
@@ -113,39 +166,62 @@ body {
 		max-width: 40rem;
 	}
 }
-/*.wrapper-transcription {
-	display: flex;
-	flex-direction: row;
-	align-items: baseline;
-}*/
-/*.transcription__numbers {
-	color: $dark-gray;
-	font-size: 1.125rem;
-	text-align: right;
-	min-width: 3rem;
-}*/
-/*.transcription__lines {
-	padding-left: 1rem;
-	p {
-		text-align: left;
-		text-indent: 0;
-	}
-}*/
-.wrapper-vertical-divider {
+.switch-wrapper {
+/*	border: 1px solid green;*/
 	display: flex;
 	justify-content: center;
-	height: 100vh;
-	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 2;
 }
-.vertical-divider {
-	background-color: $light-gray;
-	height: 100vh;
-	width: .5rem;
+.latin-german-switch {
+/*	border: 1px solid red;*/
+	display: flex;
+	align-self: flex-start;
+	justify-content: center;
+	height: 1.25rem;
+	width: 8rem;
+	margin-bottom: 1.5rem;
+	ul {
+/*		border: 1px solid blue;*/
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		width: 100%;
+		li {
+/*			border: 1px solid green;*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: .75em;
+			margin: 0 .25rem;
+			width: 100%;
+			a {
+				color: $black;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				width: 100%;
+			}
+			a:hover {
+				color: $blue;
+			}
+		}
+	}
 }
-
+.is-active {
+	background-color: $periwinkle !important;
+	a {
+		color: $black !important;
+	}
+}
+.is-hidden {
+	display: none !important;
+}
+.is-selected {
+	border-bottom: 3px solid $blue;
+}
 
 
 /***     Breakpoints     ***/
@@ -227,6 +303,14 @@ body {
 		max-width: 30rem;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

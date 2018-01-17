@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -95,7 +96,8 @@ table {
   /*	position: fixed;*/ }
 
 .topnav {
-  background-color: #222;
+  background-color: rgba(173, 184, 122, 0.5);
+  /*	background-color: $black;*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -112,7 +114,7 @@ table {
   width: 100%;
   line-height: 2rem;
   margin: 0;
-  position: relative;
+  position: fixed;
   z-index: 10; }
   .topnav ul {
     display: -webkit-box;
@@ -153,30 +155,27 @@ table {
 /* COOL */
 /* WARM */
 .wrapper-subnav5 {
-  /*	border: 1px solid yellow;*/
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
+  display: block;
+  position: fixed;
+  width: 100%; }
 
 .subnav5 {
-  background-color: #fff;
+  /*	background-color: $white;*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: top;
+  -webkit-align-items: top;
+  -ms-flex-align: top;
+  align-items: top;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 5rem;
-  width: 100%; }
+  height: 8rem; }
   .subnav5 ul {
-    /*		border: 2px solid red;*/
+    /*border: 1px solid red;*/
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -189,10 +188,10 @@ table {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    /*height: 100%;*/
     width: 100%; }
     .subnav5 ul li {
-      background-color: #222;
+      background-color: rgba(46, 184, 103, 0.5);
+      /*background-color: $black;*/
       color: #fff;
       display: -webkit-box;
       display: -webkit-flex;
@@ -305,7 +304,7 @@ table {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
-  height: 3rem;
+  height: 40%;
   width: 50%; }
 
 .subnav5__views--single {
@@ -348,8 +347,8 @@ table {
 		}
 	}
 }*/
-.subnav5__options__option {
-  cursor: pointer; }
+.subnav5__options--option {
+  height: 60%; }
 
 .toggle {
   background-color: #989DAC;
@@ -477,16 +476,19 @@ table {
 .css-test {
   border: 2px solid green !important; }
 
-.is-active {
-  background-color: #A0AACE !important; }
-  .is-active a {
-    color: #222 !important; }
+body {
+  background-color: pink;
+  font-family: 'Futura', Helvetica, sans-serif;
+  font-size: 16px; }
+  body p {
+    font-family: Garamond, serif; }
 
-.is-hidden {
-  display: none !important; }
+.wrapper-emblem {
+  background-color: #eee;
+  padding: 50px 0 .125rem 0; }
 
 .emblem-wrapper {
-  margin-top: 7rem;
+  /*	background-color: blue;*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -494,7 +496,8 @@ table {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-top: 8rem; }
 
 .emblem__full {
   width: 100%; }
@@ -525,21 +528,35 @@ table {
   display: -ms-flexbox;
   display: flex; }
 
-/*.compare {
-	border: 1px solid red;
-	padding: 4rem !important;
-	p {
-		text-align: left !important;
-	}
-}*/
+.wrapper-section {
+  background-color: #fff;
+  margin: .5rem;
+  padding: 1rem 0; }
+
+.section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 14rem;
+  text-align: center; }
+  .section h1 {
+    font-size: 2.5rem; }
+
 .facsimile-wrapper {
-  background-color: #D26F42;
+  /*	background-color: hsla(19, 62%, 54%, .7);*/
   height: 100vh;
+  width: 100%;
   margin: 0;
   padding: 0;
-  position: fixed;
-  top: 0;
-  width: 50%;
   vertical-align: top;
   /* pfft text */ }
 
@@ -547,17 +564,151 @@ table {
   left: 0; }
 
 .facsimile {
-  background-color: #D26F42;
-  height: 100vh; }
+  background-color: rgba(210, 111, 65, 0.7);
+  height: 100vh;
+  position: fixed; }
+
+.image {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 34rem;
+  /*	position: relative;  needed for the z-index to apply and hide the vertical divider in this section 
+	z-index: 3;*/ }
+  .image .image__picture {
+    /*		position: absolute; - breaks in safari*/ }
+    .image .image__picture img {
+      width: 31rem;
+      height: 31rem; }
+  .image .image__facets {
+    position: absolute;
+    left: 67%;
+    z-index: 0; }
+  .image .image__buttons {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    max-width: 22rem; }
+
+.music {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 40rem;
+  /*	position: relative;   needed for the z-index to apply and hide the vertical divider in this section */
+  /*	z-index: 3;*/ }
 
 .motto {
-  width: 100%; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 10rem;
+  /* this prevents the page from shifting vertically when selecting language options in the subnav */
+  max-height: 20rem;
+  /* this prevents the page from shifting vertically when selecting language options in the subnav */
+  width: 100%;
+  padding: 5rem 0 0 0; }
+  .motto h1 {
+    font-size: 2rem; }
 
 .epigram {
-  width: 100%; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 6rem;
+  max-height: 30rem;
+  /* this prevents the page from shifting vertically when selecting language options in the subnav */
+  width: 100%;
+  padding: 4rem 0;
+  text-align: center; }
+  .epigram p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 2.125rem;
+    text-align: center;
+    white-space: pre-line; }
 
 .discourse {
-  width: 100%; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*	justify-content: space-between;*/
+  min-height: 30rem;
+  max-height: 5000rem;
+  /* this prevents the page from shifting vertically when selecting language options in the subnav */
+  width: 100%;
+  padding-bottom: 6rem; }
+  .discourse .text {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 5rem 0;
+    text-align: left; }
+  .discourse p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+    text-indent: 2rem;
+    max-width: 40rem; }
 
 .switch-wrapper {
   /*	border: 1px solid green;*/
@@ -640,221 +791,16 @@ table {
       .latin-german-switch ul li a:hover {
         color: #7694C0; }
 
+.is-active {
+  background-color: #A0AACE !important; }
+  .is-active a {
+    color: #222 !important; }
+
+.is-hidden {
+  display: none !important; }
+
 .is-selected {
   border-bottom: 3px solid #7694C0; }
-
-/* NEUTRAL */
-/* COOL */
-/* WARM */
-body {
-  font-family: 'Futura', Helvetica, sans-serif;
-  font-size: 16px; }
-  body p {
-    font-family: Garamond, serif; }
-
-.wrapper-emblem {
-  background-color: #eee;
-  padding: 0 0 .125rem 0; }
-
-.wrapper-section {
-  background-color: #fff;
-  margin: .5rem;
-  padding: 1rem 0; }
-
-.section {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 14rem;
-  text-align: center; }
-  .section h1 {
-    font-size: 2.5rem; }
-
-.motto {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: baseline;
-  -webkit-align-items: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 10rem;
-  /* this prevents the page from shifting vertically when selecting language options in the subnav */
-  max-height: 20rem;
-  /* this prevents the page from shifting vertically when selecting language options in the subnav */
-  padding: 5rem 0 0 0; }
-  .motto h1 {
-    font-size: 2rem; }
-
-.image {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 34rem;
-  /*	position: relative;  needed for the z-index to apply and hide the vertical divider in this section 
-	z-index: 3;*/ }
-  .image .image__picture {
-    /*		position: absolute; - breaks in safari*/ }
-    .image .image__picture img {
-      width: 31rem;
-      height: 31rem; }
-  .image .image__facets {
-    position: absolute;
-    left: 67%;
-    z-index: 0; }
-  .image .image__buttons {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    max-width: 22rem; }
-
-.music {
-  background-color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 40rem;
-  /*	position: relative;   needed for the z-index to apply and hide the vertical divider in this section */
-  /*	z-index: 3;*/ }
-
-.epigram {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: baseline;
-  -webkit-align-items: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  min-height: 6rem;
-  max-height: 30rem;
-  /* this prevents the page from shifting vertically when selecting language options in the subnav */
-  padding: 4rem 0;
-  text-align: center; }
-  .epigram p {
-    font-size: 1.25rem;
-    font-weight: bold;
-    line-height: 2.125rem;
-    text-align: center;
-    white-space: pre-line; }
-
-.discourse {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: baseline;
-  -webkit-align-items: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  /*	justify-content: space-between;*/
-  min-height: 30rem;
-  max-height: 5000rem;
-  /* this prevents the page from shifting vertically when selecting language options in the subnav */
-  padding-bottom: 6rem; }
-  .discourse .text {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin: 5rem 0;
-    text-align: left; }
-  .discourse p {
-    margin: 0;
-    padding: 0;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    margin-bottom: 1rem;
-    text-indent: 2rem;
-    max-width: 40rem; }
-
-/*.wrapper-transcription {
-	display: flex;
-	flex-direction: row;
-	align-items: baseline;
-}*/
-/*.transcription__numbers {
-	color: $dark-gray;
-	font-size: 1.125rem;
-	text-align: right;
-	min-width: 3rem;
-}*/
-/*.transcription__lines {
-	padding-left: 1rem;
-	p {
-		text-align: left;
-		text-indent: 0;
-	}
-}*/
-.wrapper-vertical-divider {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 2; }
-
-.vertical-divider {
-  background-color: #eee;
-  height: 100vh;
-  width: .5rem; }
 
 /***     Breakpoints     ***/
 /* large  -  desktop */
@@ -918,9 +864,126 @@ body {
 /* NEUTRAL */
 /* COOL */
 /* WARM */
+/*
+ * CSS for Transcription of English translation of Atalanta. Designed mostly for proofreading.
+ * Almost all elements are styled, but often so that they can be proofread.
+ *
+ * HISTORY
+ * EM initial styling 2017-03-31
+ * EM work on improving styling for proofreading 2017-07-06
+ * CB integrating EM styling into template 2018-01-17
+ */
+.epigram {
+  text-align: center; }
+
+.verse {
+  margin-left: 1.5in; }
+
+h2 {
+  color: #b5b5b5; }
+
+h3.title {
+  font-style: oblique; }
+
+.pb {
+  display: block;
+  text-align: center; }
+
+.pb:before {
+  content: "––– Page: "; }
+
+.pb:after {
+  content: " –––"; }
+
+.milestone {
+  font-style: italic;
+  color: grey; }
+
+.milestone:before {
+  content: " [§ "; }
+
+.milestone:after {
+  content: "] "; }
+
+.choice {
+  background-color: #eeeeee;
+  margin-left: 2px; }
+
+.reg {
+  color: #009acd; }
+
+/*  .reg:before {
+      content: "|";
+  }*/
+.subst {
+  background-color: #eeeeee;
+  margin-left: 2px; }
+
+.del {
+  text-decoration: line-through; }
+
+.add:before {
+  content: "<";
+  color: #8E8E38; }
+
+.add:after {
+  content: ">";
+  color: #8E8E38; }
+
+.unclear {
+  color: green; }
+
+.unclear:before {
+  content: "[? "; }
+
+.unclear:after {
+  content: "]"; }
+
+.supplied {
+  display: none; }
+
+.supplied:before {
+  content: "<";
+  color: #8E8E38; }
+
+.supplied:after {
+  content: ">";
+  color: #8E8E38; }
+
+span.superscript {
+  vertical-align: super;
+  font-size: smaller; }
+
+span.underline {
+  text-decoration: underline; }
+
+.fw {
+  font-style: italic;
+  display: block; }
+
+.margin-note {
+  float: right;
+  margin-left: 20px;
+  outline: .5px solid #b5b5b5;
+  top: auto;
+  /* default */
+  width: 175px;
+  padding-left: 10px; }
+
+.note-mark {
+  color: #C67171;
+  font-weight: bold;
+  vertical-align: super; }
+
+.help {
+  color: red; }
+
+/* NEUTRAL */
+/* COOL */
+/* WARM */
 .wrapper-sidenav {
   background-color: #222;
-  margin-top: 3rem;
+  margin-top: 8.5rem;
   margin-left: .5rem;
   padding: 0 0 1rem 0;
   position: fixed;
