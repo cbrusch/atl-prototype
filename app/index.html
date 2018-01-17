@@ -298,7 +298,8 @@
 			var rightLatinSwitch = '.right .latin-german-switch ul li:nth-child(1)';
 			var rightGermanSwitch = '.right .latin-german-switch ul li:nth-child(2)';
 			/* emblem halves */
-			var wholeEmblemWrapper = '.emblem__full';
+			var emblemWrapper = '.emblem-wrapper';
+			var wholeEmblem = '.emblem__full';
 			var leftEmblem = '.emblem__left';
 			var rightEmblem = '.emblem__right';
 			var leftEmblemText = '.emblem__left .emblem';
@@ -501,6 +502,7 @@
 				$(rightOriginal).addClass('is-hidden'); // hide right emblem latin/german text
 			}
 			function showTranslation() {
+				$(emblemWrapper).removeClass('is-sticky'); // remove fixed position from container
 				$(singleTranslation).removeClass('is-hidden'); // display english text
 				storeTranslationLeft(); // mark english text to be visible in left container of split facsimile view
 				if( $(singleViewBtn).hasClass('is-active') ) {
@@ -512,6 +514,7 @@
 				storeTranslationRight(); // mark english text to be visible in right container of split facsimile view
 			}
 			function showOriginalLanguage() {
+				$(emblemWrapper).removeClass('is-sticky'); // remove fixed position from container
 				$(singleOriginal).removeClass('is-hidden'); // display default latin text
 				storeOriginalLeft(); // mark default latin text to be visible in left container of split facsimile view
 				if( $(singleViewBtn).hasClass('is-active') ) {
@@ -573,12 +576,13 @@
 				$(rightFacsimile).siblings().addClass('is-hidden'); // hide right emblem text
 			}
 			function hideFacsimileHalves() {
-				$(wholeEmblemWrapper).removeClass('is-hidden'); // show whole emblem
+				$(wholeEmblem).removeClass('is-hidden'); // show whole emblem
+				$(emblemWrapper).addClass('is-sticky'); // give container a fixed position
 				$(leftEmblem).addClass('is-hidden'); // hide left emblem
 				$(rightEmblem).addClass('is-hidden'); // hide right emblem
 			}
 			function hideFacsimileWhole() { // ***this has to happen whenever facsimile is selected in split view
-				$(wholeEmblemWrapper).addClass('is-hidden'); // hide whole emblem
+				$(wholeEmblem).addClass('is-hidden'); // hide whole emblem
 				$(leftEmblem).removeClass('is-hidden'); // show left emblem
 				$(rightEmblem).removeClass('is-hidden'); // show right emblem
 			}

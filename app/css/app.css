@@ -489,32 +489,39 @@ body {
 
 .emblem-wrapper {
   /*	background-color: blue;*/
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding-top: 8rem; }
-
-.emblem__full {
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 8rem;
+  height: 100vh;
   width: 100%; }
 
+.emblem__full {
+  border: 5px solid blue;
+  /*	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;*/
+  grid-area: 1 / 1 / auto / span 2;
+  position: relative; }
+
 .emblem__left {
-  display: inline-block;
+  border: 5px solid red;
+  grid-area: 1 / 1 / auto / span 1;
+  /*	display: inline-block;*/
   vertical-align: top;
   /* pfft text */
-  width: 49%;
-  height: 20rem; }
+  /*	width: 49%;*/
+  /*	height: 20rem;*/ }
 
 .emblem__right {
-  display: inline-block;
+  border: 5px solid orange;
+  grid-area: 1 / 2 / auto / span 1;
+  /*	display: inline-block;*/
   vertical-align: top;
   /* pfft text */
-  width: 49%;
-  height: 20rem; }
+  /*	width: 49%;
+	height: 20rem;*/ }
 
 .emblem {
   display: inline-block;
@@ -552,7 +559,7 @@ body {
     font-size: 2.5rem; }
 
 .facsimile-wrapper {
-  /*	background-color: hsla(19, 62%, 54%, .7);*/
+  background-color: green;
   height: 100vh;
   width: 100%;
   margin: 0;
@@ -566,7 +573,9 @@ body {
 .facsimile {
   background-color: rgba(210, 111, 65, 0.7);
   height: 100vh;
-  position: fixed; }
+  width: 100%;
+  /*	grid-area: 1 / 1 / auto / span 2;*/
+  /*	position: fixed;*/ }
 
 .image {
   display: -webkit-box;
@@ -801,6 +810,9 @@ body {
 
 .is-selected {
   border-bottom: 3px solid #7694C0; }
+
+.is-sticky {
+  position: fixed; }
 
 /***     Breakpoints     ***/
 /* large  -  desktop */
