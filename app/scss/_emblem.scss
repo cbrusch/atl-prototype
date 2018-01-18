@@ -12,9 +12,6 @@ body {
 		font-family: Garamond, serif;
 	}
 }
-.width--100 {
-	width: 100%;
-}
 .wrapper-emblem {
 	background-color: $light-gray;
 	padding: 50px 0 .125rem 0;
@@ -31,28 +28,18 @@ body {
 }
 .emblem__full {
 	border: 5px solid blue;
-/*	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;*/
 	grid-area: 1 / 1 / auto / span 2;
 	position: relative;
 }
 .emblem__left {
 	border: 5px solid red;
 	grid-area: 1 / 1 / auto / span 1;
-/*	display: inline-block;*/
 	vertical-align: top; /* pfft text */
-/*	width: 49%;*/
-/*	height: 20rem;*/
-
 }
 .emblem__right {
 	border: 5px solid orange;
 	grid-area: 1 / 2 / auto / span 1;
-/*	display: inline-block;*/
 	vertical-align: top; /* pfft text */
-/*	width: 49%;
-	height: 20rem;*/
 }
 .emblem {
 	display: inline-block;
@@ -77,6 +64,11 @@ body {
 		font-size: 2.5rem;
 	}
 }
+.section--split-or-wrap {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(47vw, 1fr));	
+}
 .facsimile-wrapper {
 	background-color: green;
 	height: 100vh;
@@ -93,15 +85,11 @@ body {
 	background-color: hsla(19, 62%, 54%, .7);
 	height: 100vh;
 	width: 100%;
-/*	grid-area: 1 / 1 / auto / span 2;*/
-/*	position: fixed;*/
 }
 .image {
 	display: flex;
 	justify-content: center;
 	min-height: 34rem;
-/*	position: relative;  needed for the z-index to apply and hide the vertical divider in this section 
-	z-index: 3;*/
 	.image__picture {
 /*		position: absolute; - breaks in safari*/ 
 		img {
@@ -127,9 +115,6 @@ body {
 	display: flex;
 	justify-content: center;
 	min-height: 40rem;
-/*	position: relative;   needed for the z-index to apply and hide the vertical divider in this section */
-/*	z-index: 3;*/
-
 }
 .motto {
 	display: flex;
@@ -228,21 +213,6 @@ body {
 			}
 		}
 	}
-}
-.is-active {
-	background-color: $periwinkle !important;
-	a {
-		color: $black !important;
-	}
-}
-.is-hidden {
-	display: none !important;
-}
-.is-selected {
-	border-bottom: 3px solid $blue;
-}
-.is-sticky {
-	position: fixed;
 }
 
 

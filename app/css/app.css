@@ -484,9 +484,6 @@ body {
   body p {
     font-family: Garamond, serif; }
 
-.width--100 {
-  width: 100%; }
-
 .wrapper-emblem {
   background-color: #eee;
   padding: 50px 0 .125rem 0; }
@@ -503,29 +500,20 @@ body {
 
 .emblem__full {
   border: 5px solid blue;
-  /*	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;*/
   grid-area: 1 / 1 / auto / span 2;
   position: relative; }
 
 .emblem__left {
   border: 5px solid red;
   grid-area: 1 / 1 / auto / span 1;
-  /*	display: inline-block;*/
   vertical-align: top;
-  /* pfft text */
-  /*	width: 49%;*/
-  /*	height: 20rem;*/ }
+  /* pfft text */ }
 
 .emblem__right {
   border: 5px solid orange;
   grid-area: 1 / 2 / auto / span 1;
-  /*	display: inline-block;*/
   vertical-align: top;
-  /* pfft text */
-  /*	width: 49%;
-	height: 20rem;*/ }
+  /* pfft text */ }
 
 .emblem {
   display: inline-block;
@@ -562,6 +550,11 @@ body {
   .section h1 {
     font-size: 2.5rem; }
 
+.section--split-or-wrap {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(47vw, 1fr)); }
+
 .facsimile-wrapper {
   background-color: green;
   height: 100vh;
@@ -578,9 +571,7 @@ body {
 .facsimile {
   background-color: rgba(210, 111, 65, 0.7);
   height: 100vh;
-  width: 100%;
-  /*	grid-area: 1 / 1 / auto / span 2;*/
-  /*	position: fixed;*/ }
+  width: 100%; }
 
 .image {
   display: -webkit-box;
@@ -591,9 +582,7 @@ body {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-height: 34rem;
-  /*	position: relative;  needed for the z-index to apply and hide the vertical divider in this section 
-	z-index: 3;*/ }
+  min-height: 34rem; }
   .image .image__picture {
     /*		position: absolute; - breaks in safari*/ }
     .image .image__picture img {
@@ -631,9 +620,7 @@ body {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-height: 40rem;
-  /*	position: relative;   needed for the z-index to apply and hide the vertical divider in this section */
-  /*	z-index: 3;*/ }
+  min-height: 40rem; }
 
 .motto {
   display: -webkit-box;
@@ -805,20 +792,6 @@ body {
       .latin-german-switch ul li a:hover {
         color: #7694C0; }
 
-.is-active {
-  background-color: #A0AACE !important; }
-  .is-active a {
-    color: #222 !important; }
-
-.is-hidden {
-  display: none !important; }
-
-.is-selected {
-  border-bottom: 3px solid #7694C0; }
-
-.is-sticky {
-  position: fixed; }
-
 /***     Breakpoints     ***/
 /* large  -  desktop */
 @media screen and (min-width: 1200px) and (max-width: 1499px) {
@@ -910,9 +883,12 @@ body {
 .epigram {
   text-align: center; }
 
-.verse {
-  margin-left: 1.5in; }
+/*
+.verse{
+    margin-left: 1.5in;
+}
 
+*/
 h2 {
   color: #b5b5b5; }
 
