@@ -17,14 +17,13 @@ body {
 	padding: 50px 0 .125rem 0;
 }
 .emblem-wrapper {
-/*	background-color: blue;*/
 	display: grid;
-	grid-gap: 5rem;
+	grid-gap: 1rem;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
 	margin-top: 8rem;
 	position: relative;
-	height: 100vh;
+	height: auto;
 	width: 100%;
 }
 .emblem__full {
@@ -78,9 +77,10 @@ body {
 .facsimile-wrapper {
 	background-color: green;
 	height: 100vh;
-	width: 100%;
+	width: 50%;
 	margin: 0;
 	padding: 0;
+	position: fixed;
 	vertical-align: top; /* pfft text */
 }
 .emblem__left .facsimile-wrapper {

@@ -115,7 +115,7 @@ table {
   line-height: 2rem;
   margin: 0;
   position: fixed;
-  z-index: 10; }
+  z-index: 100; }
   .topnav ul {
     display: -webkit-box;
     display: -webkit-flex;
@@ -157,7 +157,8 @@ table {
 .wrapper-subnav5 {
   display: block;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 100; }
 
 .subnav5 {
   /*	background-color: $white;*/
@@ -488,14 +489,13 @@ body {
   padding: 50px 0 .125rem 0; }
 
 .emblem-wrapper {
-  /*	background-color: blue;*/
   display: grid;
-  grid-gap: 5rem;
+  grid-gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   margin-top: 8rem;
   position: relative;
-  height: 100vh;
+  height: auto;
   width: 100%; }
 
 .emblem__full {
@@ -562,9 +562,10 @@ body {
 .facsimile-wrapper {
   background-color: green;
   height: 100vh;
-  width: 100%;
+  width: 50%;
   margin: 0;
   padding: 0;
+  position: fixed;
   vertical-align: top;
   /* pfft text */ }
 
