@@ -16,8 +16,8 @@ $(document).ready(function() {
 	var sideNavPartial = "../partials/_sidenav.html";
 	var imageDiv = "._image";
 	var imagePartial = "../partials/_image.html";
-	var imageContent = "._image-url";
-	var imageAlt = "._image-alt-text";
+	var facsimileDiv = "._facsimile";
+	var facsimilePartial = "../partials/_facsimile.html";
 
 	// var dataDiv = ".wrapper-emblem";
 	// var dataNum = 0;
@@ -72,6 +72,7 @@ $(document).ready(function() {
 		$(discourseDivEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the corresponding file
 		$(sideNavDiv).load(sideNavPartial); // load the side nav partial
 		$(imageDiv).load(imagePartial); // load the emblem image partial
+		$(facsimileDiv).load(facsimilePartial); // load the facsimile image viewer partial
 		// updateEmblemNum();
 
 	}

@@ -2,15 +2,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> -->
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns:af="http://www.tei-c.org/ns/1.0">
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:af="http://www.tei-c.org/ns/1.0"> -->
+
+<!DOCTYPE html>
+<html>
 <head>
 	<meta content="text/html" charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Atalanta - Emblem</title>
 	<link type="text/css" rel="stylesheet" href="../css/app.css" />
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script
+	src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous">
+</script>
 	<script type="text/javascript" src="../js/translation.js"></script>
+	<script type="text/javascript" src="../js/openseadragon/openseadragon.min.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -47,7 +58,8 @@
 			<div class="emblem-wrapper">
 <!-- WHOLE EMBLEM -->
 				<div class="emblem__full">
-					<div class="facsimile is-hidden">Facsimile</div>
+					<div class="_facsimile"></div>
+					<!-- <div class="facsimile is-hidden">Facsimile</div> -->
 					<div class="emblem">
 						<!-- MOTTO -->
 						<a name="motto"></a>
