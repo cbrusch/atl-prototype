@@ -352,11 +352,11 @@
 				resetLanguagesOnLeft(); // hide all full-width text or left half text, except image and music sections
 				showTranslation(); // show english text in full-width or left half
 				if( $(this).hasClass('is-active') ) { 
-
 				}
 				else {
 					$(singleNav).removeClass('is-active'); // remove highlight from other options in single nav
 					$(this).addClass('is-active'); // highlight selected view option in single nav
+					restoreWholeEmblem(); // hide facsimile halves and show whole emblem in double view
 				}
 				return false;
 			});
@@ -369,6 +369,7 @@
 				else {
 					$(singleNav).removeClass('is-active'); // remove highlight from other options in single nav
 					$(this).addClass('is-active'); // highlight selected view option in single nav
+					restoreWholeEmblem(); // hide facsimile halves and show whole emblem in double view
 				}
 				return false;
 			});
@@ -480,10 +481,25 @@
 				}
 			}
 			function splitWholeEmblem() {
+				console.log("I should be splitting the whole emblem");
 				$('.emblem__full .double').removeClass('is-hidden'); //replace full-width with left/right halves in whole emblem container
+				$('.emblem__left').addClass('is-hidden'); //replace full-width with left/right halves in whole emblem container
+				$('.emblem__right').addClass('is-hidden');
 			}
 			function rejoinWholeEmblem() {
 				$('.emblem__full .double').addClass('is-hidden'); //replace left/right halves with full-width in whole emblem container
+			}
+			function restoreWholeEmblem() {
+				if( $(facsimileDoubleView).hasClass('is-active') ) { // display right facsimile if it is stored
+					console.log("end 2");
+				}
+				else { // display emblem halves in whole emblem container if no facsimile is stored
+					console.log("step 6");
+					splitWholeEmblem();
+					console.log("step 7");
+					console.log("end 3");
+					console.log("I should be looking at the whole emblem");
+				}
 			}
 			function resetLanguagesOnLeft() {
 				console.log("I reset the languages on the LEFT");
@@ -506,13 +522,12 @@
 				$(singleTranslation).removeClass('is-hidden'); // display english text
 				console.log(singleTranslation);
 				storeTranslationLeft(); // mark english text to be visible in left container of split facsimile view
-				if( $(singleViewBtn).hasClass('is-active') ) {
-					hideFacsimileHalves(); // hide split facsimile view
-				}
+				queryFacsimile();
 			}
 			function showTranslationDouble() {
 				$(doubleTranslation).removeClass('is-hidden'); // show latin/german text in double half
 				storeTranslationRight(); // mark english text to be visible in right container of split facsimile view
+				queryFacsimile();
 			}
 			function showOriginalLanguage() {
 				console.log("I am in the show ORIGINAL function");
@@ -520,13 +535,12 @@
 				$(singleOriginal).removeClass('is-hidden'); // display default latin text
 				console.log(singleOriginal);
 				storeOriginalLeft(); // mark default latin text to be visible in left container of split facsimile view
-				if( $(singleViewBtn).hasClass('is-active') ) {
-					hideFacsimileHalves(); // hide split facsimile view		
-				}
+				queryFacsimile();
 			}
 			function showOriginalLanguageDouble() {
 				$(doubleOriginal).removeClass('is-hidden'); // show latin/german text in right half of whole emblem container
 				storeOriginalLanguageRight(); // mark latin text to be visible in right container of split facsimile view
+				queryFacsimile();
 			}
 			function showFacsimile() {
 				storeFacsimileWhole(); // mark whole facsimile as active, even though the wrapper and its contents may be hidden
@@ -582,7 +596,18 @@
 				$(rightFacsimile).removeClass('is-hidden'); // show right facsimile
 				$(rightFacsimile).siblings().addClass('is-hidden'); // hide right emblem text
 			}
+			function queryFacsimile() {
+				if( $(singleViewBtn).hasClass('is-active') ) {
+					console.log("SINGLE VIEW is active");
+					hideFacsimileHalves(); // hide split facsimile view
+				}
+				else if( $(doubleViewBtn).hasClass('is-active') && $(leftFacsimile).hasClass('is-hidden') && $(rightFacsimile).hasClass('is-hidden') ) {
+					console.log("DOUBLE VIEW is active and I need to HIDE the FACSIMILE HALVES");
+					hideFacsimileHalves(); // hide split facsimile view
+				}
+			}
 			function hideFacsimileHalves() {
+				console.log("I'm HIDING the FACSIMILE HALVES and SHOWING the WHOLE emblem")
 				$(wholeEmblem).removeClass('is-hidden'); // show whole emblem
 				$(leftEmblem).addClass('is-hidden'); // hide left emblem
 				$(rightEmblem).addClass('is-hidden'); // hide right emblem
