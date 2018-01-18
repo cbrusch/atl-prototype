@@ -1078,16 +1078,19 @@ span.underline {
 	padding: 0;
 	border: 1px solid green;
 }*/
-.facsimile {
-  width: 100%;
-  position: fixed; }
-
+/*.facsimile {
+	width: 100%;
+	position: fixed;
+}*/
 #openseadragon-wrapper {
   border: 1px solid red !important;
   float: right !important;
   height: 100vh;
   /*	width: 50% !important;*/
   width: 100vw; }
+
+.facsimile-wrapper #openseadragon-wrapper {
+  width: 50vw; }
 
 a {
   text-decoration: none !important; }

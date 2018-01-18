@@ -18,6 +18,8 @@ $(document).ready(function() {
 	var imagePartial = "../partials/_image.html";
 	var facsimileDiv = "._facsimile";
 	var facsimilePartial = "../partials/_facsimile.html";
+	var facsimileHalfDiv = "._facsimile-half";
+	var facsimileHalfPartial = "../partials/_facsimileHalf.html";
 
 	// var dataDiv = ".wrapper-emblem";
 	// var dataNum = 0;
@@ -72,7 +74,8 @@ $(document).ready(function() {
 		$(discourseDivEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the corresponding file
 		$(sideNavDiv).load(sideNavPartial); // load the side nav partial
 		$(imageDiv).load(imagePartial); // load the emblem image partial
-		$(facsimileDiv).load(facsimilePartial); // load the facsimile image viewer partial
+		$(facsimileDiv).load(facsimilePartial); // load the full facsimile image viewer partial
+		$(facsimileHalfDiv).load(facsimileHalfPartial); // load the half facsimile image viewer partial
 		// updateEmblemNum();
 
 	}
