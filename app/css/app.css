@@ -484,6 +484,9 @@ body {
   body p {
     font-family: Garamond, serif; }
 
+.width--100 {
+  width: 100%; }
+
 .wrapper-emblem {
   background-color: #eee;
   padding: 50px 0 .125rem 0; }
@@ -649,7 +652,7 @@ body {
   /* this prevents the page from shifting vertically when selecting language options in the subnav */
   max-height: 20rem;
   /* this prevents the page from shifting vertically when selecting language options in the subnav */
-  width: 100%;
+  /*	width: 100%;*/
   padding: 5rem 0 0 0; }
   .motto h1 {
     font-size: 2rem; }
@@ -670,7 +673,7 @@ body {
   min-height: 6rem;
   max-height: 30rem;
   /* this prevents the page from shifting vertically when selecting language options in the subnav */
-  width: 100%;
+  /*	width: 100%;*/
   padding: 4rem 0;
   text-align: center; }
   .epigram p {
@@ -702,7 +705,7 @@ body {
   min-height: 30rem;
   max-height: 5000rem;
   /* this prevents the page from shifting vertically when selecting language options in the subnav */
-  width: 100%;
+  /*	width: 100%;*/
   padding-bottom: 6rem; }
   .discourse .text {
     -webkit-box-orient: vertical;
@@ -871,6 +874,23 @@ body {
     display: none !important; }
   .discourse p {
     max-width: 30rem; } }
+
+.width--100 {
+  width: 100%; }
+
+.is-active {
+  background-color: #A0AACE !important; }
+  .is-active a {
+    color: #222 !important; }
+
+.is-hidden {
+  display: none !important; }
+
+.is-selected {
+  border-bottom: 3px solid #7694C0; }
+
+.is-sticky {
+  position: fixed; }
 
 /* NEUTRAL */
 /* COOL */

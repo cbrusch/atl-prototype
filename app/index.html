@@ -52,7 +52,7 @@
 						<!-- MOTTO -->
 						<a name="motto"></a>
 						<div class="motto-wrapper half wrapper-section">
-							<div class="motto section single">
+							<div class="motto section width--100">
 								<div class="english _motto--english"></div>
 								<div class="original is-hidden">
 									<div class="switch-wrapper left">
@@ -88,8 +88,8 @@
 						<div class="_image"></div>
 						<!-- MUSIC -->
 						<a name="music"></a>
-						<div class="music wrapper-section single">
-							<div class="section">
+						<div class="music wrapper-section">
+							<div class="section width--100">
 								<div class="test">
 									<p>Music will go here</p>
 								</div>
@@ -97,7 +97,7 @@
 						</div>
 						<!-- EPIGRAM -->
 						<div class="epigram-wrapper half wrapper-section">
-							<div class="epigram section single">
+							<div class="epigram section width--100">
 								<div class="english _epigram--english"></div>
 								<div class="original is-hidden">
 									<div class="switch-wrapper left">
@@ -130,7 +130,7 @@
 						</div>
 						<!-- DISCOURSE -->
 						<div class="discourse-wrapper half wrapper-section">
-							<div class="discourse section single">
+							<div class="discourse section width--100">
 								<div class="english _discourse--english text"></div>
 								<div class="original text is-hidden">
 									<div class="latin _discourse--latin"></div>
@@ -284,8 +284,8 @@
 			var facsimileDoubleView = '.subnav5 > ul li:nth-child(8)';
 			/* emblem languages */
 			var singleEmblem = '.emblem__full .emblem';
-			var singleTranslation = '.single .english';
-			var singleOriginal = '.single .original';
+			var singleTranslation = '.english .width--100';
+			var singleOriginal = '.original .width--100';
 			var singleFacsimile = '.emblem__full .facsimile';
 			var doubleEmblem = '.emblem__full .double';
 			var doubleTranslation = '.double .english';
@@ -460,9 +460,7 @@
 					$(doubleViewBtn).removeClass('is-active'); // remove highlight from double view button
 					$(singleViewBtn).addClass('is-active'); // add highlight to single view button
 					$(imageSection).removeClass('double'); // end half width image section
-					$(imageSection).addClass('single'); // begin full width image section
 					$(musicSection).removeClass('double'); // end half width music section
-					$(musicSection).addClass('single'); // begin full width music section
 					console.log("367: i'm making single view active in isActiveSingle()");
 
 				}
@@ -475,9 +473,7 @@
 					$(doubleNav).removeClass('is-hidden'); // reveal last 3 language options for double view
 					$(singleViewBtn).removeClass('is-active'); // remove highlight from single view button
 					$(doubleViewBtn).addClass('is-active'); // add highlight to double view button
-					$(imageSection).removeClass('single'); // end full width image section
 					$(imageSection).addClass('double'); // begin half width image section
-					$(musicSection).removeClass('single'); // end full width music section
 					$(musicSection).addClass('double'); // begin half width music section
 					console.log("383: i'm making double view active in isActiveDouble()");
 				}
@@ -543,6 +539,7 @@
 					storeFacsimileRight();
 			}
 			function storeTranslationLeft() {
+				console.log("this is store translation left function");
 				$('.emblem__left > .emblem').removeClass('is-hidden'); // show left emblem
 				$('.emblem__left > .emblem').siblings().addClass('is-hidden'); // hide left facsimile
 				$(leftEnglishGroup).removeClass('is-hidden'); // show left english text

@@ -1,0 +1,18 @@
+.width--100 {
+	width: 100%;
+}
+.is-active {
+	background-color: $periwinkle !important;
+	a {
+		color: $black !important;
+	}
+}
+.is-hidden {
+	display: none !important;
+}
+.is-selected {
+	border-bottom: 3px solid $blue;
+}
+.is-sticky {
+	position: fixed;
+}

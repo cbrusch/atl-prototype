@@ -12,6 +12,9 @@ body {
 		font-family: Garamond, serif;
 	}
 }
+.width--100 {
+	width: 100%;
+}
 .wrapper-emblem {
 	background-color: $light-gray;
 	padding: 50px 0 .125rem 0;
@@ -134,7 +137,7 @@ body {
 	justify-content: center;
 	min-height: 10rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */
 	max-height: 20rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */	
-	width: 100%;
+/*	width: 100%;*/
 	padding: 5rem 0 0 0;
 	h1 {
 		font-size: 2rem;
@@ -146,7 +149,7 @@ body {
 	justify-content: center;
 	min-height: 6rem;
 	max-height: 30rem;  /* this prevents the page from shifting vertically when selecting language options in the subnav */
-	width: 100%;
+/*	width: 100%;*/
 	padding: 4rem 0;
 	text-align: center;
 	p {
@@ -165,7 +168,7 @@ body {
 /*	justify-content: space-between;*/
 	min-height: 30rem;
 	max-height: 5000rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */
-	width: 100%;
+/*	width: 100%;*/
 	padding-bottom: 6rem;
 	.text {
 		flex-direction: column;
