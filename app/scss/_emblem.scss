@@ -69,23 +69,6 @@ body {
 	grid-gap: 1rem;
 	grid-template-columns: repeat(auto-fit, minmax(47vw, 1fr));	
 }
-.facsimile-wrapper {
-	background-color: green;
-	height: 100vh;
-	width: 50%;
-	margin: 0;
-	padding: 0;
-	position: fixed;
-	vertical-align: top; /* pfft text */
-}
-.emblem__left .facsimile-wrapper {
-	left: 0;
-}
-.facsimile {
-	background-color: hsla(19, 62%, 54%, .7);
-	height: 100vh;
-	width: 100%;
-}
 .image {
 	display: flex;
 	justify-content: center;

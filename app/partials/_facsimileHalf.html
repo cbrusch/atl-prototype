@@ -1,8 +1,7 @@
 <!-- https://openseadragon.github.io/docs/ -->
 <div class="facsimile-wrapper is-hidden">
 	<div class="facsimile">			
-	<!-- <div id="wrapper-wrapper"> -->
-		<div id="openseadragon-wrapper">
+		<div id="openseadragon-wrapper--left">
 			<div id="tools" style="position: absolute; top: 30px; z-index: 10000;">
 				<span style="float:left; margin: 10px 20px 0 0">
 					<a id="zoom-in" href="#zoom-in" title="Zoom In" style="display: inline-block; position: relative">Zoom In</a>
@@ -29,10 +28,10 @@
 			bookView = bookView.responseJSON; // get array of book view URLS
 		})
 		.done(function() { // after all the image tiles are ready, display zoomable pages
-			var atalantaZoom = pageView.slice(myEmblemDataNum + 13, myEmblemDataNum + 17); // current view mode (initially pageView)
+			var atalantaZoom = pageView; // current view mode (initially pageView)
 			// var atalantaZoom = pageView; // current view mode (initially pageView)
 			var viewer = OpenSeadragon({
-				id: "openseadragon-wrapper",
+				id: "openseadragon-wrapper--left",
 				tileSources: [atalantaZoom],
 				autoResize: true, /***/
 	            showHomeControl: false, /***/
@@ -41,7 +40,7 @@
 				showReferenceStrip: true, /* thumbnails */
 				showNavigator: true, /* mini map */
 				// toolbar: "tools",
-				toolbar: "openseadragon-wrapper",
+				toolbar: "openseadragon-wrapper--left",
 				zoomInButton:   "zoom-in",
 				zoomOutButton:   "zoom-out",
 				homeButton: "home",
