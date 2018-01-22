@@ -993,7 +993,7 @@ span.underline {
 /* WARM */
 .wrapper-sidenav {
   background-color: #222;
-  margin-top: 8.5rem;
+  margin-top: 8.75rem;
   margin-left: .5rem;
   padding: 0 0 1rem 0;
   position: fixed;
@@ -1001,22 +1001,14 @@ span.underline {
   height: 13.5rem;
   z-index: 20; }
 
-.sidenav {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
+.sidenav ul li {
+  cursor: pointer;
+  font-size: .825rem; }
+  .sidenav ul li a {
+    color: #fff; }
 
-.sidenav ul {
+.sidenav .sidenav__navigation {
+  background-color: #989DAC;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1030,31 +1022,41 @@ span.underline {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  text-align: center;
   width: 9rem; }
-
-.sidenav ul li {
-  /*			border: 1px solid red;*/
-  color: white;
-  cursor: pointer;
-  font-size: .825rem;
-  padding: .5rem .625rem; }
-
-.sidenav ul li a {
-  color: #fff; }
-
-.sidenav ul li:hover {
-  background-color: #C9A2A2; }
-
-.sidenav ul li:hover a {
-  color: #222; }
-
-.sidenav .sidenav__navigation {
-  background-color: #C9A2A2;
-  padding-top: .325rem; }
-
-.sidenav .sidenav__navigation a {
-  color: #222; }
+  .sidenav .sidenav__navigation li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 2.5rem;
+    min-width: 1.75rem; }
+    .sidenav .sidenav__navigation li :hover {
+      background-color: #989DAC;
+      color: #DCE1E9; }
+    .sidenav .sidenav__navigation li a {
+      color: #222;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%; }
 
 .sidenav .sidenav__options {
   display: -webkit-box;
@@ -1066,10 +1068,44 @@ span.underline {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 9rem; }
-
-.sidenav .sidenav__language li {
-  padding-bottom: 1rem !important; }
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+  .sidenav .sidenav__options li {
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 2rem;
+    /*padding-bottom: .125rem;*/ }
+    .sidenav .sidenav__options li :hover {
+      background-color: #DCE1E9;
+      color: #222; }
+    .sidenav .sidenav__options li a {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%; }
 
 /* http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/ */
 /* https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033 */
