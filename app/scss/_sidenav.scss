@@ -22,6 +22,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	font-weight: 800;
 	width: 9rem;
 	li {
 		display: flex;
@@ -48,6 +49,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+
 	li {
 		color: $white;
 		display: flex;
@@ -55,9 +57,12 @@
 		justify-content: center;
 		height: 2rem;
 		/*padding-bottom: .125rem;*/
-		:hover{
+		:hover {
 			background-color: $dusty-blue-lt;
 			color: $black;
+		}
+		:active {
+			background-color: $blue;
 		}
 		a {
 			display: flex;
@@ -67,6 +72,13 @@
 			width: 100%;
 		}
 	}
+}
+.sidenav--is-active {
+	background-color: $dusty-blue-dk;
+}
+ul.sidenav__options li.sidenav--is-active a:hover {
+	background-color: $dusty-blue-dk;
+	color: $white;
 }
 
 /* http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/ */
