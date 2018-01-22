@@ -1071,6 +1071,15 @@ span.underline {
 .sidenav .sidenav__language li {
   padding-bottom: 1rem !important; }
 
+/* http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/ */
+/* https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033 */
+*[id]:before {
+  display: block;
+  content: " ";
+  margin-top: -180px;
+  height: 180px;
+  visibility: hidden; }
+
 /*html body {
 	height: 100vh;
 	width: 100vw;
