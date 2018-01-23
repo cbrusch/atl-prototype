@@ -27,7 +27,7 @@ body {
 	width: 100%;
 }
 .emblem__full {
-	border: 5px solid blue;
+/*	border: 5px solid blue;*/
 	grid-area: 1 / 1 / auto / span 2;
 	position: relative;
 }
@@ -60,6 +60,7 @@ body {
 	justify-content: center;
 	min-height: 14rem;
 	text-align: center;
+	   												line-height: 24px;
 	h1 {
 		font-size: 2.5rem;
 	}
@@ -155,6 +156,7 @@ body {
 	max-height: 5000rem; /* this prevents the page from shifting vertically when selecting language options in the subnav */
 /*	width: 100%;*/
 	padding-bottom: 6rem;
+	    															line-height: 28px;
 	.text {
 		flex-direction: column;
 		margin: 5rem 0;

@@ -2,15 +2,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> -->
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns:af="http://www.tei-c.org/ns/1.0">
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:af="http://www.tei-c.org/ns/1.0"> -->
+
+<!DOCTYPE html>
+<html>
 <head>
 	<meta content="text/html" charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Atalanta - Emblem</title>
 	<link type="text/css" rel="stylesheet" href="../css/app.css" />
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script
+	src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous">
+</script>
 	<script type="text/javascript" src="../js/translation.js"></script>
+	<script type="text/javascript" src="../js/openseadragon/openseadragon.min.js"></script>
+	<script type="text/javascript" src="../js/waypoints/lib/noframework.waypoints.min.js"></script>
+	<script type="text/javascript" src="../js/waypoints/lib/jquery.waypoints.min.js"></script>
+	<script src="../js/waypoints/lib/waypoints.debug.js"></script> <!-- remove in production -->
+
 </head>
 <body>
 	<div class="container-fluid">
@@ -43,15 +58,17 @@
 			</div>
 <!-- SIDENAV -->
 			<div class="_sidenav"></div>
-<!-- WHOLE EMBLEM -->
+<!-- EMBLEMS: WHOLE / LEFT / RIGHT -->
 			<div class="emblem-wrapper">
+<!-- WHOLE EMBLEM -->
 				<div class="emblem__full">
-					<div class="facsimile is-hidden">Facsimile</div>
+					<div class="_facsimile"></div>
+					<!-- <div class="facsimile is-hidden">Facsimile</div> -->
 					<div class="emblem">
 						<!-- MOTTO -->
-						<a name="motto"></a>
-						<div class="motto-wrapper half wrapper-section">
-							<div class="motto section single">
+						<a name="motto" id="basic-waypoint__0"></a>
+						<div class="motto-wrapper half wrapper-section section--split-or-wrap">
+							<div class="motto section width--100">
 								<div class="english _motto--english"></div>
 								<div class="original is-hidden">
 									<div class="switch-wrapper left">
@@ -83,20 +100,21 @@
 							</div>
 						</div>
 						<!-- IMAGE -->
-						<a name="image"></a>
+						<a name="image" id="basic-waypoint__1"></a>
 						<div class="_image"></div>
 						<!-- MUSIC -->
-						<a name="music"></a>
-						<div class="music wrapper-section single">
-							<div class="section">
+						<a name="music" id="basic-waypoint__2"></a>
+						<div class="music wrapper-section">
+							<div class="section width--100">
 								<div class="test">
 									<p>Music will go here</p>
 								</div>
 							</div>
 						</div>
 						<!-- EPIGRAM -->
-						<div class="epigram-wrapper half wrapper-section">
-							<div class="epigram section single">
+						<a name="epigram" id="basic-waypoint__3"></a>
+						<div class="epigram-wrapper half wrapper-section section--split-or-wrap">
+							<div class="epigram section width--100">
 								<div class="english _epigram--english"></div>
 								<div class="original is-hidden">
 									<div class="switch-wrapper left">
@@ -128,8 +146,9 @@
 							</div>
 						</div>
 						<!-- DISCOURSE -->
-						<div class="discourse-wrapper half wrapper-section">
-							<div class="discourse section single">
+						<a name="discourse" id="basic-waypoint__4"></a>
+						<div class="discourse-wrapper half wrapper-section section--split-or-wrap">
+							<div class="discourse section width--100">
 								<div class="english _discourse--english text"></div>
 								<div class="original text is-hidden">
 									<div class="latin _discourse--latin"></div>
@@ -283,8 +302,8 @@
 			var facsimileDoubleView = '.subnav5 > ul li:nth-child(8)';
 			/* emblem languages */
 			var singleEmblem = '.emblem__full .emblem';
-			var singleTranslation = '.single .english';
-			var singleOriginal = '.single .original';
+			var singleTranslation = '.width--100 .english ';
+			var singleOriginal = '.width--100 .original';
 			var singleFacsimile = '.emblem__full .facsimile';
 			var doubleEmblem = '.emblem__full .double';
 			var doubleTranslation = '.double .english';
@@ -297,14 +316,9 @@
 			var leftGermanSwitch = '.left .latin-german-switch ul li:nth-child(2)';
 			var rightLatinSwitch = '.right .latin-german-switch ul li:nth-child(1)';
 			var rightGermanSwitch = '.right .latin-german-switch ul li:nth-child(2)';
-			/* emblem side nav */
-			// var mottoSideNav = 'ul.sidenav__options > a li:nth-child(1)';
-			// var imageSideNav = 'ul.sidenav__options > a li:nth-child(2)';
-			// var musicSideNav = 'ul.sidenav__options > a li:nth-child(3)';
-			// var epigramSideNav = 'ul.sidenav__options > a li:nth-child(4)';
-			// var discourseSideNav = 'ul.sidenav__options > a li:nth-child(5)';
 			/* emblem halves */
-			var wholeEmblemWrapper = '.emblem__full';
+			var emblemWrapper = '.emblem-wrapper';
+			var wholeEmblem = '.emblem__full';
 			var leftEmblem = '.emblem__left';
 			var rightEmblem = '.emblem__right';
 			var leftEmblemText = '.emblem__left .emblem';
@@ -316,6 +330,8 @@
 			/* emblem sections */
 			var imageSection = '.emblem__full .image';
 			var musicSection = '.emblem__full .music';
+			/* side nav */
+			var sideNav = '._sidenav';
 
 /* INITIALIZE */
 			onLoad(); // display emblem menu and default options on page load
@@ -323,7 +339,8 @@
 /* EVENTS */
 			/* pages */
 			$(doubleViewBtn).click(function() { // display split emblem
-				console.log("I clicked on double view!");
+				console.log("I clicked on DOUBLE view!");
+				$(sideNav).addClass('is-hidden');
 				isActiveDouble(); // highlight double view
 				if( $(facsimileSingleView).hasClass('is-active') ) { // display left facsimile if it is stored
 					showFacsimile();
@@ -337,9 +354,12 @@
 				return false;
 			});
 			$(singleViewBtn).click(function() { // display single emblem
+				console.log("I clicked on SINGLE view!");
+				$(sideNav).removeClass('is-hidden');
 				isActiveSingle(); // highlight single view
 				rejoinWholeEmblem(); //replace left/right halves with full-width in whole emblem container
 				if( $(facsimileSingleView).hasClass('is-active') ) { // display whole facsimile if left facsimile is active when switching from double to single view
+					$(sideNav).addClass('is-hidden');
 					showFacsimile();
 				}
 				else if( $(englishSingleView).hasClass('is-active') ) { // display whole english text
@@ -357,9 +377,14 @@
 				if( $(this).hasClass('is-active') ) { 
 
 				}
+				else if( $(doubleViewBtn).hasClass('is-active') ) {
+					$(sideNav).addClass('is-hidden');
+				}
 				else {
 					$(singleNav).removeClass('is-active'); // remove highlight from other options in single nav
 					$(this).addClass('is-active'); // highlight selected view option in single nav
+					restoreWholeEmblem(); // hide facsimile halves and show whole emblem in double view
+					$(sideNav).removeClass('is-hidden');
 				}
 				return false;
 			});
@@ -369,9 +394,14 @@
 				if( $(this).hasClass('is-active') ) {
 
 				}
+				else if( $(doubleViewBtn).hasClass('is-active') ) {
+					$(sideNav).addClass('is-hidden');
+				}
 				else {
 					$(singleNav).removeClass('is-active'); // remove highlight from other options in single nav
 					$(this).addClass('is-active'); // highlight selected view option in single nav
+					restoreWholeEmblem(); // hide facsimile halves and show whole emblem in double view
+					$(sideNav).removeClass('is-hidden');
 				}
 				return false;
 			});
@@ -383,6 +413,7 @@
 					$(singleNav).removeClass('is-active'); // remove highlight from other options in single nav
 					$(this).addClass('is-active'); // highlight selected view option in nav
 					showFacsimile(); // display full-width or left half facsimile
+					$(sideNav).addClass('is-hidden');
 				}
 				return false;
 			});
@@ -464,9 +495,7 @@
 					$(doubleViewBtn).removeClass('is-active'); // remove highlight from double view button
 					$(singleViewBtn).addClass('is-active'); // add highlight to single view button
 					$(imageSection).removeClass('double'); // end half width image section
-					$(imageSection).addClass('single'); // begin full width image section
 					$(musicSection).removeClass('double'); // end half width music section
-					$(musicSection).addClass('single'); // begin full width music section
 					console.log("367: i'm making single view active in isActiveSingle()");
 
 				}
@@ -475,24 +504,38 @@
 				if( $(doubleViewBtn).hasClass('is-active') ) {
 					console.log("373: double view is already active!!!");
 				}
-				else if( !$(doubleViewBtn).hasClass('is-active') && $(doubleNav).hasClass('is-hidden') ) { 
+				else if( !$(doubleViewBtn).hasClass('is-active') && $(doubleNav).hasClass('is-hidden') ) {$(emblemWrapper).removeClass('is-sticky'); // remove fixed position from facsimile container
 					$(doubleNav).removeClass('is-hidden'); // reveal last 3 language options for double view
 					$(singleViewBtn).removeClass('is-active'); // remove highlight from single view button
 					$(doubleViewBtn).addClass('is-active'); // add highlight to double view button
-					$(imageSection).removeClass('single'); // end full width image section
 					$(imageSection).addClass('double'); // begin half width image section
-					$(musicSection).removeClass('single'); // end full width music section
 					$(musicSection).addClass('double'); // begin half width music section
 					console.log("383: i'm making double view active in isActiveDouble()");
 				}
 			}
 			function splitWholeEmblem() {
+				console.log("I should be splitting the whole emblem");
 				$('.emblem__full .double').removeClass('is-hidden'); //replace full-width with left/right halves in whole emblem container
+				$('.emblem__left').addClass('is-hidden'); //replace full-width with left/right halves in whole emblem container
+				$('.emblem__right').addClass('is-hidden');
 			}
 			function rejoinWholeEmblem() {
 				$('.emblem__full .double').addClass('is-hidden'); //replace left/right halves with full-width in whole emblem container
 			}
+			function restoreWholeEmblem() {
+				if( $(facsimileDoubleView).hasClass('is-active') ) { // display right facsimile if it is stored
+					console.log("end 2");
+				}
+				else { // display emblem halves in whole emblem container if no facsimile is stored
+					console.log("step 6");
+					splitWholeEmblem();
+					console.log("step 7");
+					console.log("end 3");
+					console.log("I should be looking at the whole emblem");
+				}
+			}
 			function resetLanguagesOnLeft() {
+				console.log("I reset the languages on the LEFT");
 				$(singleEmblem).removeClass('is-hidden'); // show full-width emblem
 				$(singleFacsimile).addClass('is-hidden'); // hide full-width/left-half facsimile
 				$(singleTranslation).addClass('is-hidden'); // hide full-width/left-half english text
@@ -507,32 +550,37 @@
 				$(rightOriginal).addClass('is-hidden'); // hide right emblem latin/german text
 			}
 			function showTranslation() {
+				console.log("I am in the show TRANSLATION function");
+				$(emblemWrapper).removeClass('is-sticky'); // remove fixed position from facsimile container
 				$(singleTranslation).removeClass('is-hidden'); // display english text
+				console.log(singleTranslation);
 				storeTranslationLeft(); // mark english text to be visible in left container of split facsimile view
-				if( $(singleViewBtn).hasClass('is-active') ) {
-					hideFacsimileHalves(); // hide split facsimile view
-				}
+				queryFacsimile();
 			}
 			function showTranslationDouble() {
 				$(doubleTranslation).removeClass('is-hidden'); // show latin/german text in double half
 				storeTranslationRight(); // mark english text to be visible in right container of split facsimile view
+				queryFacsimile();
 			}
 			function showOriginalLanguage() {
+				console.log("I am in the show ORIGINAL function");
+				$(emblemWrapper).removeClass('is-sticky'); // remove fixed position from facsimile container
 				$(singleOriginal).removeClass('is-hidden'); // display default latin text
+				console.log(singleOriginal);
 				storeOriginalLeft(); // mark default latin text to be visible in left container of split facsimile view
-				if( $(singleViewBtn).hasClass('is-active') ) {
-					hideFacsimileHalves(); // hide split facsimile view		
-				}
+				queryFacsimile();
 			}
 			function showOriginalLanguageDouble() {
 				$(doubleOriginal).removeClass('is-hidden'); // show latin/german text in right half of whole emblem container
 				storeOriginalLanguageRight(); // mark latin text to be visible in right container of split facsimile view
+				queryFacsimile();
 			}
 			function showFacsimile() {
 				storeFacsimileWhole(); // mark whole facsimile as active, even though the wrapper and its contents may be hidden
 				storeFacsimileLeft(); // mark left facsimile as active, even though the wrapper and its contents may be hidden
 				if( $(singleViewBtn).hasClass('is-active') ) { // make facsimile 100vh
 					hideFacsimileHalves(); // show whole container emblem and hide left/right container emblems
+					$(emblemWrapper).addClass('is-sticky'); // give facsimile container a fixed position
 				}
 				// do I need an else if that applies to left facs when double view is active???
 				else if( $(doubleViewBtn).hasClass('is-active') ) {
@@ -544,6 +592,7 @@
 					storeFacsimileRight();
 			}
 			function storeTranslationLeft() {
+				console.log("this is store TRANSLATION left function");
 				$('.emblem__left > .emblem').removeClass('is-hidden'); // show left emblem
 				$('.emblem__left > .emblem').siblings().addClass('is-hidden'); // hide left facsimile
 				$(leftEnglishGroup).removeClass('is-hidden'); // show left english text
@@ -556,9 +605,11 @@
 				$(rightEnglishGroup).siblings().addClass('is-hidden'); // hide right original text
 			}
 			function storeOriginalLeft() {
+				console.log("this is store ORIGINAL left function");
 				$('.emblem__left > .emblem').removeClass('is-hidden'); // show left emblem
 				$('.emblem__left > .emblem').siblings().addClass('is-hidden'); // hide left facsimile
 				$(leftOriginalGroup).removeClass('is-hidden'); // show left latin text
+				$(leftOriginalGroup).siblings().addClass('is-hidden'); // hide left english text
 			}
 			function storeOriginalLanguageRight() {
 				$('.emblem__right > .emblem').removeClass('is-hidden'); // show right emblem
@@ -578,13 +629,24 @@
 				$(rightFacsimile).removeClass('is-hidden'); // show right facsimile
 				$(rightFacsimile).siblings().addClass('is-hidden'); // hide right emblem text
 			}
+			function queryFacsimile() {
+				if( $(singleViewBtn).hasClass('is-active') ) {
+					console.log("SINGLE VIEW is active");
+					hideFacsimileHalves(); // hide split facsimile view
+				}
+				else if( $(doubleViewBtn).hasClass('is-active') && $(leftFacsimile).hasClass('is-hidden') && $(rightFacsimile).hasClass('is-hidden') ) {
+					console.log("DOUBLE VIEW is active and I need to HIDE the FACSIMILE HALVES");
+					hideFacsimileHalves(); // hide split facsimile view
+				}
+			}
 			function hideFacsimileHalves() {
-				$(wholeEmblemWrapper).removeClass('is-hidden'); // show whole emblem
+				console.log("I'm HIDING the FACSIMILE HALVES and SHOWING the WHOLE emblem")
+				$(wholeEmblem).removeClass('is-hidden'); // show whole emblem
 				$(leftEmblem).addClass('is-hidden'); // hide left emblem
 				$(rightEmblem).addClass('is-hidden'); // hide right emblem
 			}
 			function hideFacsimileWhole() { // ***this has to happen whenever facsimile is selected in split view
-				$(wholeEmblemWrapper).addClass('is-hidden'); // hide whole emblem
+				$(wholeEmblem).addClass('is-hidden'); // hide whole emblem
 				$(leftEmblem).removeClass('is-hidden'); // show left emblem
 				$(rightEmblem).removeClass('is-hidden'); // show right emblem
 			}
