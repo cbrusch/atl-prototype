@@ -21,24 +21,10 @@ $(document).ready(function() {
 	var facsimileHalfDiv = "._facsimile-half";
 	var facsimileHalfPartial = "../partials/_facsimileHalf.html";
 
-	// var dataDiv = ".wrapper-emblem";
-	// var dataNum = 0;
-	// var dataID = $(dataDiv).attr("data-id", dataNum);
-	// console.log(dataID);
-	// dataNum = 3;
-	// console.log(dataID);
-
-
 	generateJSON();
 
 
-
-
-
-
-
 // update url with window.location.href???
-
 
 
 	function generateJSON(){
@@ -64,7 +50,6 @@ $(document).ready(function() {
 
 	function identifyEmblem(){
 		englishEmblemURL = englishEmblemArray[emblemDataNum]; // associate the URL with the corresponding emblem data ID
-
 		loadPartials();
 	}
 
@@ -76,12 +61,6 @@ $(document).ready(function() {
 		$(imageDiv).load(imagePartial); // load the emblem image partial
 		$(facsimileDiv).load(facsimilePartial); // load the full facsimile image viewer partial
 		$(facsimileHalfDiv).load(facsimileHalfPartial); // load the half facsimile image viewer partial
-		// updateEmblemNum();
-
-	}
-
-	function updateEmblemNum(){
-		$('#sidenav__titles').innerHTML.replace("Emblem 6", "Emblem ");
 	}
 
 })
