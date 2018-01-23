@@ -14,7 +14,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Atalanta - Emblem</title>
 	<link type="text/css" rel="stylesheet" href="../css/app.css" />
-<!-- 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 <script
 	src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
@@ -24,8 +23,6 @@
 	<script type="text/javascript" src="../js/openseadragon/openseadragon.min.js"></script>
 	<script type="text/javascript" src="../js/waypoints/lib/noframework.waypoints.min.js"></script>
 	<script type="text/javascript" src="../js/waypoints/lib/jquery.waypoints.min.js"></script>
-	<script src="../js/waypoints/lib/waypoints.debug.js"></script> <!-- remove in production -->
-
 </head>
 <body>
 	<div class="container-fluid">
@@ -33,7 +30,7 @@
 		<div class="wrapper-topnav">
 			<div class="topnav">
 				<ul>
-					<li><a href="#" title="Table of Contents"><img src="img/icons/toc.png" alt="table of contents icon" /></a></li>
+					<li><a href="#" title="Table of Contents"><img src="../img/icons/toc.png" alt="table of contents icon" /></a></li>
 					<li>Furnace + Fugue: Atalanta Fugiens</li>
 					<li></li>
 				</ul>
@@ -487,7 +484,6 @@
 				$(singleViewBtn).toggleClass('is-active'); // make "Single View" button active
 				$(englishSingleView).toggleClass('is-active'); // highlight english translation as default single text
 				$(latinDoubleView).toggleClass('is-active'); // highlight latin as default double text
-				// $('ul.sidenav__options a:nth-child(1)').toggleClass('is-active'); // highlight motto in sidenav menu
 				$('.wrapper-vertical-divider').toggleClass('is-disabled'); // hide vertical line that divides text sections
 				console.log("352: I loaded the page");
 			}
