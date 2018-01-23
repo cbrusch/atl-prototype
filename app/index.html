@@ -330,6 +330,8 @@
 			/* emblem sections */
 			var imageSection = '.emblem__full .image';
 			var musicSection = '.emblem__full .music';
+			/* side nav */
+			var sideNav = '._sidenav';
 
 /* INITIALIZE */
 			onLoad(); // display emblem menu and default options on page load
@@ -338,6 +340,7 @@
 			/* pages */
 			$(doubleViewBtn).click(function() { // display split emblem
 				console.log("I clicked on DOUBLE view!");
+				$(sideNav).addClass('is-hidden');
 				isActiveDouble(); // highlight double view
 				if( $(facsimileSingleView).hasClass('is-active') ) { // display left facsimile if it is stored
 					showFacsimile();
@@ -352,9 +355,11 @@
 			});
 			$(singleViewBtn).click(function() { // display single emblem
 				console.log("I clicked on SINGLE view!");
+				$(sideNav).removeClass('is-hidden');
 				isActiveSingle(); // highlight single view
 				rejoinWholeEmblem(); //replace left/right halves with full-width in whole emblem container
 				if( $(facsimileSingleView).hasClass('is-active') ) { // display whole facsimile if left facsimile is active when switching from double to single view
+					$(sideNav).addClass('is-hidden');
 					showFacsimile();
 				}
 				else if( $(englishSingleView).hasClass('is-active') ) { // display whole english text
@@ -370,11 +375,16 @@
 				resetLanguagesOnLeft(); // hide all full-width text or left half text, except image and music sections
 				showTranslation(); // show english text in full-width or left half
 				if( $(this).hasClass('is-active') ) { 
+
+				}
+				else if( $(doubleViewBtn).hasClass('is-active') ) {
+					$(sideNav).addClass('is-hidden');
 				}
 				else {
 					$(singleNav).removeClass('is-active'); // remove highlight from other options in single nav
 					$(this).addClass('is-active'); // highlight selected view option in single nav
 					restoreWholeEmblem(); // hide facsimile halves and show whole emblem in double view
+					$(sideNav).removeClass('is-hidden');
 				}
 				return false;
 			});
@@ -384,10 +394,14 @@
 				if( $(this).hasClass('is-active') ) {
 
 				}
+				else if( $(doubleViewBtn).hasClass('is-active') ) {
+					$(sideNav).addClass('is-hidden');
+				}
 				else {
 					$(singleNav).removeClass('is-active'); // remove highlight from other options in single nav
 					$(this).addClass('is-active'); // highlight selected view option in single nav
 					restoreWholeEmblem(); // hide facsimile halves and show whole emblem in double view
+					$(sideNav).removeClass('is-hidden');
 				}
 				return false;
 			});
@@ -399,6 +413,7 @@
 					$(singleNav).removeClass('is-active'); // remove highlight from other options in single nav
 					$(this).addClass('is-active'); // highlight selected view option in nav
 					showFacsimile(); // display full-width or left half facsimile
+					$(sideNav).addClass('is-hidden');
 				}
 				return false;
 			});
