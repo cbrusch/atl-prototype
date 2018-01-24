@@ -11,7 +11,7 @@ $(document).ready(function() {
 	var epigramDivGerman = "._epigram--german";
 	var englishEmblemArray = [];
 	var englishEmblemURL
-	var emblemDataNum = $('.wrapper-emblem').data("id"); // get the data ID for the current emblem page
+	var emblemDataNum = $('.emblem-page').data("id"); // get the data ID for the current emblem page
 	var sideNavDiv = "._sidenav";
 	var sideNavPartial = "../partials/_sidenav.html";
 	var imageDiv = "._image";

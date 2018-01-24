@@ -17,7 +17,7 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){ // prepare and display zoomable scans of book pages
-		var myEmblemDataNum = $('.wrapper-emblem').data("id"); // get the data ID for the current emblem page
+		var myEmblemDataNum = $('.emblem-page').data("id"); // get the data ID for the current emblem page
 		var pageTiles = "../data/pageView.json"; // file path to page view dzi files
 		var bookTiles = "../data/bookView.json"; // file path to book view dzi files
 		var pageView = $.getJSON(pageTiles, function() { // get pageView.json file
