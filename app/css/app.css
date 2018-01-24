@@ -114,9 +114,6 @@ body {
 /* NEUTRAL */
 /* COOL */
 /* WARM */
-.wrapper-topnav {
-  /*	position: fixed;*/ }
-
 .topnav {
   background-color: rgba(173, 184, 122, 0.5);
   /*	background-color: $black;*/
