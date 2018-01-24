@@ -1,22 +1,11 @@
-/*html body {
-	height: 100vh;
-	width: 100vw;
-	margin: 0;
-	padding: 0;
-	border: 1px solid green;
-}*/
-
-/*.facsimile {
-	width: 100%;
-	position: fixed;
-}*/
+@import 'utilities';
 
 #openseadragon-wrapper {
-	border: 1px solid red !important;
+/*	border: 1px solid red !important;*/
 	float: right !important;
-	height: 100vh;
+	height: calc(100vh - 11.125rem); /* currently, the combined height of the topnav and subnav is 11.125rem */
 /*	width: 50% !important;*/
-width: 100vw;
+	width: 100vw;
 }
 .facsimile-wrapper #openseadragon-wrapper {
 	width: 50vw;
