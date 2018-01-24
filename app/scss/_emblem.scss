@@ -1,17 +1,6 @@
+@import 'utilities';
 @import 'colors';
 
-.css-test {
-	border: 2px solid green !important;
-}
-
-body {
-	background-color: pink;
-	font-family: 'Futura', Helvetica, sans-serif;
-	font-size: 16px;
-	p {
-		font-family: Garamond, serif;
-	}
-}
 .wrapper-emblem {
 	background-color: $light-gray;
 	padding: 50px 0 .125rem 0;
@@ -21,7 +10,7 @@ body {
 	grid-gap: 1rem;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
-	margin-top: 8rem;
+	margin-top: $subnav-h;
 	position: relative;
 	height: auto;
 	width: 100%;
