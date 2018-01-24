@@ -1,25 +1,28 @@
 $(document).ready(function() {
 	console.log("the translation.js file loaded");
+	var topNavEl = "._topnav";
+	var topNavPartial = "../partials/_topnav.html";
 	var i = 1;
-	var mottoDivEnglish = "._motto--english";
-	var epigramDivEnglish = "._epigram--english";
-	var discourseDivEnglish = "._discourse--english";
-	var mottoDivLatin = "._motto--latin";
-	var epigramDivLatin = "._epigram--latin";
-	var discourseDivLatin = "._discourse--latin";
-	var mottoDivGerman = "._motto--german";
-	var epigramDivGerman = "._epigram--german";
+	var mottoElEnglish = "._motto--english";
+	var epigramElEnglish = "._epigram--english";
+	var discourseElEnglish = "._discourse--english";
+	var mottoElLatin = "._motto--latin";
+	var epigramElLatin = "._epigram--latin";
+	var discourseElLatin = "._discourse--latin";
+	var mottoElGerman = "._motto--german";
+	var epigramElGerman = "._epigram--german";
 	var englishEmblemArray = [];
 	var englishEmblemURL
-	var emblemDataNum = $('.wrapper-emblem').data("id"); // get the data ID for the current emblem page
-	var sideNavDiv = "._sidenav";
+	var emblemDataNum = $('.emblem-page').data("id"); // get the data ID for the current emblem page
+	var sideNavEl = "._sidenav";
 	var sideNavPartial = "../partials/_sidenav.html";
-	var imageDiv = "._image";
+	var imageEl = "._image";
 	var imagePartial = "../partials/_image.html";
-	var facsimileDiv = "._facsimile";
+	var facsimileEl = "._facsimile";
 	var facsimilePartial = "../partials/_facsimile.html";
-	var facsimileHalfDiv = "._facsimile-half";
+	var facsimileHalfEl = "._facsimile-half";
 	var facsimileHalfPartial = "../partials/_facsimileHalf.html";
+
 
 	generateJSON();
 
@@ -54,13 +57,14 @@ $(document).ready(function() {
 	}
 
 	function loadPartials(){
-		$(mottoDivEnglish).load(englishEmblemURL["motto"]); // load the motto text from the corresponding file
-		$(epigramDivEnglish).load(englishEmblemURL["epigram"]); // load the epigram text from the corresponding file
-		$(discourseDivEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the corresponding file
-		$(sideNavDiv).load(sideNavPartial); // load the side nav partial
-		$(imageDiv).load(imagePartial); // load the emblem image partial
-		$(facsimileDiv).load(facsimilePartial); // load the full facsimile image viewer partial
-		$(facsimileHalfDiv).load(facsimileHalfPartial); // load the half facsimile image viewer partial
+		$(topNavEl).load(topNavPartial); // load the global navigation partial
+		$(mottoElEnglish).load(englishEmblemURL["motto"]); // load the motto text from the corresponding file
+		$(epigramElEnglish).load(englishEmblemURL["epigram"]); // load the epigram text from the corresponding file
+		$(discourseElEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the corresponding file
+		$(sideNavEl).load(sideNavPartial); // load the side nav partial
+		$(imageEl).load(imagePartial); // load the emblem image partial
+		$(facsimileEl).load(facsimilePartial); // load the full facsimile image viewer partial
+		$(facsimileHalfEl).load(facsimileHalfPartial); // load the half facsimile image viewer partial
 	}
 
 })

@@ -1,5 +1,5 @@
 <!-- https://openseadragon.github.io/docs/ -->
-<div class="facsimile is-hidden">
+<section class="facsimile is-hidden">
 <!-- <div id="wrapper-wrapper"> -->
 	<div id="openseadragon-wrapper">
 		<div id="tools" style="position: absolute; top: 30px; z-index: 10000;">
@@ -13,11 +13,11 @@
 			</span>
 		</div>
 	</div>
-</div>
+</section>
 
 <script type="text/javascript">
 	$(document).ready(function(){ // prepare and display zoomable scans of book pages
-		var myEmblemDataNum = $('.wrapper-emblem').data("id"); // get the data ID for the current emblem page
+		var myEmblemDataNum = $('.emblem-page').data("id"); // get the data ID for the current emblem page
 		var pageTiles = "../data/pageView.json"; // file path to page view dzi files
 		var bookTiles = "../data/bookView.json"; // file path to book view dzi files
 		var pageView = $.getJSON(pageTiles, function() { // get pageView.json file

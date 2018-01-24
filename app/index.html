@@ -1,20 +1,12 @@
-<!-- <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> -->
-
-
-<!-- <?xml version="1.0" encoding="UTF-8"?>
-<html xmlns:af="http://www.tei-c.org/ns/1.0"> -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
 	<meta content="text/html" charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Atalanta - Emblem</title>
-	<link type="text/css" rel="stylesheet" href="../css/app.css" />
+	<link type="text/css" rel="stylesheet" media="screen" href="../css/app.css" />
 <script
+	type="text/javascript"
 	src="https://code.jquery.com/jquery-3.2.1.js"
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous">
@@ -25,151 +17,40 @@
 	<script type="text/javascript" src="../js/waypoints/lib/jquery.waypoints.min.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
+	<header>
 <!-- GLOBAL NAVIGATION -->
-		<div class="wrapper-topnav">
-			<div class="topnav">
-				<ul>
-					<li><a href="#" title="Table of Contents"><img src="../img/icons/toc.png" alt="table of contents icon" /></a></li>
-					<li>Furnace + Fugue: Atalanta Fugiens</li>
-					<li></li>
-				</ul>
-			</div>
-		</div>
-<!-- EMBLEM PAGE-->		
-		<div class="wrapper-emblem" data-id="0">
+		<div class="_topnav"></div>
 <!-- EMBLEM NAV -->
-			<div class="wrapper-subnav5">
-				<div class="subnav5">
-					<ul>
-						<li class="subnav5__views--single"><a href="#">Single View</a></li>
-						<li class="subnav5__options--option"><a href="#">Translation</a></li>
-						<li class="subnav5__options--option"><a href="#">Original</a></li>
-						<li class="subnav5__options--option"><a href="#">Facsimile</a></li>
-						<li class="subnav5__views--double"><a href="#">Side-by-side View</a></li>
-						<li class="subnav5__options--option"><a href="#">Translation</a></li>
-						<li class="subnav5__options--option"><a href="#">Original</a></li>
-						<li class="subnav5__options--option"><a href="#">Facsimile</a></li>
-					</ul>
-				</div>
-			</div>
+		<nav class="subnav">
+			<ul>
+				<li class="subnav__views--single"><a href="#">Single View</a></li>
+				<li class="subnav__options--option"><a href="#">Translation</a></li>
+				<li class="subnav__options--option"><a href="#">Original</a></li>
+				<li class="subnav__options--option"><a href="#">Facsimile</a></li>
+				<li class="subnav__views--double"><a href="#">Side-by-side View</a></li>
+				<li class="subnav__options--option"><a href="#">Translation</a></li>
+				<li class="subnav__options--option"><a href="#">Original</a></li>
+				<li class="subnav__options--option"><a href="#">Facsimile</a></li>
+			</ul>
+		</nav>
+	</header>
+<!-- EMBLEM PAGE-->
+	<main class="emblem-page" data-id="0">
 <!-- SIDENAV -->
-			<div class="_sidenav"></div>
+		<div class="_sidenav"></div>
 <!-- EMBLEMS: WHOLE / LEFT / RIGHT -->
-			<div class="emblem-wrapper">
+		<div class="emblem-wrapper">
 <!-- WHOLE EMBLEM -->
-				<div class="emblem__full">
-					<div class="_facsimile"></div>
-					<!-- <div class="facsimile is-hidden">Facsimile</div> -->
-					<div class="emblem">
-						<!-- MOTTO -->
-						<a name="motto" id="basic-waypoint__0"></a>
-						<div class="motto-wrapper half wrapper-section section--split-or-wrap">
-							<div class="motto section width--100">
-								<div class="english _motto--english"></div>
-								<div class="original is-hidden">
-									<div class="switch-wrapper left">
-										<div class="latin-german-switch">
-											<ul>
-												<li class="is-selected"><a href="#">Latin</a></li>
-												<li><a href="#">German</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="latin _motto--latin"></div>
-									<div class="german _motto--german is-hidden"></div>
-								</div>
-							</div>
-							<div class="motto section double is-hidden">
-								<div class="english _motto--english is-hidden"><</div>
-								<div class="original">
-									<div class="switch-wrapper right">
-										<div class="latin-german-switch">
-											<ul>
-												<li class="is-selected"><a href="#">Latin</a></li>
-												<li><a href="#">German</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="latin _motto--latin"></div>
-									<div class="german _motto--german is-hidden"></div>
-								</div>
-							</div>
-						</div>
-						<!-- IMAGE -->
-						<a name="image" id="basic-waypoint__1"></a>
-						<div class="_image"></div>
-						<!-- MUSIC -->
-						<a name="music" id="basic-waypoint__2"></a>
-						<div class="music wrapper-section">
-							<div class="section width--100">
-								<div class="test">
-									<p>Music will go here</p>
-								</div>
-							</div>
-						</div>
-						<!-- EPIGRAM -->
-						<a name="epigram" id="basic-waypoint__3"></a>
-						<div class="epigram-wrapper half wrapper-section section--split-or-wrap">
-							<div class="epigram section width--100">
-								<div class="english _epigram--english"></div>
-								<div class="original is-hidden">
-									<div class="switch-wrapper left">
-										<div class="latin-german-switch">
-											<ul>
-												<li class="is-selected"><a href="#">Latin</a></li>
-												<li><a href="#">German</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="latin _epigram--latin"></div>
-									<div class="german _epigram--german is-hidden"></div>
-								</div>
-							</div>
-							<div class="epigram section double is-hidden">
-								<div class="english _epigram--english is-hidden"></div>
-								<div class="original">
-									<div class="switch-wrapper right">
-										<div class="latin-german-switch">
-											<ul>
-												<li class="is-selected"><a href="#">Latin</a></li>
-												<li><a href="#">German</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="latin _epigram--latin"></div>
-									<div class="german _epigram--german is-hidden"></div>
-								</div>
-							</div>
-						</div>
-						<!-- DISCOURSE -->
-						<a name="discourse" id="basic-waypoint__4"></a>
-						<div class="discourse-wrapper half wrapper-section section--split-or-wrap">
-							<div class="discourse section width--100">
-								<div class="english _discourse--english text"></div>
-								<div class="original text is-hidden">
-									<div class="latin _discourse--latin"></div>
-								</div>
-							</div>
-							<div class="discourse section double is-hidden">
-								<div class="english _discourse--english text is-hidden"></div>
-								<div class="original text">
-									<div class="latin _discourse--latin"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-<!-- LEFT PANEL -->
-				<div class="emblem__left is-hidden">
-					<div class="facsimile-wrapper is-hidden">
-						<div class="facsimile">Facsimile</div>
-					</div>
-					<div class="emblem">
-						<!-- MOTTO -->
-						<div class="motto wrapper-section section">
-							<div class="english _motto--english left-english-text"></div>
-							<div class="original left-latin-german-text is-hidden">
+			<div class="emblem__full">
+				<div class="_facsimile"></div>
+				<!-- <div class="facsimile is-hidden">Facsimile</div> -->
+				<div class="emblem">
+					<!-- MOTTO -->
+					<a name="motto" id="basic-waypoint__0"></a>
+					<section class="motto-wrapper half wrapper-section section--split-or-wrap">
+						<div class="motto section width--100">
+							<div class="english _motto--english"></div>
+							<div class="original is-hidden">
 								<div class="switch-wrapper left">
 									<div class="latin-german-switch">
 										<ul>
@@ -182,54 +63,9 @@
 								<div class="german _motto--german is-hidden"></div>
 							</div>
 						</div>
-						<!-- IMAGE -->
-						<div class="image wrapper-section section">
-							<div class="image__picture"><img src="../img/img12.png" alt="Illustration of a farmer sowing coins into a field" /></div>
-						</div>
-						<!-- MUSIC -->
-						<div class="music wrapper-section">
-							<div class="section">
-								<div class="test">
-									<p>Music will go here</p>
-								</div>
-							</div>
-						</div>
-						<!-- EPIGRAM -->
-						<div class="epigram wrapper-section section">
-							<div class="english _epigram--english left-english-text">
-							</div>
-							<div class="original left-latin-german-text is-hidden">
-								<div class="switch-wrapper left">
-									<div class="latin-german-switch">
-										<ul>
-											<li class="is-selected"><a href="#">Latin</a></li>
-											<li><a href="#">German</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="latin _epigram--latin "></div>
-								<div class="german _epigram--german is-hidden"></div>
-							</div>
-						</div>
-						<!-- DISCOURSE -->
-						<div class="discourse wrapper-section">
-							<div class="english _discourse--latin left-english-text section text"></div>
-							<div class="original left-latin-german-text section text is-hidden">
-								<div class="latin _discourse--latin"></div>
-							</div>
-						</div>
-					</div>
-				</div><!-- END OF LEFT PANEL -->
-<!-- RIGHT PANEL -->
-				<div class="emblem__right is-hidden">
-					<div class="facsimile-wrapper is-hidden">
-						<div class="facsimile">Facsimile</div>
-					</div>
-					<div class="emblem">
-						<!-- MOTTO -->
-						<div class="motto wrapper-section section">
-							<div class="english _motto--english right-english-text is-hidden"></div>
-							<div class="original right-latin-german-text">
+						<div class="motto section double is-hidden">
+							<div class="english _motto--english is-hidden"><</div>
+							<div class="original">
 								<div class="switch-wrapper right">
 									<div class="latin-german-switch">
 										<ul>
@@ -242,22 +78,40 @@
 								<div class="german _motto--german is-hidden"></div>
 							</div>
 						</div>
-						<!-- IMAGE -->
-						<div class="image wrapper-section section">
-							<div class="image__picture"><img src="../img/img12.png" alt="Illustration of a farmer sowing coins into a field" /></div>
-						</div>
-						<!-- MUSIC -->
-						<div class="music wrapper-section">
-							<div class="section">
-								<div class="test">
-									<p>Music will go here</p>
-								</div>
+					</section>
+					<!-- IMAGE -->
+					<a name="image" id="basic-waypoint__1"></a>
+					<div class="_image"></div>
+					<!-- MUSIC -->
+					<a name="music" id="basic-waypoint__2"></a>
+					<section class="music wrapper-section">
+						<div class="section width--100">
+							<div class="test">
+								<p>Music will go here</p>
 							</div>
 						</div>
-						<!-- EPIGRAM -->
-						<div class="epigram wrapper-section section">
-							<div class="english _epigram--english right-english-text is-hidden"></div>
-							<div class="original right-latin-german-text">
+					</section>
+					<!-- EPIGRAM -->
+					<a name="epigram" id="basic-waypoint__3"></a>
+					<section class="epigram-wrapper half wrapper-section section--split-or-wrap">
+						<div class="epigram section width--100">
+							<div class="english _epigram--english"></div>
+							<div class="original is-hidden">
+								<div class="switch-wrapper left">
+									<div class="latin-german-switch">
+										<ul>
+											<li class="is-selected"><a href="#">Latin</a></li>
+											<li><a href="#">German</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="latin _epigram--latin"></div>
+								<div class="german _epigram--german is-hidden"></div>
+							</div>
+						</div>
+						<div class="epigram section double is-hidden">
+							<div class="english _epigram--english is-hidden"></div>
+							<div class="original">
 								<div class="switch-wrapper right">
 									<div class="latin-german-switch">
 										<ul>
@@ -270,33 +124,157 @@
 								<div class="german _epigram--german is-hidden"></div>
 							</div>
 						</div>
-						<!-- DISCOURSE -->
-						<div class="discourse wrapper-section">
-							<div class="english _discourse--english right-english-text section text is-hidden"></div>
-							<div class="original right-latin-german-text section text">
+					</section>
+					<!-- DISCOURSE -->
+					<a name="discourse" id="basic-waypoint__4"></a>
+					<section class="discourse-wrapper half wrapper-section section--split-or-wrap">
+						<div class="discourse section width--100">
+							<div class="english _discourse--english text"></div>
+							<div class="original text is-hidden">
 								<div class="latin _discourse--latin"></div>
 							</div>
 						</div>
-					</div>
-				</div><!-- END OF RIGHT PANEL -->
-			</div> <!-- END OF EMBLEM WRAPPER -->
-		</div> <!-- END OF EMBLEM PAGE -->
-	</div> <!-- END OF CONTAINER -->
+						<div class="discourse section double is-hidden">
+							<div class="english _discourse--english text is-hidden"></div>
+							<div class="original text">
+								<div class="latin _discourse--latin"></div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+<!-- LEFT PANEL -->
+			<div class="emblem__left is-hidden">
+				<section class="facsimile-wrapper is-hidden">
+					<div class="facsimile">Facsimile</div>
+				</section>
+				<div class="emblem">
+					<!-- MOTTO -->
+					<section class="motto wrapper-section section">
+						<div class="english _motto--english left-english-text"></div>
+						<div class="original left-latin-german-text is-hidden">
+							<div class="switch-wrapper left">
+								<div class="latin-german-switch">
+									<ul>
+										<li class="is-selected"><a href="#">Latin</a></li>
+										<li><a href="#">German</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="latin _motto--latin"></div>
+							<div class="german _motto--german is-hidden"></div>
+						</div>
+					</section>
+					<!-- IMAGE -->
+					<div class="_image"></div>
+					<!-- MUSIC -->
+					<section class="music wrapper-section">
+						<div class="section">
+							<div class="test">
+								<p>Music will go here</p>
+							</div>
+						</div>
+					</section>
+					<!-- EPIGRAM -->
+					<section class="epigram wrapper-section section">
+						<div class="english _epigram--english left-english-text">
+						</div>
+						<div class="original left-latin-german-text is-hidden">
+							<div class="switch-wrapper left">
+								<div class="latin-german-switch">
+									<ul>
+										<li class="is-selected"><a href="#">Latin</a></li>
+										<li><a href="#">German</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="latin _epigram--latin "></div>
+							<div class="german _epigram--german is-hidden"></div>
+						</div>
+					</section>
+					<!-- DISCOURSE -->
+					<section class="discourse wrapper-section">
+						<div class="english _discourse--latin left-english-text section text"></div>
+						<div class="original left-latin-german-text section text is-hidden">
+							<div class="latin _discourse--latin"></div>
+						</div>
+					</section>
+				</div>
+			</div><!-- END OF LEFT PANEL -->
+<!-- RIGHT PANEL -->
+			<div class="emblem__right is-hidden">
+				<section class="facsimile-wrapper is-hidden">
+					<div class="facsimile">Facsimile</div>
+				</section>
+				<div class="emblem">
+					<!-- MOTTO -->
+					<section class="motto wrapper-section section">
+						<div class="english _motto--english right-english-text is-hidden"></div>
+						<div class="original right-latin-german-text">
+							<div class="switch-wrapper right">
+								<div class="latin-german-switch">
+									<ul>
+										<li class="is-selected"><a href="#">Latin</a></li>
+										<li><a href="#">German</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="latin _motto--latin"></div>
+							<div class="german _motto--german is-hidden"></div>
+						</div>
+					</section>
+					<!-- IMAGE -->
+					<div class="_image"></div>
+					<!-- MUSIC -->
+					<section class="music wrapper-section">
+						<div class="section">
+							<div class="test">
+								<p>Music will go here</p>
+							</div>
+						</div>
+					</section>
+					<!-- EPIGRAM -->
+					<section class="epigram wrapper-section section">
+						<div class="english _epigram--english right-english-text is-hidden"></div>
+						<div class="original right-latin-german-text">
+							<div class="switch-wrapper right">
+								<div class="latin-german-switch">
+									<ul>
+										<li class="is-selected"><a href="#">Latin</a></li>
+										<li><a href="#">German</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="latin _epigram--latin"></div>
+							<div class="german _epigram--german is-hidden"></div>
+						</div>
+					</section
+					<!-- DISCOURSE -->
+					<section class="discourse wrapper-section">
+						<div class="english _discourse--english right-english-text section text is-hidden"></div>
+						<div class="original right-latin-german-text section text">
+							<div class="latin _discourse--latin"></div>
+						</div>
+					</section>
+				</div>
+			</div><!-- END OF RIGHT PANEL -->
+		</div> <!-- END OF EMBLEM WRAPPER -->
+	</main> <!-- END OF EMBLEM PAGE -->
 <!-- JS -->
 	<script type="text/javascript">
 		$(function () {
 /* VARIABLES */
 			/* emblem nav */
-			var singleNav = '.subnav5 > ul li:nth-child(n + 2):nth-child(-n + 4)';
-			var doubleNav = '.subnav5 > ul li:nth-last-child(-n + 3)';
-			var singleViewBtn = '.subnav5 > ul li:nth-child(1)';
-			var doubleViewBtn = '.subnav5 > ul li:nth-child(5)';
-			var englishSingleView = '.subnav5 > ul li:nth-child(2)';
-			var latinSingleView = '.subnav5 > ul li:nth-child(3)';
-			var facsimileSingleView = '.subnav5 > ul li:nth-child(4)';
-			var englishDoubleView = '.subnav5 > ul li:nth-child(6)';
-			var latinDoubleView = '.subnav5 > ul li:nth-child(7)';
-			var facsimileDoubleView = '.subnav5 > ul li:nth-child(8)';
+			var singleNav = '.subnav > ul li:nth-child(n + 2):nth-child(-n + 4)';
+			var doubleNav = '.subnav > ul li:nth-last-child(-n + 3)';
+			var singleViewBtn = '.subnav > ul li:nth-child(1)';
+			var doubleViewBtn = '.subnav > ul li:nth-child(5)';
+			var englishSingleView = '.subnav > ul li:nth-child(2)';
+			var latinSingleView = '.subnav > ul li:nth-child(3)';
+			var facsimileSingleView = '.subnav > ul li:nth-child(4)';
+			var englishDoubleView = '.subnav > ul li:nth-child(6)';
+			var latinDoubleView = '.subnav > ul li:nth-child(7)';
+			var facsimileDoubleView = '.subnav > ul li:nth-child(8)';
 			/* emblem languages */
 			var singleEmblem = '.emblem__full .emblem';
 			var singleTranslation = '.width--100 .english ';
