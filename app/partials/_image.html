@@ -8,9 +8,20 @@
 	var imageJSON
 	var imageBlock = "._image img";
 
+/* https://github.com/jquery/api.jquery.com/issues/756 */
+	// $.getJSON(imageJSONFile, function( json ) {
+	// 	imageJSON = json[emblemDataNum]; // get the image object for the current emblem
+	// 	$(imageBlock).attr("src", imageJSON["github-raw-url"]); // update the image src
+	// 	$(imageBlock).attr("alt", imageJSON["alt-text"]); // update the image alt-text
+	// });
 	$.getJSON(imageJSONFile, function( json ) {
 		imageJSON = json[emblemDataNum]; // get the image object for the current emblem
-		$(imageBlock).attr("src", imageJSON["github-raw-url"]); // update the image src
-		$(imageBlock).attr("alt", imageJSON["alt-text"]); // update the image alt-text
-	});
+	})
+		.fail(function() {
+			console.log("_image.html FAILED to load emblem images");
+		})
+		.done(function() {
+			$(imageBlock).attr("src", imageJSON["github-raw-url"]); // update the image src
+			$(imageBlock).attr("alt", imageJSON["alt-text"]); // update the image alt-text
+		});
 </script>
