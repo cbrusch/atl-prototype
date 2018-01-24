@@ -1,5 +1,14 @@
 @import 'colors';
- 
+
+body {
+	background-color: pink;
+	font-family: 'Futura', Helvetica, sans-serif;
+	font-size: 16px;
+	p {
+		font-family: Garamond, serif;
+	}
+}
+
 .container-fluid {
 	margin: 0;
 	padding: 0;
