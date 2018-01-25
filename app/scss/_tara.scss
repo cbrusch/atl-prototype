@@ -11,6 +11,9 @@
 .orig {
 	display: none;
 }
+.reg {
+	color: $black;
+}
 .note-mark {
 /*	display: none;*/
 }
@@ -26,11 +29,24 @@ max-width: 12rem;
 .milestone {
 	display: none;
 }
+.choice, .subst {
+	background-color: $white;
+	margin-left: 0;
+}
+.add:before {
+	content: "";
+}
+.add:after {
+	content: " ";
+}
 .del {
 	display: none;
 }
 .pb {
 	display: none;
+}
+.verse {
+	margin-left: 0;
 }
 #discoursePartial--e > .discourse {
 	display: flex;
@@ -58,9 +74,9 @@ max-width: 12rem;
 	min-width: 40%;
 	max-width: 70%;
 }
-.my-motto {
-	font-size: 2rem;
-	line-height: 3rem;
+h3.title { /* motto */
+	font-size: 1.825rem;
+	line-height: 2.25rem;
 }
 .emblem-heading {
 	font-size: 1rem;

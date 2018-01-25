@@ -875,90 +875,6 @@ body {
 /* NEUTRAL */
 /* COOL */
 /* WARM */
-/*.subnav__options--option:nth-child(3) {
-	background-color: red !important;
-	display: none;
-}
-.subnav__options--option:nth-child(7) {
-	background-color: red !important;
-	display: none;
-}*/
-.orig {
-  display: none; }
-
-.note-mark {
-  /*	display: none;*/ }
-
-.margin-note {
-  /*	display: none;*/
-  position: absolute;
-  right: 1rem;
-  font-size: .825rem;
-  line-height: 1.25rem;
-  max-width: 12rem;
-  /*z-index: 5000;*/ }
-
-.milestone {
-  display: none; }
-
-.del {
-  display: none; }
-
-.pb {
-  display: none; }
-
-#discoursePartial--e > .discourse {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  /*	border: 1px solid pink;*/ }
-
-#discoursePartial--e h3 {
-  /* discourse is a conflicting class with emblem template */
-  display: block;
-  height: auto;
-  min-height: .5rem;
-  max-height: 2rem;
-  padding: 1rem 0;
-  text-align: center;
-  width: 100%;
-  /*	border: 1px solid red;*/ }
-
-#discoursePartial--e .discourse .ab {
-  /*	border: 1px solid green;*/
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-align: left;
-  height: auto;
-  padding: 3rem 5rem;
-  min-width: 40%;
-  max-width: 70%; }
-
-.my-motto {
-  font-size: 2rem;
-  line-height: 3rem; }
-
-.emblem-heading {
-  font-size: 1rem; }
-
-.verse-epigram {
-  font-size: 1.325rem;
-  line-height: 2.5rem;
-  padding-bottom: 2.5rem; }
-
-/* NEUTRAL */
-/* COOL */
-/* WARM */
 /*
  * CSS for Transcription of English translation of Atalanta. Designed mostly for proofreading.
  * Almost all elements are styled, but often so that they can be proofread.
@@ -971,12 +887,9 @@ body {
 .epigram {
   text-align: center; }
 
-/*
-.verse{
-    margin-left: 1.5in;
-}
+.verse {
+  margin-left: 1.5in; }
 
-*/
 h2 {
   color: #b5b5b5; }
 
@@ -998,35 +911,35 @@ h3.title {
   color: grey; }
 
 .milestone:before {
-  /*content: " [§ ";*/ }
+  content: " [§ "; }
 
 .milestone:after {
-  /*content: "] ";*/ }
+  content: "] "; }
 
 .choice {
-  /* background-color: #eeeeee;*/
+  background-color: #eeeeee;
   margin-left: 2px; }
 
 .reg {
-  /*color: #009acd;*/ }
+  color: #009acd; }
 
 /*  .reg:before {
       content: "|";
   }*/
 .subst {
-  /*background-color: #eeeeee;*/
-  /*margin-left: 2px;*/ }
+  background-color: #eeeeee;
+  margin-left: 2px; }
 
 .del {
   text-decoration: line-through; }
 
 .add:before {
-  /*content: "<";
-    color: #8E8E38;*/ }
+  content: "<";
+  color: #8E8E38; }
 
 .add:after {
-  /*content: ">";
-    color: #8E8E38;*/ }
+  content: ">";
+  color: #8E8E38; }
 
 .unclear {
   color: green; }
@@ -1075,6 +988,107 @@ span.underline {
 
 .help {
   color: red; }
+
+/* NEUTRAL */
+/* COOL */
+/* WARM */
+/*.subnav__options--option:nth-child(3) {
+	background-color: red !important;
+	display: none;
+}
+.subnav__options--option:nth-child(7) {
+	background-color: red !important;
+	display: none;
+}*/
+.orig {
+  display: none; }
+
+.reg {
+  color: #222; }
+
+.note-mark {
+  /*	display: none;*/ }
+
+.margin-note {
+  /*	display: none;*/
+  position: absolute;
+  right: 1rem;
+  font-size: .825rem;
+  line-height: 1.25rem;
+  max-width: 12rem;
+  /*z-index: 5000;*/ }
+
+.milestone {
+  display: none; }
+
+.choice, .subst {
+  background-color: #fff;
+  margin-left: 0; }
+
+.add:before {
+  content: ""; }
+
+.add:after {
+  content: " "; }
+
+.del {
+  display: none; }
+
+.pb {
+  display: none; }
+
+.verse {
+  margin-left: 0; }
+
+#discoursePartial--e > .discourse {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*	border: 1px solid pink;*/ }
+
+#discoursePartial--e h3 {
+  /* discourse is a conflicting class with emblem template */
+  display: block;
+  height: auto;
+  min-height: .5rem;
+  max-height: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+  /*	border: 1px solid red;*/ }
+
+#discoursePartial--e .discourse .ab {
+  /*	border: 1px solid green;*/
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-align: left;
+  height: auto;
+  padding: 3rem 5rem;
+  min-width: 40%;
+  max-width: 70%; }
+
+h3.title {
+  /* motto */
+  font-size: 1.825rem;
+  line-height: 2.25rem; }
+
+.emblem-heading {
+  font-size: 1rem; }
+
+.verse-epigram {
+  font-size: 1.325rem;
+  line-height: 2.5rem;
+  padding-bottom: 2.5rem; }
 
 /* NEUTRAL */
 /* COOL */
