@@ -884,7 +884,7 @@ body {
 	display: none;
 }*/
 .orig {
-  /*display: none;*/ }
+  display: none; }
 
 .note-mark {
   /*	display: none;*/ }
@@ -897,6 +897,12 @@ body {
   line-height: 1.25rem;
   max-width: 12rem;
   /*z-index: 5000;*/ }
+
+.milestone {
+  display: none; }
+
+.del {
+  display: none; }
 
 .pb {
   display: none; }
@@ -992,35 +998,35 @@ h3.title {
   color: grey; }
 
 .milestone:before {
-  content: " [§ "; }
+  /*content: " [§ ";*/ }
 
 .milestone:after {
-  content: "] "; }
+  /*content: "] ";*/ }
 
 .choice {
-  background-color: #eeeeee;
+  /* background-color: #eeeeee;*/
   margin-left: 2px; }
 
 .reg {
-  color: #009acd; }
+  /*color: #009acd;*/ }
 
 /*  .reg:before {
       content: "|";
   }*/
 .subst {
-  background-color: #eeeeee;
-  margin-left: 2px; }
+  /*background-color: #eeeeee;*/
+  /*margin-left: 2px;*/ }
 
 .del {
   text-decoration: line-through; }
 
 .add:before {
-  content: "<";
-  color: #8E8E38; }
+  /*content: "<";
+    color: #8E8E38;*/ }
 
 .add:after {
-  content: ">";
-  color: #8E8E38; }
+  /*content: ">";
+    color: #8E8E38;*/ }
 
 .unclear {
   color: green; }

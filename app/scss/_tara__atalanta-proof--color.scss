@@ -45,21 +45,21 @@ h3.title{
 }
 
 .milestone:before{
-    content: " [§ ";
+    /*content: " [§ ";*/
 }
 
 .milestone:after{
-    content: "] ";
+    /*content: "] ";*/
 }
 
 .choice {
-    background-color: #eeeeee;
+   /* background-color: #eeeeee;*/
     margin-left: 2px;
 }
 
 
 .reg {
-    color: #009acd;
+    /*color: #009acd;*/
 }
 
 /*  .reg:before {
@@ -67,8 +67,8 @@ h3.title{
   }*/
 
 .subst {
-    background-color: #eeeeee;
-    margin-left: 2px;
+    /*background-color: #eeeeee;*/
+    /*margin-left: 2px;*/
   }
 
 .del{
@@ -76,13 +76,13 @@ h3.title{
 }
 
 .add:before{
-    content: "<";
-    color: #8E8E38;
+    /*content: "<";
+    color: #8E8E38;*/
 }
 
 .add:after{
-    content: ">";
-    color: #8E8E38;
+    /*content: ">";
+    color: #8E8E38;*/
 }
 
 .unclear{

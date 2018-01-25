@@ -9,7 +9,7 @@
 	display: none;
 }*/
 .orig {
-	/*display: none;*/
+	display: none;
 }
 .note-mark {
 /*	display: none;*/
@@ -22,6 +22,12 @@ font-size: .825rem;
 line-height: 1.25rem;
 max-width: 12rem;
 /*z-index: 5000;*/
+}
+.milestone {
+	display: none;
+}
+.del {
+	display: none;
 }
 .pb {
 	display: none;
