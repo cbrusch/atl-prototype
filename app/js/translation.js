@@ -35,15 +35,15 @@ $(document).ready(function() {
 		for (i = 1; i < 51; i++) { // make an array of emblem html files with values of urls + IDs to the content sections
 			if (i < 10) { // add a leading zero to the emblem number in the url if the emblem is less than 10
 				englishEmblemArray.push({
-					motto: "../../partials/emblems-html/emblem0" + i + "-Facsimile.html #mottoPartial--e",
-					epigram: "../partials/emblems-html/emblem0" + i + "-Facsimile.html #epigramPartial--e",
+					motto: "../../partials/emblems-html/emblem0" + i + "-Facsimile.html #mottoPartial--e .my-motto",
+					epigram: "../partials/emblems-html/emblem0" + i + "-Facsimile.html #epigramPartial--e .verse-epigram",
 					discourse: "../partials/emblems-html/emblem0" + i + "-Facsimile.html #discoursePartial--e"
 				});	
 			}
 			else {
 				englishEmblemArray.push({
-					motto: "../partials/emblems-html/emblem" + i + "-Facsimile.html #mottoPartial--e",
-					epigram: "../partials/emblems-html/emblem" + i + "-Facsimile.html #epigramPartial--e",
+					motto: "../partials/emblems-html/emblem" + i + "-Facsimile.html #mottoPartial--e .my-motto",
+					epigram: "../partials/emblems-html/emblem" + i + "-Facsimile.html #epigramPartial--e .verse-epigram",
 					discourse: "../partials/emblems-html/emblem" + i + "-Facsimile.html #discoursePartial--e"
 				});	
 			}

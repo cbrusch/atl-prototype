@@ -1,1 +1,66 @@
 @import 'colors';
+
+/*.subnav__options--option:nth-child(3) {
+	background-color: red !important;
+	display: none;
+}
+.subnav__options--option:nth-child(7) {
+	background-color: red !important;
+	display: none;
+}*/
+.orig {
+	/*display: none;*/
+}
+.note-mark {
+/*	display: none;*/
+}
+.margin-note {
+/*	display: none;*/
+position: absolute;
+right: 1rem;
+font-size: .825rem;
+line-height: 1.25rem;
+max-width: 12rem;
+/*z-index: 5000;*/
+}
+.pb {
+	display: none;
+}
+#discoursePartial--e > .discourse {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+/*	border: 1px solid pink;*/
+}
+#discoursePartial--e h3 { /* discourse is a conflicting class with emblem template */
+	display: block;
+	height: auto;
+	min-height: .5rem;
+	max-height: 2rem;
+	padding: 1rem 0;
+	text-align: center;
+	width: 100%;
+/*	border: 1px solid red;*/
+}
+#discoursePartial--e .discourse .ab {
+/*	border: 1px solid green;*/
+	font-size: 1.25rem;
+	line-height: 2rem;
+	text-align: left;
+	height: auto;
+	padding: 3rem 5rem;
+	min-width: 40%;
+	max-width: 70%;
+}
+.my-motto {
+	font-size: 2rem;
+	line-height: 3rem;
+}
+.emblem-heading {
+	font-size: 1rem;
+}
+.verse-epigram {
+	font-size: 1.325rem;
+	line-height: 2.5rem;
+	padding-bottom: 2.5rem;
+}
