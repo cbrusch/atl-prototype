@@ -159,7 +159,6 @@ body {
         width: 45px; }
 
 .toc-wrapper {
-  border: 2px solid red;
   position: fixed;
   /*	height: 100vh;*/
   width: 100%;
@@ -175,7 +174,6 @@ body {
   display: none; }
 
 .toc {
-  border: 2px solid green;
   padding: 2rem;
   background-color: #282828;
   display: -webkit-box;
@@ -194,14 +192,14 @@ body {
   height: 180vh;
   /*	overflow-y: auto;
 	overflow-x: hidden;*/
-  width: 30%;
+  width: 20%;
   /*	position: fixed;*/
   /*	height: 100vh;*/
   /*		overflow-y: auto !important;
 		overflow-x: hidden;*/ }
 
 .edition {
-  border: 2px solid purple;
+  /*	border: 2px solid purple;*/
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

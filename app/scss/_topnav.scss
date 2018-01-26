@@ -31,7 +31,6 @@
 	}
 }
 .toc-wrapper {
-	border: 2px solid red;
 	position: fixed;
 /*	height: 100vh;*/
 	width: 100%;
@@ -48,7 +47,6 @@ overflow: auto;
 	display: none;
 }
 .toc {
-	border: 2px solid green;
 	padding: 2rem;
 	background-color: $gray;
 	display: flex;
@@ -57,7 +55,7 @@ overflow: auto;
 	height: 180vh;
 /*	overflow-y: auto;
 	overflow-x: hidden;*/
-	width: 30%;
+	width: 20%;
 /*	position: fixed;*/
 /*	height: 100vh;*/
 /*		overflow-y: auto !important;
@@ -66,7 +64,7 @@ overflow: auto;
 
 }
 .edition {
-	border: 2px solid purple;
+/*	border: 2px solid purple;*/
 	display: flex;
 	flex-direction: column;
 	align-content: center;
