@@ -195,7 +195,7 @@
 					</section>
 					<!-- Discourse -->
 					<section class="discourse wrapper-section">
-						<div class="english _discourse--latin left-english-text section text"></div>
+						<div class="english _discourse--english left-english-text section text"></div>
 						<div class="original left-latin-german-text section text is-hidden">
 							<div class="latin _discourse--latin"></div>
 						</div>
@@ -463,15 +463,16 @@
 				$(doubleNav).toggleClass('is-hidden'); // hide last 3 language options for double view
 				$(singleViewBtn).toggleClass('is-active'); // make "Single View" button active
 				$(englishSingleView).toggleClass('is-active'); // highlight english translation as default single text
+				// $(facsimileDoubleView).toggleClass('is-active'); // highlight facsimile for Tara's class
 				$(latinDoubleView).toggleClass('is-active'); // highlight latin as default double text
 				$('.wrapper-vertical-divider').toggleClass('is-disabled'); // hide vertical line that divides text sections
-				console.log("352: I loaded the page");
+				console.log("I loaded the page");
 			}
 			// I need to take a deep look at the *pages* event listeners and these two functions below. Are they repeating themselves???
 			function isActiveSingle() { // make full-width emblem when single view is active
 				console.log("I called isActiveSingle()");
 				if( $(singleViewBtn).hasClass('is-active') ) {
-					console.log("357: single view is already active");
+					console.log("Single view is already active");
 				}
 				else {
 					$(doubleNav).addClass('is-hidden'); // hide last 3 language options for double view
@@ -479,14 +480,14 @@
 					$(singleViewBtn).addClass('is-active'); // add highlight to single view button
 					$(imageSection).removeClass('double'); // end half width image section
 					$(musicSection).removeClass('double'); // end half width music section
-					console.log("367: i'm making single view active in isActiveSingle()");
+					console.log("I'm making single view active in isActiveSingle()");
 				}
 				console.log("Leaving isActiveSingle()");
 			}
 			function isActiveDouble() { // split whole emblem into left/right halves
 				console.log("I called isActiveDouble()");
 				if( $(doubleViewBtn).hasClass('is-active') ) {
-					console.log("373: double view is already active!!!");
+					console.log("Double view is already active!!!");
 				}
 				else if( !$(doubleViewBtn).hasClass('is-active') && $(doubleNav).hasClass('is-hidden') ) {$(emblemWrapper).removeClass('is-sticky'); // remove fixed position from facsimile container
 					$(doubleNav).removeClass('is-hidden'); // reveal last 3 language options for double view
@@ -494,15 +495,15 @@
 					$(doubleViewBtn).addClass('is-active'); // add highlight to double view button
 					$(imageSection).addClass('double'); // begin half width image section
 					$(musicSection).addClass('double'); // begin half width music section
-					console.log("383: i'm making double view active in isActiveDouble()");
+					console.log("I'm making double view active in isActiveDouble()");
 				}
 				console.log("Leaving isActiveDouble()");
 			}
 			function splitWholeEmblem() {
 				console.log("I called splitWholeEmblem()");
 				$('.emblem__full .double').removeClass('is-hidden'); //replace full-width with left/right halves in whole emblem container
-				$('.emblem__left').addClass('is-hidden'); //replace full-width with left/right halves in whole emblem container
-				$('.emblem__right').addClass('is-hidden');
+				$(leftEmblem).addClass('is-hidden'); //replace full-width with left/right halves in whole emblem container
+				$(rightEmblem).addClass('is-hidden');
 				console.log("Leaving splitWholeEmblem()");
 			}
 			function rejoinWholeEmblem() {
@@ -513,13 +514,9 @@
 			function restoreWholeEmblem() {
 				console.log("I called restoreWholeEmblem()");
 				if( $(facsimileDoubleView).hasClass('is-active') ) { // display right facsimile if it is stored
-					console.log("end 2");
 				}
 				else { // display emblem halves in whole emblem container if no facsimile is stored
-					console.log("step 6");
 					splitWholeEmblem();
-					console.log("step 7");
-					console.log("end 3");
 					console.log("I should be looking at the whole emblem");
 				}
 				console.log("Leaving restoreWholeEmblem()");
