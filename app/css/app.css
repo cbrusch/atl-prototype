@@ -162,28 +162,22 @@ body {
   border: 2px solid red;
   position: fixed;
   /*	height: 100vh;*/
-  width: 40vh !important;
+  width: 100%;
   height: 100vh;
-  background-color: #282828;
   top: 0;
-  left: -50vh;
-  padding: 2rem !important;
+  left: 0;
   /*	overflow: hidden;*/
   z-index: 20000000;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  .toc-wrapper ::scrollbar {
-    display: none; }
+  /*	overflow: hidden;*/
+  overflow: auto;
+  /*	display: flex;
+	justify-content: flex-start;*/
+  display: none; }
 
 .toc {
   border: 2px solid green;
+  padding: 2rem;
+  background-color: #282828;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -193,14 +187,14 @@ body {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 92vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  height: 180vh;
+  /*	overflow-y: auto;
+	overflow-x: hidden;*/
+  width: 30%;
   /*	position: fixed;*/
   /*	height: 100vh;*/
   /*		overflow-y: auto !important;
@@ -220,6 +214,7 @@ body {
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
+  height: auto;
   /*height: auto;*/
   width: 100%;
   /*	overflow: auto;*/
