@@ -1,5 +1,11 @@
 @import 'colors';
 
+.section {
+	line-height: 1.5rem;
+}
+section > div.discourse.section.width--100 {
+	line-height: 1.75rem;
+}
 /*.subnav__options--option:nth-child(3) {
 	background-color: red !important;
 	display: none;
@@ -48,7 +54,7 @@ max-width: 12rem;
 .verse {
 	margin-left: 0;
 }
-#discoursePartial--e > .discourse {
+#discoursePartial--e div.discourse {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
