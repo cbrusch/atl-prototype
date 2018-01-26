@@ -12,7 +12,7 @@
 	line-height: 2rem;
 	margin: 0;
 	position: fixed;
-	z-index: 100;
+	z-index: 100000;
 	ul {
 		display: flex;
 		align-items: center;
@@ -31,6 +31,37 @@
 	}
 }
 
+.toc {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	height: 100vh;
+	width: 40vh !important;
+	background-color: $gray;
+	top: 0;
+	left: -50vh;
+	padding: 2rem !important;
+	a {
+		color: $white;
+		font-size: 1rem;
+	}
+	a:hover {
+		color: $dusty-blue-lt;
+	}
+}
+.edition {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+/*	border: 5px solid green;*/
+}
+.move-in {
+	left: 0;
+}
+.move-out {
+	left: -50vh;
+}
 
 
 /*** Breakpoints ***/

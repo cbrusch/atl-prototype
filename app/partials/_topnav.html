@@ -1,7 +1,31 @@
 <nav class="topnav">
 	<ul>
-		<li><a href="#" title="Table of Contents"><img src="../img/icons/toc.png" alt="table of contents icon" /></a></li>
+		<li class="my-trigger"><a href="#" title="Table of Contents"><img src="../img/icons/toc.png" alt="table of contents icon" /></a></li>
 		<li>Furnace + Fugue: Atalanta Fugiens</li>
 		<li></li>
 	</ul>
+	<ul class="toc">
+		<div class="edition">
+			<li><a href="../pages/emblem1.html">Emblem 1</a></li>
+			<li><a href="../pages/emblem2.html">Emblem 2</a></li>
+			<li><a href="../pages/emblem3.html">Emblem 3</a></li>
+			<li><a href="../pages/emblem4.html">Emblem 4</a></li>
+			<li><a href="../pages/emblem5.html">Emblem 5</a></li>
+		</div>
+	</ul>
 </nav>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.my-trigger').click(function() {
+			console.log("the menu is sliding in");
+			$('.toc').addClass('move-in');
+			$('.toc').removeClass('move-out');
+		});
+		$('.edition').click(function() {
+			console.log("the menu is sliding out");
+			$('.toc').addClass('move-out');
+			$('.toc').removeClass('move-in');
+		});
+	})
+</script>

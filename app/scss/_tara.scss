@@ -54,13 +54,18 @@ max-width: 12rem;
 .verse {
 	margin-left: 0;
 }
-#discoursePartial--e div.discourse {
+._motto--english h3.title {
+/*	border: 1px solid purple;*/
+}
+/*#discoursePartial--e div.discourse {*/
+._discourse--english div.discourse {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 /*	border: 1px solid pink;*/
 }
-#discoursePartial--e h3 { /* discourse is a conflicting class with emblem template */
+/*#discoursePartial--e h3 { *//* discourse is a conflicting class with emblem template */
+._discourse--english h3 { 
 	display: block;
 	height: auto;
 	min-height: .5rem;
@@ -68,7 +73,7 @@ max-width: 12rem;
 	padding: 1rem 0;
 	text-align: center;
 	width: 100%;
-/*	border: 1px solid red;*/
+/*	border: 1px solid green;*/
 }
 #discoursePartial--e .discourse .ab {
 /*	border: 1px solid green;*/
