@@ -1379,5 +1379,16 @@ ul.sidenav__options li.sidenav--is-active a:hover {
 #tools a:active {
   color: yellow; }
 
+/***     Breakpoints     ***/
+/* large  -  desktop */
+/* medium-large - laptop */
+/* medium - small laptop */
+/* medium - tablet */
+/* small  -  mobile */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  /* mobile phones are too small for a side by side view */
+  ._sidenav {
+    display: none; } }
+
 a {
   text-decoration: none !important; }
