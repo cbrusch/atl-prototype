@@ -11,10 +11,10 @@
 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 	crossorigin="anonymous">
 </script>
-	<script type="text/javascript" src="../js/translation.js"></script>
-	<script type="text/javascript" src="../js/openseadragon/openseadragon.min.js"></script>
-	<script type="text/javascript" src="../js/waypoints/lib/noframework.waypoints.min.js"></script>
-	<script type="text/javascript" src="../js/waypoints/lib/jquery.waypoints.min.js"></script>
+	<script type="text/javascript" src="/js/translation.js"></script>
+	<script type="text/javascript" src="/js/openseadragon/openseadragon.min.js"></script>
+	<script type="text/javascript" src="/js/waypoints/lib/noframework.waypoints.min.js"></script>
+	<script type="text/javascript" src="/js/waypoints/lib/jquery.waypoints.min.js"></script>
 </head>
 <body>
 	<header>
@@ -24,12 +24,12 @@
 		<nav class="subnav">
 			<ul>
 				<li class="subnav__views--single"><a href="#">Single View</a></li>
-				<li class="subnav__options--option"><a href="#">Translation</a></li>
-				<li class="subnav__options--option"><a href="#">Original</a></li>
+				<li class="subnav__options--option"><a href="#">English</a></li>
+				<li class="subnav__options--option"><a href="#">Latin/German</a></li>
 				<li class="subnav__options--option"><a href="#">Facsimile</a></li>
 				<li class="subnav__views--double"><a href="#">Side-by-side View</a></li>
-				<li class="subnav__options--option"><a href="#">Translation</a></li>
-				<li class="subnav__options--option"><a href="#">Original</a></li>
+				<li class="subnav__options--option"><a href="#">English</a></li>
+				<li class="subnav__options--option"><a href="#">Latin/German</a></li>
 				<li class="subnav__options--option"><a href="#">Facsimile</a></li>
 			</ul>
 		</nav>
@@ -146,9 +146,7 @@
 <!-- LEFT PANEL -->
 			<div class="emblem__left is-hidden">
 				<!-- Facsimile -->
-				<section class="facsimile-wrapper is-hidden">
-					<div class="facsimile">Facsimile</div>
-				</section>
+					<div class="_facsimile-half is-hidden"></div>
 				<div class="emblem">
 					<!-- Motto -->
 					<section class="motto wrapper-section section">
@@ -205,9 +203,7 @@
 <!-- RIGHT PANEL -->
 			<div class="emblem__right is-hidden">
 				<!-- Facsimile -->
-				<section class="facsimile-wrapper is-hidden">
-					<div class="facsimile">Facsimile</div>
-				</section>
+				<div class="_facsimile-half is-hidden"></div>
 				<div class="emblem">
 					<!-- Motto -->
 					<section class="motto wrapper-section section">
@@ -300,8 +296,8 @@
 			var rightEmblem = '.emblem__right';
 			var leftEmblemText = '.emblem__left .emblem';
 			var rightEmblemText = '.emblem__right .emblem';
-			var leftFacsimile = '.emblem__left .facsimile-wrapper';
-			var rightFacsimile = '.emblem__right .facsimile-wrapper';
+			var leftFacsimile = '.emblem__left ._facsimile-half';
+			var rightFacsimile = '.emblem__right ._facsimile-half';
 			var rightTranslation = '.emblem__right .english';
 			var rightOriginal = '.emblem__right .original';
 			/* emblem sections */
@@ -426,14 +422,17 @@
 			});
 			$(facsimileDoubleView).click(function() { // activate double facsimile
 				if( $(this).hasClass('is-active') ) {
-
+					
 				}
 				else { 
 					$(doubleNav).removeClass('is-active'); // remove highlight from other options in double nav
 					$(this).addClass('is-active'); // highlight selected view option in nav
 					showRightFacsimile();
-					if( $(leftEmblem).hasClass('is-hidden') ) {
-						$(leftFacsimile).addClass('is-hidden'); // reset and hide left facsimile if the left panel is also hidden
+					if( $(leftFacsimile).hasClass('is-hidden') ) {
+	
+					}
+					else {
+						$(leftFacsimile).removeClass('is-hidden');	// display left facsimile
 					}
 				}
 				return false;

@@ -1,18 +1,15 @@
 <!-- https://openseadragon.github.io/docs/ -->
-<section class="facsimile">
+<section class="facsimile-wrapper">
 	<div class="facsimile-half">
-		<div id="openseadragon-wrapper">
-			<div id="tools">
+		<div id="openseadragon-wrapper--half">
+<!-- 			<div id="tools">
 				<span>
 					<a id="zoom-in" href="#zoom-in" title="Zoom In" style="display: inline-block; position: relative">Zoom In</a>
 					<a id="zoom-out" href="#zoom-out" title="Zoom Out" style="display: inline-block; position: relative">Zoom Out</a>
-	<!-- 				<a id="home" href="#home" title="Go home" style="display: inline-block; position: relative;">Home</a> -->
-	<!-- 				<a id="home" href="#home" title="Home" style="display: inline-block; position: relative">Reset</a> -->
-	<!-- 				<a id="full-page" href="#full-page" title="Full Page" style="display: inline-block; position: relative">Full Page</a> -->
 					<a id="previous" href="#previous" title="Previous" style="display: inline-block; position: relative">Previous</a>
 					<a id="next" href="#next" title="Next" style="display: inline-block; position: relative">Next</a>
 				</span>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>
@@ -33,8 +30,8 @@
 		})
 		.done(function() { // after all the image tiles are ready, display zoomable pages
 			var atalantaZoom = pageView; // current view mode (initially pageView)
-			var viewer = OpenSeadragon({
-				id: "openseadragon-wrapper",
+			var viewer2 = OpenSeadragon({
+				id: "openseadragon-wrapper--half",
 				tileSources: [atalantaZoom],
 				initialPage: startPage, // start viewer at first page of current emblem
 				autoResize: true, /***/
@@ -44,7 +41,7 @@
 				showReferenceStrip: false, /* thumbnails */
 				showNavigator: true, /* mini map */
 				// toolbar: "tools",
-				toolbar: "openseadragon-wrapper",
+				toolbar: "openseadragon-wrapper--half",
 				zoomInButton: "zoom-in",
 				zoomOutButton: "zoom-out",
 				homeButton: "home",

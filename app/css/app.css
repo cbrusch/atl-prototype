@@ -657,7 +657,12 @@ body {
   /* pfft text */ }
 
 .emblem__left .facsimile-wrapper {
-  left: 0; }
+  left: 0;
+  background-color: blue; }
+
+.emblem__right .facsimile-wrapper {
+  right: 0;
+  background-color: pink; }
 
 .facsimile {
   background-color: #222;
@@ -666,7 +671,7 @@ body {
 
 .facsimile-half {
   height: 100vh;
-  width: 50%;
+  width: 100%;
   border: 5px solid purple; }
 
 .image {
@@ -1084,6 +1089,9 @@ span.underline {
 /* NEUTRAL */
 /* COOL */
 /* WARM */
+.music {
+  display: none; }
+
 .section {
   line-height: 1.5rem; }
 
@@ -1355,6 +1363,18 @@ ul.sidenav__options li.sidenav--is-active a:hover {
   /* currently, the combined height of the topnav and subnav is 11.125rem */
   /*	width: 50% !important;*/
   width: 100vw; }
+
+#openseadragon-wrapper--half {
+  /*	border: 1px solid red !important;*/
+  float: right !important;
+  height: calc(100vh - 11.125rem);
+  /* currently, the combined height of the topnav and subnav is 11.125rem */
+  /*	width: 50% !important;*/
+  width: 50vw !important; }
+  #openseadragon-wrapper--half canvas {
+    cursor: pointer; }
+  #openseadragon-wrapper--half .navigator {
+    cursor: pointer; }
 
 .facsimile-wrapper #openseadragon-wrapper {
   width: 50vw; }

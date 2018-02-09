@@ -7,6 +7,20 @@
 /*	width: 50% !important;*/
 	width: 100vw;
 }
+#openseadragon-wrapper--half {
+/*	border: 1px solid red !important;*/
+	float: right !important;
+	height: calc(100vh - 11.125rem); /* currently, the combined height of the topnav and subnav is 11.125rem */
+/*	width: 50% !important;*/
+	width: 50vw !important;
+
+	canvas {
+		cursor: pointer;
+	}
+	.navigator {
+		cursor: pointer;
+	}
+}
 .facsimile-wrapper #openseadragon-wrapper {
 	width: 50vw;
 }
