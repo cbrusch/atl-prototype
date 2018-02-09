@@ -24,20 +24,21 @@
 		var discourseSideNav = 'ul.sidenav__options > li:nth-child(5)';
 		var sideNavOption = 'ul.sidenav__options > li';
 		var dataID = $('.emblem-page').data('id');
-		var currentEmblemNum = dataID + 1;
+		var myEmblem = dataID - 3;
+		var currentEmblemNum = myEmblem;
 		var prevEmblemNum = currentEmblemNum - 1;
 		var nextEmblemNum = currentEmblemNum + 1;
 		var prevBtn = '#sidenav__prev';
 		var nextBtn = '#sidenav__next';
 		var emblemNumTextArea = '#sidenav__titles';
 		
-		if (dataID === 0) {
+		if (dataID === 4) {
 			$(prevBtn).addClass('is-hidden'); // do not display previous button on first emblem
 			$(nextBtn).removeClass('is-hidden'); // display next button
 			$(nextBtn).attr("href", "../pages/emblem" + nextEmblemNum + ".html"); // update the next button to link to the next emblem
 			$(emblemNumTextArea).text("Emblem " + currentEmblemNum); // update the emblem title to reflect the current emblem number
 		}
-		else if (dataID === 4) { 
+		else if (dataID === 8) { 
 			$(nextBtn).addClass('is-hidden'); // do not display next button on last emblem
 			$(prevBtn).removeClass('is-hidden'); // display previous button
 			$(prevBtn).attr("href", "../pages/emblem" + prevEmblemNum + ".html"); // update the previous button to link to the previous emblem
