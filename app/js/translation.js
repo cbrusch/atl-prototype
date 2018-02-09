@@ -14,6 +14,7 @@ $(document).ready(function() {
 	var englishEmblemArray = [];
 	var englishEmblemURL
 	var emblemDataNum = $('.emblem-page').data("id"); // get the data ID for the current emblem page
+	var myEmblem = emblemDataNum - 4;
 	var sideNavEl = "._sidenav";
 	var sideNavPartial = "../partials/_sidenav.html";
 	var imageEl = "._image";
@@ -52,7 +53,7 @@ $(document).ready(function() {
 	}
 
 	function identifyEmblem(){
-		englishEmblemURL = englishEmblemArray[emblemDataNum]; // associate the URL with the corresponding emblem data ID
+		englishEmblemURL = englishEmblemArray[myEmblem]; // associate the URL with the corresponding emblem data ID
 		loadPartials();
 	}
 
