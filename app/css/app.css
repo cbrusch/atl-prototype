@@ -1089,6 +1089,47 @@ span.underline {
 /* NEUTRAL */
 /* COOL */
 /* WARM */
+.topnav a {
+  color: #fff; }
+
+.topnav a:hover {
+  color: #7694C0; }
+
+.topnav a:active {
+  color: #BD205D; }
+
+.tara-intro {
+  color: #222;
+  padding-top: 4rem;
+  text-align: center; }
+
+.tara-intro h1 {
+  font-size: 5rem;
+  font-style: italic;
+  line-height: 6rem; }
+
+.tara-intro h2 {
+  color: #222;
+  font-size: 2rem;
+  line-height: 4rem; }
+
+.tara-intro h3 {
+  color: #BD205D;
+  font-size: 1.25rem;
+  line-height: 3rem; }
+
+.tara-intro ul li {
+  line-height: 1.5rem; }
+
+.tara-intro ul a {
+  color: #222; }
+
+.tara-intro ul a:hover {
+  color: #7694C0; }
+
+.tara-intro ul a:active {
+  color: #BD205D; }
+
 .music {
   display: none; }
 

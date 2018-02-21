@@ -1,5 +1,49 @@
 @import 'colors';
 
+.topnav a {
+	color: $white;
+}
+.topnav a:hover {
+	color: $blue;
+}
+.topnav a:active {
+	color: $dark-pink;
+}
+.tara-intro {
+	color: $black;
+	padding-top: 4rem;
+	text-align: center;
+}
+.tara-intro h1 {
+	font-size: 5rem;
+	font-style: italic;
+	line-height: 6rem;
+}
+.tara-intro h2 {
+	color: $black;
+	font-size: 2rem;
+	line-height: 4rem;
+}
+.tara-intro h3 {
+	color: $dark-pink;
+	font-size: 1.25rem;
+	line-height: 3rem;
+}
+.tara-intro ul {
+	li {
+		line-height: 1.5rem;
+	}
+	a {
+		color: $black;
+	}
+	a:hover {
+		color: $blue;
+	}
+	a:active {
+		color: $dark-pink;
+	}
+}
+
 .music {
 	display: none;
 }
