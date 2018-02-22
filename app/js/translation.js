@@ -65,13 +65,13 @@ $(document).ready(function() {
 
 	function loadPartials(){
 		$(topNavEl).load(topNavPartial); // load the global navigation partial
+		$(sideNavEl).load(sideNavPartial); // load the side nav partial
 		$(frontispieceElEnglish).load(frontispiecePartial); // load the frontispiece text from the XML file
 		$(bioElEnglish).load(bioPartial); // load the bio text from the XML file
 		$(prefaceElEnglish).load(prefacePartial); // load the preface text from the XML file
 		$(mottoElEnglish).load(englishEmblemURL["motto"]); // load the motto text from the XML file
 		$(epigramElEnglish).load(englishEmblemURL["epigram"]); // load the epigram text from the XML file
 		$(discourseElEnglish).load(englishEmblemURL["discourse"]); // load the discourse text from the XML file
-		$(sideNavEl).load(sideNavPartial); // load the side nav partial
 		$(imageEl).load(imagePartial); // load the emblem image partial
 		$(facsimileEl).load(facsimilePartial); // load the full facsimile image viewer partial
 		$(facsimileHalfEl).load(facsimileHalfPartial); // load the half facsimile image viewer partial
