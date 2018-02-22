@@ -75,6 +75,38 @@ main[data-id='1'], main[data-id='2'], main[data-id='3'] {
 		font-weight: 400;
 	}
 }
+.bio-wrapper {
+	padding: 5rem 20%;
+	min-height: 100vh;
+}
+#bioPartial--e::before {
+	height: 0 !important;
+	margin-top: 0 !important;
+/*see the following:	
+[id]:before {
+  display: block;
+  content: " ";
+  margin-top: -180px;
+  height: 180px;
+  visibility: hidden; 
+}*/
+}
+.preface-wrapper {
+	padding: 5rem 20%;
+	min-height: 100vh;
+}
+#prefacePartial--e {
+	.title h3 {
+		font-size: 2rem;
+		line-height: 2.75rem;
+	}
+	.the-discourse {
+		margin-top: 4rem;
+		font-size: 1.25rem;
+		line-height: 2.5rem;
+		text-align: left;
+	}
+}
 
 .music {
 	display: none;
