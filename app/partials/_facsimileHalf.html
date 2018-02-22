@@ -2,23 +2,28 @@
 <section class="facsimile-wrapper">
 	<div class="facsimile-half">
 		<div id="openseadragon-wrapper--half">
-<!-- 			<div id="tools">
+			<div id="tools">
 				<span>
-					<a id="zoom-in" href="#zoom-in" title="Zoom In" style="display: inline-block; position: relative">Zoom In</a>
-					<a id="zoom-out" href="#zoom-out" title="Zoom Out" style="display: inline-block; position: relative">Zoom Out</a>
+<!-- 					<a id="zoom-in" href="#zoom-in" title="Zoom In" style="display: inline-block; position: relative">Zoom In</a>
+					<a id="zoom-out" href="#zoom-out" title="Zoom Out" style="display: inline-block; position: relative">Zoom Out</a> -->
+	<!-- 				<a id="home" href="#home" title="Go home" style="display: inline-block; position: relative;">Home</a> -->
+	<!-- 				<a id="home" href="#home" title="Home" style="display: inline-block; position: relative">Reset</a> -->
+	<!-- 				<a id="full-page" href="#full-page" title="Full Page" style="display: inline-block; position: relative">Full Page</a> -->
 					<a id="previous" href="#previous" title="Previous" style="display: inline-block; position: relative">Previous</a>
 					<a id="next" href="#next" title="Next" style="display: inline-block; position: relative">Next</a>
 				</span>
-			</div> -->
+			</div>
 		</div>
 	</div>
 </section>
 
+
+
 <script type="text/javascript">
 	$(document).ready(function(){ // prepare and display zoomable scans of book pages
 		var myEmblemDataNum = $('.emblem-page').data("id"); // get the data ID for the current emblem page
-		var startPage = myEmblemDataNum * 4 + 10; // the number of first page of current emblem
-		console.log(startPage);
+		var startPage // the number of first page of current emblem
+		// console.log(startPage);
 		var pageTiles = "../data/pageView.json"; // file path to page view dzi files
 		console.log("This is pageTiles " + pageTiles);
 		var bookTiles = "../data/bookView.json"; // file path to book view dzi files
@@ -29,9 +34,16 @@
 			bookView = bookView.responseJSON; // get array of book view URLS
 		})
 		.done(function() { // after all the image tiles are ready, display zoomable pages
+			if (myEmblemDataNum <= 3) { // handle front matter (not in sets of 4)
+				startPage = myEmblemDataNum + 7;
+			}
+			else if (myEmblemDataNum > 3) { // handle emblems (in sets of 4)
+				startPage = myEmblemDataNum * 4 + 3;
+			}
 			var atalantaZoom = pageView; // current view mode (initially pageView)
-			var viewer2 = OpenSeadragon({
+			var viewerHalf = OpenSeadragon({
 				id: "openseadragon-wrapper--half",
+				// tileSources: [atalantaZoom],
 				tileSources: [atalantaZoom],
 				initialPage: startPage, // start viewer at first page of current emblem
 				autoResize: true, /***/
@@ -39,8 +51,8 @@
 				animationTime: 1.5, /* smoother zooming with easing */
 				sequenceMode: true, /* group an array of images */
 				showReferenceStrip: false, /* thumbnails */
+				// referenceStripScroll: 'vertical',
 				showNavigator: true, /* mini map */
-				// toolbar: "tools",
 				toolbar: "openseadragon-wrapper--half",
 				zoomInButton: "zoom-in",
 				zoomOutButton: "zoom-out",

@@ -1112,6 +1112,32 @@ main[data-id='1'] .wrapper-sidenav, main[data-id='2'] .wrapper-sidenav, main[dat
 main[data-id='1'] .sidenav__options, main[data-id='2'] .sidenav__options, main[data-id='3'] .sidenav__options {
   display: none; }
 
+.emblem__left .margin-note, .emblem__right .margin-note {
+  display: none; }
+
+.wrapper-sidenav--0 {
+  height: 0; }
+
+.sidenav__options--none {
+  display: none; }
+
+#openseadragon-wrapper--half #tools span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  #openseadragon-wrapper--half #tools span a {
+    padding: .5rem; }
+
 .topnav a {
   color: #fff; }
 

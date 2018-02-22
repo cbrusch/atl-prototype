@@ -9,6 +9,25 @@ main[data-id='1'], main[data-id='2'], main[data-id='3'] {
 		display: none;
 	}
 }
+.emblem__left .margin-note, .emblem__right .margin-note {
+	display: none;
+}
+
+.wrapper-sidenav--0 {
+	height: 0;
+}
+.sidenav__options--none {
+	display: none;
+}
+
+#openseadragon-wrapper--half #tools span{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	a {
+		padding: .5rem;
+	}
+}
 
 .topnav a {
 	color: $white;

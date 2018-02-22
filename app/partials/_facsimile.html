@@ -18,8 +18,8 @@
 <script type="text/javascript">
 	$(document).ready(function(){ // prepare and display zoomable scans of book pages
 		var myEmblemDataNum = $('.emblem-page').data("id"); // get the data ID for the current emblem page
-		var startPage = myEmblemDataNum * 4 + 3; // the number of first page of current emblem
-		console.log(startPage);
+		var startPage // the number of first page of current emblem
+		// console.log(startPage);
 		var pageTiles = "../data/pageView.json"; // file path to page view dzi files
 		console.log("This is pageTiles " + pageTiles);
 		var bookTiles = "../data/bookView.json"; // file path to book view dzi files
@@ -30,6 +30,12 @@
 			bookView = bookView.responseJSON; // get array of book view URLS
 		})
 		.done(function() { // after all the image tiles are ready, display zoomable pages
+			if (myEmblemDataNum <= 3) { // handle front matter (not in sets of 4)
+				startPage = myEmblemDataNum + 7;
+			}
+			else if (myEmblemDataNum > 3) { // handle emblems (in sets of 4)
+				startPage = myEmblemDataNum * 4 + 3;
+			}
 			var atalantaZoom = pageView; // current view mode (initially pageView)
 			var viewer = OpenSeadragon({
 				id: "openseadragon-wrapper",
