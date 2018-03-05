@@ -112,6 +112,17 @@ $(document).ready(function() {
 
 /* INITIALIZE */
 			onLoad(); // display emblem menu and default options on page load
+			$('.nav-tabs .nav-item a').click(function (e) {
+				e.preventDefault()
+				if ($(singleViewBtn).hasClass('is-active')) {
+					console.log("WHOLE ACTIVE");
+				}
+				else if ($(doubleViewBtn).hasClass('is-active')) {
+					console.log("SPLIT ACTIVE");
+				}
+				$(this).tab('show')
+				console.log("I am showing tab " + this)
+			})
 
 /* EVENTS */
 			/* pages */
