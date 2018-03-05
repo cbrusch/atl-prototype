@@ -109,19 +109,33 @@ $(document).ready(function() {
 			var musicSection = '.emblem__full .music';
 			/* side nav */
 			var sideNav = '._sidenav';
+			var facsWhole = '.subnav > ul li:nth-child(4) > a';
+
+
+
 
 /* INITIALIZE */
 			onLoad(); // display emblem menu and default options on page load
 			$('.nav-tabs .nav-item a').click(function (e) {
-				e.preventDefault()
+
 				if ($(singleViewBtn).hasClass('is-active')) {
+					$('.emblem-page').remove('._facsimile-half section.facsimile-wrapper'); // remove the half facsimile image viewer partial
+					$(facsimileEl).load(facsimilePartial); // load the full facsimile image viewer partial
+					$(facsWhole).addClass('my-test');
+					$(facsWhole).attr('href', '#openseadragon-wrapper');
 					console.log("WHOLE ACTIVE");
+					$(this).tab('show')
+					console.log("I am showing tab " + this)
 				}
 				else if ($(doubleViewBtn).hasClass('is-active')) {
+					$('.emblem-page').remove('._facsimile section.facsimile'); // remove the full facsimile image viewer partial
+					$(facsimileHalfEl).load(facsimileHalfPartial); // load the half facsimile image viewer partial
+					$(facsWhole).attr('href', '#openseadragon-wrapper--half');
 					console.log("SPLIT ACTIVE");
+					$(this).tab('show')
+					console.log("I am showing tab " + this)
 				}
-				$(this).tab('show')
-				console.log("I am showing tab " + this)
+								e.preventDefault()
 			})
 
 /* EVENTS */

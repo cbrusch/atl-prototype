@@ -94,6 +94,10 @@ body {
   align-self: center;
   font-size: .825rem; }
 
+.my-test {
+  margin: 1rem;
+  border: 2px solid purple; }
+
 .width--100 {
   width: 100%; }
 
@@ -256,6 +260,10 @@ body {
 /* large  -  desktop */
 /* extra-large */
 /* xxl */
+.my-test {
+  margin: 1rem;
+  border: 2px solid purple; }
+
 .width--100 {
   width: 100%; }
 
@@ -555,6 +563,10 @@ body {
 }*/
 /* extra-large */
 /* xxl */
+.my-test {
+  margin: 1rem;
+  border: 2px solid purple; }
+
 .width--100 {
   width: 100%; }
 
@@ -952,6 +964,10 @@ section > div.discourse.section.width--100 {
   .discourse p {
     max-width: 30rem; } }
 
+.my-test {
+  margin: 1rem;
+  border: 2px solid purple; }
+
 .width--100 {
   width: 100%; }
 
@@ -1089,6 +1105,10 @@ span.underline {
 /* NEUTRAL */
 /* COOL */
 /* WARM */
+.my-test {
+  margin: 1rem;
+  border: 2px solid purple; }
+
 .width--100 {
   width: 100%; }
 
@@ -1480,6 +1500,10 @@ ul.sidenav__options li.sidenav--is-active a:hover {
   margin-top: -180px;
   height: 180px;
   visibility: hidden; }
+
+.my-test {
+  margin: 1rem;
+  border: 2px solid purple; }
 
 .width--100 {
   width: 100%; }
